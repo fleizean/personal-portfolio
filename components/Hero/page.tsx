@@ -30,13 +30,9 @@ const Hero = () => {
                                 className="text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white transition-colors">
                                 <FaGithub className="text-2xl" />
                             </Link>
-                            <Link href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"
+                            <Link href="https://linkedin.com/in/fleizean" target="_blank" rel="noopener noreferrer"
                                 className="text-gray-700 hover:text-blue-700 dark:text-gray-300 dark:hover:text-blue-400 transition-colors">
                                 <FaLinkedin className="text-2xl" />
-                            </Link>
-                            <Link href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer"
-                                className="text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors">
-                                <FaTwitter className="text-2xl" />
                             </Link>
                         </div>
                     </div>
