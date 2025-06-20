@@ -8,15 +8,7 @@ import { GiSkills } from 'react-icons/gi';
 import { AiOutlineDotNet } from 'react-icons/ai';
 import { TbBrandCSharp } from 'react-icons/tb';
 import { DiMsqlServer } from 'react-icons/di';
-
-interface TechItem {
-    name: string;
-    color: string;
-    icon: React.ElementType;
-    description: string;
-    category: 'frontend' | 'backend' | 'learning' | 'database' | 'devops';
-    link?: string;
-}
+import { TechItem } from '@/types/techitem';
 
 const TechStackContent: React.FC = () => {
     const techItems: TechItem[] = [
@@ -187,23 +179,23 @@ const TechStackContent: React.FC = () => {
     const learningItems = techItems.filter(item => item.category === 'learning');
 
     return (
-        <section className="relative w-full z-50 transition-all duration-300 mt-15">
-            <div className="container items-center container mx-auto justify-center px-8 lg:px-60 py-10">
-                <h2 className="text-3xl font-bold mb-10 text-gray-700">my tech stack</h2>
+        <section className="relative w-full z-50 transition-all duration-300 mt-10 md:mt-15">
+            <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-20 xl:px-40 py-6 md:py-10">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-6 md:mb-10 text-gray-700">my tech stack</h2>
 
                 {/* Frontend Section */}
-                <div className="mb-3">
-                    <h3 className="font-bold mb-4 flex items-center">
+                <div className="mb-6">
+                    <h3 className="font-bold mb-3 md:mb-4 flex items-center">
                       <span className="mr-2 text-gray-800">●</span>
                       <span>Frontend</span>
                     </h3>
-                    <ul className="space-y-1 pl-3">
+                    <ul className="space-y-1 pl-2 md:pl-3">
                         {frontendItems.map((item, index) => (
                             <li key={index} className="pb-3">
-                                <div className="flex items-baseline gap-2 items-start">
-                                    <span className="text-lg"><item.icon className={item.color} /></span>
-                                    <div>
-                                        <div className="flex items-center gap-1">
+                                <div className="flex items-start gap-2">
+                                    <span className="text-base sm:text-lg mt-1"><item.icon className={item.color} /></span>
+                                    <div className="flex-1">
+                                        <div className="flex flex-wrap items-center gap-1">
                                             <span className="font-xs">{item.name}</span>
                                             <span className="font-medium text-black">
                                                 <Link href={item.link || '#'} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500">
@@ -211,7 +203,7 @@ const TechStackContent: React.FC = () => {
                                                 </Link>
                                             </span>
                                         </div>
-                                        <p className="text-sm text-gray-500 mt-1">{item.description}</p>
+                                        <p className="text-xs sm:text-sm text-gray-500 mt-1">{item.description}</p>
                                     </div>
                                 </div>
                             </li>
@@ -220,18 +212,18 @@ const TechStackContent: React.FC = () => {
                 </div>
 
                 {/* Backend Section */}
-                <div className="mb-3">
-                    <h3 className="font-bold mb-4 flex items-center">
+                <div className="mb-6">
+                    <h3 className="font-bold mb-3 md:mb-4 flex items-center">
                       <span className="mr-2 text-gray-800">●</span>
                       <span>Backend</span>
                     </h3>
-                    <ul className="space-y-1 pl-3">
+                    <ul className="space-y-1 pl-2 md:pl-3">
                         {backendItems.map((item, index) => (
                             <li key={index} className="pb-3">
-                                <div className="flex items-baseline gap-2 items-start">
-                                    <span className="text-lg"><item.icon className={item.color} /></span>
-                                    <div>
-                                        <div className="flex items-center gap-1">
+                                <div className="flex items-start gap-2">
+                                    <span className="text-base sm:text-lg mt-1"><item.icon className={item.color} /></span>
+                                    <div className="flex-1">
+                                        <div className="flex flex-wrap items-center gap-1">
                                             <span className="font-xs">{item.name}</span>
                                             <span className="font-medium text-black">
                                                 <Link href={item.link || '#'} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500">
@@ -239,7 +231,7 @@ const TechStackContent: React.FC = () => {
                                                 </Link>
                                             </span>
                                         </div>
-                                        <p className="text-sm text-gray-500 mt-1">{item.description}</p>
+                                        <p className="text-xs sm:text-sm text-gray-500 mt-1">{item.description}</p>
                                     </div>
                                 </div>
                             </li>
@@ -248,18 +240,18 @@ const TechStackContent: React.FC = () => {
                 </div>
 
                 {/* Database Section */}
-                <div className="mb-3">
-                    <h3 className="font-bold mb-4 flex items-center">
+                <div className="mb-6">
+                    <h3 className="font-bold mb-3 md:mb-4 flex items-center">
                       <span className="mr-2 text-gray-800">●</span>
                       <span>Database</span>
                     </h3>
-                    <ul className="space-y-1 pl-3">
+                    <ul className="space-y-1 pl-2 md:pl-3">
                         {techItems.filter(item => item.category === 'database').map((item, index) => (
                             <li key={index} className="pb-3">
-                                <div className="flex items-baseline gap-2 items-start">
-                                    <span className="text-lg"><item.icon className={item.color} /></span>
-                                    <div>
-                                        <div className="flex items-center gap-1">
+                                <div className="flex items-start gap-2">
+                                    <span className="text-base sm:text-lg mt-1"><item.icon className={item.color} /></span>
+                                    <div className="flex-1">
+                                        <div className="flex flex-wrap items-center gap-1">
                                             <span className="font-xs">{item.name}</span>
                                             <span className="font-medium text-black">
                                                 <Link href={item.link || '#'} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500">
@@ -267,7 +259,7 @@ const TechStackContent: React.FC = () => {
                                                 </Link>
                                             </span>
                                         </div>
-                                        <p className="text-sm text-gray-500 mt-1">{item.description}</p>
+                                        <p className="text-xs sm:text-sm text-gray-500 mt-1">{item.description}</p>
                                     </div>
                                 </div>
                             </li>
@@ -276,18 +268,18 @@ const TechStackContent: React.FC = () => {
                 </div>
 
                 {/* DevOps Section */}
-                <div className="mb-3">
-                    <h3 className="font-bold mb-4 flex items-center">
+                <div className="mb-6">
+                    <h3 className="font-bold mb-3 md:mb-4 flex items-center">
                       <span className="mr-2 text-gray-800">●</span>
                       <span>DevOps</span>
                     </h3>
-                    <ul className="space-y-1 pl-3">
+                    <ul className="space-y-1 pl-2 md:pl-3">
                         {techItems.filter(item => item.category === 'devops').map((item, index) => (
                             <li key={index} className="pb-3">
-                                <div className="flex items-baseline gap-2 items-start">
-                                    <span className="text-lg"><item.icon className={item.color} /></span>
-                                    <div>
-                                        <div className="flex items-center gap-1">
+                                <div className="flex items-start gap-2">
+                                    <span className="text-base sm:text-lg mt-1"><item.icon className={item.color} /></span>
+                                    <div className="flex-1">
+                                        <div className="flex flex-wrap items-center gap-1">
                                             <span className="font-xs">{item.name}</span>
                                             <span className="font-medium text-black">
                                                 <Link href={item.link || '#'} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500">
@@ -295,7 +287,7 @@ const TechStackContent: React.FC = () => {
                                                 </Link>
                                             </span>
                                         </div>
-                                        <p className="text-sm text-gray-500 mt-1">{item.description}</p>
+                                        <p className="text-xs sm:text-sm text-gray-500 mt-1">{item.description}</p>
                                     </div>
                                 </div>
                             </li>
@@ -305,17 +297,17 @@ const TechStackContent: React.FC = () => {
 
                 {/* Currently Learning Section */}
                 <div>
-                    <h3 className="font-bold mb-4 flex items-center">
+                    <h3 className="font-bold mb-3 md:mb-4 flex items-center">
                       <span className="mr-2 text-gray-800">●</span>
                       <span>Currently Learning</span>
                     </h3>
-                    <ul className="space-y-1 pl-3">
+                    <ul className="space-y-1 pl-2 md:pl-3">
                         {learningItems.map((item, index) => (
                             <li key={index} className="pb-3">
-                                <div className="flex items-baseline gap-2 items-start">
-                                    <span className="text-lg"><item.icon className={item.color} /></span>
-                                    <div>
-                                        <div className="flex items-center gap-1">
+                                <div className="flex items-start gap-2">
+                                    <span className="text-base sm:text-lg mt-1"><item.icon className={item.color} /></span>
+                                    <div className="flex-1">
+                                        <div className="flex flex-wrap items-center gap-1">
                                             <span className="font-xs">{item.name}</span>
                                             <span className="font-medium text-black">
                                                 <Link href={item.link || '#'} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500">
@@ -323,7 +315,7 @@ const TechStackContent: React.FC = () => {
                                                 </Link>
                                             </span>
                                         </div>
-                                        <p className="text-sm text-gray-500 mt-1">{item.description}</p>
+                                        <p className="text-xs sm:text-sm text-gray-500 mt-1">{item.description}</p>
                                     </div>
                                 </div>
                             </li>

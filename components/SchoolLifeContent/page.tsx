@@ -1,15 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-interface SchoolExperience {
-    title: string;
-    period: string;
-    description: string;
-    highlights: string[];
-    image?: string;
-    link?: string;
-}
+import { SchoolExperience } from '@/types/schoolexperience';
 
 const SchoolLifeContent: React.FC = () => {
     const schoolExperiences: SchoolExperience[] = [
@@ -32,18 +24,18 @@ const SchoolLifeContent: React.FC = () => {
 
     return (
         <section className="relative w-full z-50 transition-all duration-300 mt-15">
-            <div className="container items-center container mx-auto justify-center px-60 py-10">
-                <h2 className="text-3xl font-bold mb-10 text-gray-700">my school life</h2>
+            <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20 xl:px-60 py-10">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700">my school life</h2>
 
                 <div>
                     <ul className="space-y-4">
                         {schoolExperiences.map((experience, index) => (
                             <li key={index} className="pb-3">
-                                <div className="flex items-start justify-between">
-                                    <div className="flex items-baseline gap-2">
+                                <div className="flex flex-col md:flex-row items-start justify-between gap-4">
+                                    <div className="flex items-baseline gap-2 w-full md:w-auto">
                                         <span className="text-lg">🎓</span>
-                                        <div>
-                                            <div className="flex items-center gap-1">
+                                        <div className="w-full">
+                                            <div className="flex flex-wrap items-center gap-1">
                                                 <span className="font-xs">{experience.title}</span>
                                                 <span className="font-medium text-black">
                                                     {experience.link ? (
@@ -76,13 +68,14 @@ const SchoolLifeContent: React.FC = () => {
                                     </div>
                                     
                                     {experience.image && (
-                                        <div className="flex items-center">
-                                            <div className="h-14 border-l border-gray-200 mx-4"></div>
+                                        <div className="flex items-center mt-4 md:mt-0">
+                                            <div className="hidden md:block h-14 border-l border-gray-200 mx-4"></div>
                                             <Link
                                                 href={experience.link || '#'}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 title={experience.title}
+                                                className="flex-shrink-0"
                                             >
                                                 <Image
                                                     src={experience.image}
@@ -103,7 +96,7 @@ const SchoolLifeContent: React.FC = () => {
                 <div className="mt-8">
                     <h3 className="font-bold mb-4">Looking back...</h3>
                     <div className="flex items-baseline gap-2">
-                        <span className="text-lg">✨</span>
+                        <span className="text-lg flex-shrink-0">✨</span>
                         <p className="text-sm text-gray-600">
                             School life at Ecole 42 taught me that true learning happens outside of comfort zones. The peer-to-peer model, the intensity of projects, and the supportive community created an environment where growth was inevitable. These experiences have been instrumental in shaping who I am today, both as a developer and as a person.
                         </p>

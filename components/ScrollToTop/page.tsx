@@ -34,7 +34,7 @@ const ScrollToTop: React.FC = () => {
             {isVisible && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed bottom-6 right-6 p-3 bg-white rounded-full shadow-lg transition-all duration-300 hover:bg-gray-100 border border-gray-200 group"
+                    className="fixed bottom-6 right-6 p-3 z-100 bg-white rounded-full shadow-lg transition-all duration-300 hover:bg-gray-100 border border-gray-200 group"
                     aria-label="Scroll to top"
                 >
                     <IoIosArrowUp className="text-indigo-600 text-2xl group-hover:text-indigo-800" />

@@ -1,19 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
-interface ProjectItem {
-    projectName: string;
-    type: 'present' | 'past';
-    icon: string;
-    year: string;
-    status: 'development' | 'completed' | 'ongoing';
-    description?: string;
-    techStack?: string[];
-    githubLink?: string;
-    liveLink?: string;
-    image?: string;
-}
+import { ProjectItem } from '@/types/projectitem';
 
 const ProjectsContent: React.FC = () => {
     const presentProjects: ProjectItem[] = [
@@ -94,8 +82,8 @@ const ProjectsContent: React.FC = () => {
 
     return (
         <section className="relative w-full z-50 transition-all duration-300 mt-15">
-            <div className="container items-center container mx-auto justify-center px-60 py-10">
-                <h2 className="text-3xl font-bold mb-10 text-gray-700">my projects</h2>
+            <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-20 xl:px-60 py-10">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700">my projects</h2>
 
                 {/* Present Projects */}
                 <div className="mb-8">
@@ -103,11 +91,11 @@ const ProjectsContent: React.FC = () => {
                     <ul className="space-y-4">
                         {presentProjects.map((project, index) => (
                             <li key={index} className="pb-3">
-                                <div className="flex items-start justify-between">
-                                    <div className="flex items-baseline gap-2">
+                                <div className="flex flex-col md:flex-row md:items-start">
+                                    <div className="flex items-baseline gap-2 flex-grow">
                                         <span className="text-lg">{project.icon}</span>
-                                        <div>
-                                            <div className="flex items-center gap-2">
+                                        <div className="w-full">
+                                            <div className="flex flex-wrap items-center gap-2">
                                                 <span className="font-medium text-black">{project.projectName}</span>
                                                 <span className="text-gray-500">• {project.year}</span>
                                                 {getStatusBadge(project.status)}
@@ -153,13 +141,14 @@ const ProjectsContent: React.FC = () => {
                                     
                                     {/* Project Image */}
                                     {project.image && (
-                                        <div className="flex items-center">
-                                            <div className="h-14 border-l border-gray-200 mx-4"></div>
+                                        <div className="flex items-start mt-3 md:mt-0">
+                                            <div className="hidden md:block h-14 border-l border-gray-200 mx-4"></div>
                                             <Link
                                                 href={project.githubLink || project.liveLink || '#'}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 title={project.projectName}
+                                                className='flex-shrink-0"'
                                             >
                                                 <Image
                                                     src={project.image}
@@ -183,11 +172,11 @@ const ProjectsContent: React.FC = () => {
                     <ul className="space-y-4">
                         {pastProjects.map((project, index) => (
                             <li key={index} className="pb-3">
-                                <div className="flex items-start justify-between">
-                                    <div className="flex items-baseline gap-2">
+                                <div className="flex flex-col md:flex-row md:items-start">
+                                    <div className="flex items-baseline gap-2 flex-grow">
                                         <span className="text-lg">{project.icon}</span>
-                                        <div>
-                                            <div className="flex items-center gap-2">
+                                        <div className="w-full">
+                                            <div className="flex flex-wrap items-center gap-2">
                                                 <span className="font-medium text-black">{project.projectName}</span>
                                                 <span className="text-gray-500">• {project.year}</span>
                                                 {getStatusBadge(project.status)}
@@ -233,13 +222,14 @@ const ProjectsContent: React.FC = () => {
                                     
                                     {/* Project Image */}
                                     {project.image && (
-                                        <div className="flex items-center">
-                                            <div className="h-14 border-l border-gray-200 mx-4"></div>
+                                        <div className="flex items-start mt-3 md:mt-0">
+                                            <div className="hidden md:block h-14 border-l border-gray-200 mx-4"></div>
                                             <Link
                                                 href={project.githubLink || project.liveLink || '#'}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 title={project.projectName}
+                                                className='flex-shrink-0"'
                                             >
                                                 <Image
                                                     src={project.image}

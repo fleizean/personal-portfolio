@@ -1,20 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
-
-interface JourneyItem {
-    title: string;
-    place: string;
-    year: string;
-    description: string;
-    type: 'work' | 'education' | 'project' | 'personal' | 'other';
-    emoji?: string;
-    link?: string;
-    photo?: string; // Optional field for future use
-}
+import { JourneyItem } from '@/types/journeyitem';
 
 const JourneyContent: React.FC = () => {
     const presentItems: JourneyItem[] = [
+        // Existing present items
         {
             title: "Junior Full Stack Developer",
             place: "Searching for opportunities",
@@ -37,6 +28,7 @@ const JourneyContent: React.FC = () => {
     ];
 
     const pastItems: JourneyItem[] = [
+        // Existing past items remain unchanged
         {
             title: "Full Stack Developer",
             place: "Solvent Yazılım",
@@ -105,7 +97,6 @@ const JourneyContent: React.FC = () => {
         },
     ];
 
-
     const getDefaultEmoji = (type: JourneyItem['type']) => {
         switch (type) {
             case 'work': return '💼';
@@ -119,8 +110,8 @@ const JourneyContent: React.FC = () => {
 
     return (
         <section className="relative w-full z-50 transition-all duration-300 mt-15">
-            <div className="container items-center container mx-auto justify-center px-60 py-10">
-                <h2 className="text-3xl font-bold mb-10 text-gray-700">my journey</h2>
+            <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-60 py-6 sm:py-10">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700">my journey</h2>
 
                 {/* Present Section */}
                 <div className="mb-8">
@@ -128,25 +119,26 @@ const JourneyContent: React.FC = () => {
                     <ul className="space-y-4">
                         {presentItems.map((item, index) => (
                             <li key={index} className="pb-3">
-                                <div className="flex items-start justify-between">
-                                    {/* Sol taraftaki içerik */}
-                                    <div className="flex items-baseline gap-2">
+                                <div className="flex flex-col sm:flex-row items-start justify-between">
+                                    {/* Left content */}
+                                    <div className="flex items-baseline gap-2 w-full sm:w-auto">
                                         <span className="text-lg">{item.emoji || getDefaultEmoji(item.type)}</span>
-                                        <div>
-                                            <div className="flex items-center gap-1">
+                                        <div className="w-full">
+                                            <div className="flex flex-wrap items-center gap-1">
                                                 <span className="font-xs">{item.title} at </span>
                                                 <span className="font-medium text-black">
-                                                    <Link href={`${item.link}`} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500">{item.place}</Link> • {item.year}
+                                                    <Link href={`${item.link}`} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500">{item.place}</Link>
+                                                    <span> • {item.year}</span>
                                                 </span>
                                             </div>
                                             <p className="text-sm text-gray-500 mt-1">{item.description}</p>
                                         </div>
                                     </div>
                                     
-                                    {/* Fotoğraf alanı ve dikey çizgi */}
+                                    {/* Photo area */}
                                     {item.photo && (
-                                        <div className="flex items-center">
-                                            <div className="h-14 border-l border-gray-200 mx-4"></div>
+                                        <div className="flex items-center mt-3 sm:mt-0">
+                                            <div className="hidden sm:block h-14 border-l border-gray-200 mx-4"></div>
                                             <Link
                                                 href={item.link || '#'}
                                                 target="_blank"
@@ -175,22 +167,23 @@ const JourneyContent: React.FC = () => {
                     <ul className="space-y-4">
                         {pastItems.map((item, index) => (
                             <li key={index} className="pb-3">
-                                <div className="flex items-start justify-between">
-                                    <div className="flex items-baseline gap-2">
+                                <div className="flex flex-col sm:flex-row items-start justify-between">
+                                    <div className="flex items-baseline gap-2 w-full sm:w-auto">
                                         <span className="text-lg">{item.emoji || getDefaultEmoji(item.type)}</span>
-                                        <div>
-                                            <div className="flex items-center gap-1">
+                                        <div className="w-full">
+                                            <div className="flex flex-wrap items-center gap-1">
                                                 <span className="font-xs">{item.title} at</span>
                                                 <span className="font-medium text-black">
-                                                    <Link href={`${item.link}`} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500">{item.place}</Link> • {item.year}
+                                                    <Link href={`${item.link}`} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500">{item.place}</Link>
+                                                    <span> • {item.year}</span>
                                                 </span>
                                             </div>
                                             <p className="text-sm text-gray-500 mt-1">{item.description}</p>
                                         </div>
                                     </div>
                                     {item.photo && (
-                                        <div className="flex items-center">
-                                            <div className="h-14 border-l border-gray-200 mx-4"></div>
+                                        <div className="flex items-center mt-3 sm:mt-0">
+                                            <div className="hidden sm:block h-14 border-l border-gray-200 mx-4"></div>
                                             <Link
                                                 href={item.link || '#'}
                                                 target="_blank"
