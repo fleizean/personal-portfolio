@@ -6,6 +6,18 @@ import { ProjectItem } from '@/types/projectitem';
 const ProjectsContent: React.FC = () => {
     const presentProjects: ProjectItem[] = [
         {
+            projectName: "Noteisy",
+            type: "present",
+            icon: "📝",
+            year: "2024",
+            status: "development",
+            description: "Noteisy is a note-taking application designed to help users organize their thoughts and ideas efficiently.",
+            techStack: ["Next.js", "TypeScript", "TailwindCSS"],
+            githubLink: "https://github.com/fleizean/noteisy",
+            liveLink: "https://noteisy.tech",
+            image: "/noteisy.png"
+        },
+        {
             projectName: "Personal Portfolio",
             type: "present",
             icon: "🌟",
