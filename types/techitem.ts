@@ -3,6 +3,6 @@ export interface TechItem {
     color: string;
     icon: string;
     description: string;
-    category: string;
+    category: 'frontend' | 'backend' | 'database' | 'devops' | 'learning';
     link: string;
 }

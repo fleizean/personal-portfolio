@@ -13,6 +13,9 @@ import { DiMsqlServer } from 'react-icons/di';
 import { TechItem } from '@/types/techitem';
 import { useTranslation } from '@/context/LanguageContext';
 
+type IconComponent = React.ComponentType<{ className?: string }>;
+
+
 const TechStackContent: React.FC = () => {
     const { isLoading, t } = useTranslation("common");
 
@@ -26,8 +29,8 @@ const TechStackContent: React.FC = () => {
     const techItems: TechItem[] = techStackData.items || [];
 
     // Render'da kullanım:
-    const getIcon = (iconName: string): React.ComponentType<any> => {
-        const iconMap: Record<string, React.ComponentType<any>> = {
+    const getIcon = (iconName: string): IconComponent => {
+        const iconMap: Record<string, IconComponent> = {
             FaReact,
             TbBrandCSharp,
             SiRabbitmq,
@@ -60,12 +63,9 @@ const TechStackContent: React.FC = () => {
         })
     }
 
-    const frontendItems = techItems.filter((item: any) => item.category === 'frontend');
-    const backendItems = techItems.filter((item: any) => item.category === 'backend');
-    const learningItems = techItems.filter((item: any) => item.category === 'learning');
-    const databaseItems = techItems.filter((item: any) => item.category === 'database');
-    const devopsItems = techItems.filter((item: any) => item.category === 'devops');
-
+    const frontendItems = techItems.filter((item: TechItem) => item.category === 'frontend');
+    const backendItems = techItems.filter((item: TechItem) => item.category === 'backend');
+    const learningItems = techItems.filter((item: TechItem) => item.category === 'learning');
 
     return (
         <section className="relative w-full z-50 transition-all duration-300 mt-10 md:mt-15">

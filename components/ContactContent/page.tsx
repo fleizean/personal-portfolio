@@ -7,13 +7,6 @@ import { FaX } from 'react-icons/fa6';
 
 const ContactContent = () => {
     const { isLoading, t } = useTranslation("common");
-
-    if (isLoading) {
-        return <div className="flex justify-center items-center h-screen">
-            <div className="loader"></div>
-        </div>;
-    }
-
     
     const [formData, setFormData] = useState({
         name: '',
@@ -24,7 +17,13 @@ const ContactContent = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState('');
 
-    const handleInputChange = (e: any) => {
+    if (isLoading) {
+        return <div className="flex justify-center items-center h-screen">
+            <div className="loader"></div>
+        </div>;
+    }
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -32,7 +31,7 @@ const ContactContent = () => {
         }));
     };
 
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitStatus('');
@@ -54,6 +53,7 @@ const ContactContent = () => {
             }
         } catch (error) {
             setSubmitStatus('error');
+            console.error('Error submitting form:', error);
         } finally {
             setIsSubmitting(false);
         }
