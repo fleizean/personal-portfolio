@@ -7,15 +7,24 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa6';
 import { Si42 } from 'react-icons/si';
 import { useTranslation } from '@/context/LanguageContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Hero = () => {
     const { isLoading, t } = useTranslation("common");
+    const { language } = useLanguage();
 
     if (isLoading) {
         return <div className="flex justify-center items-center h-screen">
             <div className="loader"></div>
         </div>;
     }
+
+    const handleResumeClick = () => {
+        const resumeFile = language === 'tr' 
+            ? '/ENES_YAGIZ_TR.pdf' 
+            : '/ENES_YAGIZ_EN.pdf';
+        window.location.href = resumeFile;
+    };
 
     return (
         <section className="py-10 md:py-16 lg:py-24">
@@ -59,7 +68,7 @@ const Hero = () => {
                         <div className="flex items-center mt-6">
                             [<button
                                 className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-200"
-                                onClick={() => window.location.href = '/resume.pdf'}
+                                onClick={handleResumeClick}
                             >
                                 {t('hero.resumeButton')}
                             </button>]
