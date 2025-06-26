@@ -26,7 +26,7 @@ const translations: Record<Language, Translations> = {
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (namespace: keyof Translations, key: string) => string;
+  t: (namespace: keyof Translations, key: string, options?: { returnObjects?: boolean }) => any;
   isLoading: boolean;
 }
 
@@ -75,15 +75,23 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   // Çeviri fonksiyonu
-  const t = (namespace: keyof Translations, key: string): string => {
+  const t = (namespace: keyof Translations, key: string, options?: { returnObjects?: boolean }): any => {
     if (!translations[language] || !translations[language][namespace]) {
       console.warn(`Translation not found: ${namespace}.${key} for language ${language}`);
-      return key;
+      return options?.returnObjects ? [] : key;
     }
     
     const namespaceData = translations[language][namespace];
-    return getNestedValue(namespaceData, key);
+    const result = getNestedValue(namespaceData, key);
+    
+    // Eğer returnObjects true ise ve result bir object/array ise, olduğu gibi döndür
+    if (options?.returnObjects && typeof result === 'object') {
+      return result;
+    }
+    
+    return result;
   };
+  
 
   return (
     <LanguageContext.Provider value={{ 
@@ -109,7 +117,7 @@ export function useLanguage() {
 export function useTranslation(namespace: keyof Translations) {
   const { t: contextT, language, isLoading } = useLanguage();
   
-  const t = (key: string) => contextT(namespace, key);
+  const t = (key: string, options?: { returnObjects?: boolean }) => contextT(namespace, key, options);
   
   return { t, i18n: { language }, isLoading };
 }

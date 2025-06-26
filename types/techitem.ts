@@ -1,8 +1,8 @@
 export interface TechItem {
     name: string;
     color: string;
-    icon: React.ElementType;
+    icon: string;
     description: string;
-    category: 'frontend' | 'backend' | 'learning' | 'database' | 'devops';
-    link?: string;
+    category: string;
+    link: string;
 }

@@ -1,12 +1,15 @@
 'use client';
 
+import { useTranslation } from '@/context/LanguageContext';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
+    const { isLoading, t } = useTranslation("common");
     
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -16,6 +19,12 @@ const Header = () => {
     useEffect(() => {
         setIsMenuOpen(false);
     }, [pathname]);
+
+    if (isLoading) {
+        return <div className="flex justify-center items-center h-screen">
+            <div className="loader"></div>
+        </div>;
+    }
     
     return (
         <header className={`relative w-full z-50 transition-all duration-300 mt-15`}>
@@ -31,26 +40,35 @@ const Header = () => {
                     <div className="hidden md:flex items-center">
                         <div className="flex items-center">
                             <Link href="/journey" className="text-gray-700 hover:text-black no-underline font-medium transition-colors">
-                                journey
+                                {t('header.navigation.journey')}
                             </Link>
                             <span className="mx-2 text-gray-400">━</span>
                         </div>
                         <div className="flex items-center">
                             <Link href="/tech-stack" className="text-gray-700 hover:text-black no-underline font-medium transition-colors">
-                                tech stack
+                                {t('header.navigation.tech_stack')}
                             </Link>
                             <span className="mx-2 text-gray-400">━</span>
                         </div>
                         <div className="flex items-center">
                             <Link href="/projects" className="text-gray-700 hover:text-black no-underline font-medium transition-colors">
-                                projects
+                                {t('header.navigation.projects')}
                             </Link>
                             <span className="mx-2 text-gray-400">━</span>
                         </div>
                         <div className="flex items-center">
                             <Link href="/school-life" className="text-gray-700 hover:text-black no-underline font-medium transition-colors">
-                                school life
+                                {t('header.navigation.school_life')}
                             </Link>
+                            <span className="mx-2 text-gray-400">━</span>
+                        </div>
+                        <div className="flex items-center">
+                            <Link href="/contact" className="text-gray-700 hover:text-black no-underline font-medium transition-colors">
+                                {t('header.navigation.contact')}
+                            </Link>
+                        </div>
+                        <div className="ml-4">
+                            <LanguageSwitcher />
                         </div>
                     </div>
                     
@@ -79,17 +97,23 @@ const Header = () => {
                 <div className="md:hidden bg-white shadow-md">
                     <div className="px-4 py-3 space-y-3">
                         <Link href="/journey" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors">
-                            journey
+                            {t('header.navigation.journey')}
                         </Link>
                         <Link href="/tech-stack" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors">
-                            tech stack
+                            {t('header.navigation.tech_stack')}
                         </Link>
                         <Link href="/projects" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors">
-                            projects
+                            {t('header.navigation.projects')}
                         </Link>
                         <Link href="/school-life" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors">
-                            school life
+                            {t('header.navigation.school_life')}
                         </Link>
+                        <Link href="/contact" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors">
+                            {t('header.navigation.contact')}
+                        </Link>
+                    </div>
+                    <div className="px-4 py-3">
+                        <LanguageSwitcher />
                     </div>
                 </div>
             )}

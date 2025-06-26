@@ -1,31 +1,26 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SchoolExperience } from '@/types/schoolexperience';
+import { useTranslation } from '@/context/LanguageContext';
 
 const SchoolLifeContent: React.FC = () => {
-    const schoolExperiences: SchoolExperience[] = [
-        {
-            title: "Ecole 42",
-            period: "2021 - 2024",
-            description: "Ecole 42 was a transformative journey that shaped both my technical skills and personal growth. This peer-to-peer learning environment pushed me beyond my comfort zone and taught me how to approach complex problems with creativity and perseverance.",
-            highlights: [
-                "Mastered C, C++, and various programming paradigms through intensive projects",
-                "Built strong collaboration skills through team projects and peer evaluations",
-                "Developed problem-solving abilities through the unique &apos;learn by doing&apos; approach",
-                "Formed lasting friendships with peers from diverse backgrounds",
-                "Gained experience in system administration, networks, and web development",
-                "Learned to work under pressure and meet challenging deadlines"
-            ],
-            image: "/42.png",
-            link: "https://www.42.fr/en/"
-        }
-    ];
+    const { isLoading, t } = useTranslation("common");
+
+    if (isLoading) {
+        return <div className="flex justify-center items-center h-screen">
+            <div className="loader"></div>
+        </div>;
+    }
+
+    const schoolExperiences = t('school.experiences', { returnObjects: true }) as SchoolExperience[] || [];
 
     return (
         <section className="relative w-full z-50 transition-all duration-300 mt-15">
             <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20 xl:px-60 py-10">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700">my school life</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700">{t('school.section_title')}</h2>
 
                 <div>
                     <ul className="space-y-4">
@@ -50,7 +45,7 @@ const SchoolLifeContent: React.FC = () => {
                                             <p className="text-sm text-gray-500 mt-1">{experience.description}</p>
                                             
                                             <div className="mt-4">
-                                                <h4 className="font-semibold mb-2">Key Experiences:</h4>
+                                                <h4 className="font-semibold mb-2">{t('school.key_experiences_title')}</h4>
                                                 <ul className="list-disc pl-5 space-y-1">
                                                     {experience.highlights.map((highlight, i) => (
                                                         <li key={i} className="text-sm text-gray-600">{highlight}</li>
@@ -59,9 +54,9 @@ const SchoolLifeContent: React.FC = () => {
                                             </div>
                                             
                                             <div className="mt-6">
-                                                <h4 className="font-semibold mb-2">Personal Reflection:</h4>
+                                                <h4 className="font-semibold mb-2">{t('school.experiences.0.reflection_title')}</h4>
                                                 <p className="text-sm text-gray-600 italic">
-                                                    &ldquo;My time at 42 wasn&apos;t just about coding—it was about discovering my potential, building lifelong connections, and developing the resilience to tackle any challenge. The countless nights spent debugging, the collaborative problem-solving sessions, and the shared victories formed the foundation of not just my technical skills, but my approach to life&apos;s challenges.&ldquo;
+                                                    &ldquo;{t('school.experiences.0.reflection')}&rdquo;
                                                 </p>
                                             </div>
                                         </div>
@@ -94,11 +89,11 @@ const SchoolLifeContent: React.FC = () => {
                 </div>
 
                 <div className="mt-8">
-                    <h3 className="font-bold mb-4">Looking back...</h3>
+                    <h3 className="font-bold mb-4">{t('school.looking_back_title')}</h3>
                     <div className="flex items-baseline gap-2">
                         <span className="text-lg flex-shrink-0">✨</span>
                         <p className="text-sm text-gray-600">
-                            School life at Ecole 42 taught me that true learning happens outside of comfort zones. The peer-to-peer model, the intensity of projects, and the supportive community created an environment where growth was inevitable. These experiences have been instrumental in shaping who I am today, both as a developer and as a person.
+                            {t('school.looking_back_text')}
                         </p>
                     </div>
                 </div>

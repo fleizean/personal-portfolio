@@ -1,83 +1,23 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ProjectItem } from '@/types/projectitem';
+import { useTranslation } from '@/context/LanguageContext';
 
 const ProjectsContent: React.FC = () => {
-    const presentProjects: ProjectItem[] = [
-        {
-            projectName: "Noteisy",
-            type: "present",
-            icon: "📝",
-            year: "2024",
-            status: "development",
-            description: "Noteisy is a note-taking application designed to help users organize their thoughts and ideas efficiently.",
-            techStack: ["Next.js", "TypeScript", "TailwindCSS"],
-            githubLink: "https://github.com/fleizean/noteisy",
-            liveLink: "https://noteisy.tech",
-            image: "/noteisy.png"
-        },
-        {
-            projectName: "Personal Portfolio",
-            type: "present",
-            icon: "🌟",
-            year: "2024",
-            status: "completed",
-            description: "My personal portfolio website built with Next.js and TypeScript.",
-            techStack: ["Next.js", "TypeScript", "TailwindCSS"],
-            githubLink: "https://github.com/fleizean/personal-portfolio",
-            liveLink: "https://fleizean.me",
-            image: "/logo.png"
-        },
-        {
-            projectName: "nasilbifirma",
-            type: "present",
-            icon: "🚀",
-            year: "2024",
-            status: "development",
-            description: "Personal tech venture focused on innovative solutions.",
-            techStack: [".NET", "Next.js", "TypeScript", "TailwindCSS"],
-            githubLink: "https://github.com/fleizean/nasilbifirma",
-            liveLink: "https://nasilbifirma.com",
-            image: "/nasilbifirma.png"
-        }
-    ];
+    const { isLoading, t } = useTranslation("common");
+        
+    if (isLoading) {
+        return <div className="flex justify-center items-center h-screen">
+            <div className="loader"></div>
+        </div>;
+    }
+    
+    const presentProjects = t('projects.items.present', { returnObjects: true }) as ProjectItem[] || [];
+    const pastProjects = t('projects.items.past', { returnObjects: true }) as ProjectItem[] || [];
 
-    const pastProjects: ProjectItem[] = [
-        {
-            projectName: "spotifyfizyfit",
-            type: "past",
-            icon: "🎵",
-            year: "2024",
-            status: "completed",
-            description: "Selenium-based automation for Spotify to fizy playlist migration.",
-            techStack: ["Python", "Selenium", "Web Automation"],
-            githubLink: "https://github.com/fleizean/spotifyfizyfit",
-            image: "/spotifyfizyfit.png"
-        },
-        {
-            projectName: "sleepwipe",
-            type: "past",
-            icon: "💤",
-            year: "2024",
-            status: "completed",
-            description: "Sleepwipe is a software that prevents the computer from going into sleep mode.",
-            techStack: ["C", "Bash"],
-            githubLink: "https://github.com/fleizean/sleepwipe",
-            image: "/sleepwipe.png"
-        },
-        {
-            projectName: "webserv",
-            type: "past",
-            icon: "🐚",
-            year: "2023",
-            status: "completed",
-            description: "Nginx-like web server built from C++.",
-            techStack: ["C++", "HTTP", "Web Server"],
-            githubLink: "https://github.com/fleizean/webserv",
-            image: "/webserv.png"
-        }
-    ];
 
     const getStatusBadge = (status: ProjectItem['status']) => {
         switch (status) {
@@ -95,11 +35,11 @@ const ProjectsContent: React.FC = () => {
     return (
         <section className="relative w-full z-50 transition-all duration-300 mt-15">
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-20 xl:px-60 py-10">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700">my projects</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700">{t('projects.section_title')}</h2>
 
                 {/* Present Projects */}
                 <div className="mb-8">
-                    <h3 className="font-bold mb-4">Present</h3>
+                    <h3 className="font-bold mb-4">{t('projects.present_section_title')}</h3>
                     <ul className="space-y-4">
                         {presentProjects.map((project, index) => (
                             <li key={index} className="pb-3">
@@ -134,7 +74,7 @@ const ProjectsContent: React.FC = () => {
                                                         rel="noopener noreferrer"
                                                         className="text-sm text-gray-600 hover:text-black"
                                                     >
-                                                        GitHub
+                                                        {t('projects.links.github')}
                                                     </Link>
                                                 )}
                                                 {project.liveLink && (
@@ -144,7 +84,7 @@ const ProjectsContent: React.FC = () => {
                                                         rel="noopener noreferrer"
                                                         className="text-sm text-gray-600 hover:text-black"
                                                     >
-                                                        Live Demo
+                                                        {t('projects.links.live_demo')}
                                                     </Link>
                                                 )}
                                             </div>
@@ -162,13 +102,15 @@ const ProjectsContent: React.FC = () => {
                                                 title={project.projectName}
                                                 className='flex-shrink-0"'
                                             >
-                                                <Image
-                                                    src={project.image}
-                                                    alt={project.projectName}
-                                                    width={80}
-                                                    height={50}
-                                                    className="object-cover rounded"
-                                                />
+                                               <div className="w-16 h-16 overflow-hidden rounded flex-shrink-0">
+                                                    <Image
+                                                        src={project.image}
+                                                        alt={project.projectName}
+                                                        width={64}
+                                                        height={64}
+                                                        className="object-cover w-full h-full"
+                                                    />
+                                                </div>
                                             </Link>
                                         </div>
                                     )}
@@ -180,7 +122,7 @@ const ProjectsContent: React.FC = () => {
 
                 {/* Past Projects */}
                 <div>
-                    <h3 className="font-bold mb-4">Past</h3>
+                    <h3 className="font-bold mb-4">{t('projects.past_section_title')}</h3>
                     <ul className="space-y-4">
                         {pastProjects.map((project, index) => (
                             <li key={index} className="pb-3">
@@ -243,13 +185,15 @@ const ProjectsContent: React.FC = () => {
                                                 title={project.projectName}
                                                 className='flex-shrink-0"'
                                             >
-                                                <Image
-                                                    src={project.image}
-                                                    alt={project.projectName}
-                                                    width={80}
-                                                    height={50}
-                                                    className="object-cover rounded"
-                                                />
+                                                 <div className="w-16 h-16 overflow-hidden rounded flex-shrink-0">
+                                                    <Image
+                                                        src={project.image}
+                                                        alt={project.projectName}
+                                                        width={64}
+                                                        height={64}
+                                                        className="object-cover w-full h-full"
+                                                    />
+                                                </div>
                                             </Link>
                                         </div>
                                     )}

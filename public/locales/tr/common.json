@@ -16,12 +16,11 @@
     },
     "header": {
         "navigation": {
-            "home": "Ana Sayfa",
-            "about": "Hakkımda",
-            "journey": "Yolculuk",
-            "tech_stack": "Teknoloji Yığını",
-            "projects": "Projeler",
-            "contact": "İletişim"
+            "journey": "yolculuk",
+            "tech_stack": "teknoloji yığını",
+            "projects": "projeler",
+            "school_life": "okul hayatı",
+            "contact": "iletişim"
         },
         "language_switcher": {
             "aria_label": "Dili değiştir",
@@ -36,7 +35,7 @@
     "footer": {
         "location_label": "şu anda",
         "location_name": "Kocaeli, Türkiye",
-        "copyright": "© {{year}} fleizean",
+        "copyright": "© {{year}} Enes Yağız tarafından ❤️ ile yapıldı",
         "email": "@fleizean"
     },
     "journey": {
@@ -47,7 +46,7 @@
             "present": [
                 {
                     "title": "Junior Full Stack Developer",
-                    "place": "Fırsat arıyorum",
+                    "place": "fırsat arıyorum",
                     "year": "Şimdi",
                     "description": "Yenilikçi projelere ve ekiplere katkıda bulunmak için aktif olarak fırsatlar arıyorum.",
                     "type": "work",
@@ -57,7 +56,7 @@
                     "title": "CEO / Developer",
                     "place": "nasilbifirma",
                     "year": "2025 - Şimdi",
-                    "description": "Kişisel teknoloji girişiminin geliştirme ve strateji süreçlerini yönetiyorum.",
+                    "description": "Arkadaşlarımla girişimimizin geliştirme ve strateji süreçlerini yönetiyorum.",
                     "type": "work",
                     "emoji": "🚀",
                     "link": "https://nasilbifirma.com",
@@ -130,10 +129,10 @@
     },
     "projects": {
         "section_title": "projelerim",
-        "present_section_title": "Güncel",
+        "present_section_title": "Şimdiki",
         "past_section_title": "Geçmiş",
         "status_badges": {
-            "development": "Geliştirme Aşamasında",
+            "development": "Geliştiriliyor",
             "completed": "Tamamlandı",
             "ongoing": "Devam Ediyor"
         },
@@ -144,32 +143,83 @@
         "items": {
             "present": [
                 {
-                    "name": "Noteisy",
+                    "projectName": "Noteisy",
+                    "type": "present",
+                    "icon": "📝",
                     "year": "2024",
-                    "description": "Noteisy, kullanıcıların düşüncelerini ve fikirlerini verimli şekilde organize etmelerine yardımcı olan bir not alma uygulamasıdır."
+                    "status": "development",
+                    "description": "Noteisy, kullanıcıların düşüncelerini ve fikirlerini verimli bir şekilde organize etmelerine yardımcı olmak için tasarlanmış bir not alma uygulamasıdır.",
+                    "techStack": [
+                        "Next.js", "TypeScript", "TailwindCSS"
+                    ],
+                    "githubLink": "https://github.com/fleizean/noteisy",
+                    "liveLink": "https://noteisy.tech",
+                    "image": "/noteisy.png"
                 }, {
-                    "name": "Kişisel Portföy",
+                    "projectName": "Personal Portfolio",
+                    "type": "present",
+                    "icon": "🌟",
                     "year": "2024",
-                    "description": "Next.js ve TypeScript ile geliştirilmiş kişisel portföy web sitem."
+                    "status": "completed",
+                    "description": "Next.js ve TypeScript ile oluşturduğum kişisel portfolyo web sitesi.",
+                    "techStack": [
+                        "Next.js", "TypeScript", "TailwindCSS"
+                    ],
+                    "githubLink": "https://github.com/fleizean/personal-portfolio",
+                    "liveLink": "https://fleizean.me",
+                    "image": "/logo.png"
                 }, {
-                    "name": "nasilbifirma",
+                    "projectName": "nasilbifirma",
+                    "type": "present",
+                    "icon": "🚀",
                     "year": "2024",
-                    "description": "Yenilikçi çözümler üzerine odaklanan kişisel teknoloji girişimi."
+                    "status": "development",
+                    "description": "Yenilikçi çözümlere odaklanan kişisel teknoloji girişimi.",
+                    "techStack": [
+                        ".NET", "Next.js", "TypeScript", "TailwindCSS"
+                    ],
+                    "githubLink": "https://github.com/fleizean/nasilbifirma",
+                    "liveLink": "https://nasilbifirma.com",
+                    "image": "/nasilbifirma.png"
                 }
             ],
             "past": [
                 {
-                    "name": "spotifyfizyfit",
+                    "projectName": "spotifyfizyfit",
+                    "type": "past",
+                    "icon": "🎵",
                     "year": "2024",
-                    "description": "Spotify'dan fizy oynatma listesi göçü için Selenium tabanlı otomasyon."
+                    "status": "completed",
+                    "description": "Spotify'dan fizy'ye çalma listesi taşıma için Selenium tabanlı otomasyon.",
+                    "techStack": [
+                        "Python", "Selenium", "Web Automation"
+                    ],
+                    "githubLink": "https://github.com/fleizean/spotifyfizyfit",
+                    "image": "/spotifyfizyfit.png"
                 }, {
-                    "name": "sleepwipe",
+                    "projectName": "sleepwipe",
+                    "type": "past",
+                    "icon": "💤",
                     "year": "2024",
-                    "description": "Bilgisayarın uyku moduna geçmesini engelleyen yazılım."
+                    "status": "completed",
+                    "description": "Bilgisayarın uyku moduna geçmesini engelleyen bir yazılım.",
+                    "techStack": [
+                        "C", "Bash"
+                    ],
+                    "githubLink": "https://github.com/fleizean/sleepwipe",
+                    "image": "/sleepwipe.png"
                 }, {
-                    "name": "webserv",
+                    "projectName": "webserv",
+                    "type": "past",
+                    "icon": "🐚",
                     "year": "2023",
-                    "description": "C++ ile geliştirilmiş Nginx benzeri web sunucusu."
+                    "status": "completed",
+                    "description": "C++ ile oluşturulmuş Nginx benzeri web sunucusu.",
+                    "techStack": [
+                        "C++", "HTTP", "Web Server"
+                    ],
+                    "githubLink": "https://github.com/fleizean/webserv",
+                    "image": "/webserv.png"
                 }
             ]
         }
@@ -180,62 +230,246 @@
             {
                 "title": "Ecole 42",
                 "period": "2021 - 2024",
-                "description": "Ecole 42, hem teknik becerilerimi hem de kişisel gelişimimi şekillendiren dönüştürücü bir yolculuktu. Bu eşler arası öğrenme ortamı, konfor alanımın dışına çıkmamı sağladı ve karmaşık problemlere yaratıcı ve sebatla yaklaşmayı öğretti.",
+                "description": "Ecole 42, hem teknik becerilerimi hem de kişisel gelişimimi şekillendiren dönüştürücü bir yolculuktu. Bu akran öğrenmesi ortamı beni konfor alanımın dışına itti ve karmaşık problemlere yaratıcılık ve sebatla nasıl yaklaşacağımı öğretti.",
                 "highlights": [
-                    "Yoğun projelerle C, C++ ve çeşitli programlama paradigmalarında ustalaştım",
-                    "Takım projeleri ve eş değerlendirmeleri ile güçlü iş birliği becerileri geliştirdim",
-                    "Eşsiz 'yaparak öğrenme' yaklaşımıyla problem çözme yeteneklerimi ilerlettim",
-                    "Farklı geçmişlerden gelen arkadaşlarımla kalıcı dostluklar kurdum",
+                    "Yoğun projeler aracılığıyla C, C++ ve çeşitli programlama paradigmalarında ustalaştım",
+                    "Takım projeleri ve akran değerlendirmeleri sayesinde güçlü işbirliği becerileri geliştirdim",
+                    "Benzersiz 'yaparak öğrenme' yaklaşımıyla problem çözme yetenekleri kazandım",
+                    "Farklı geçmişlerden akranlarımla kalıcı dostluklar kurdum",
                     "Sistem yönetimi, ağlar ve web geliştirme alanlarında deneyim kazandım",
-                    "Baskı altında çalışma ve zorlu teslim tarihlerini karşılama yeteneği edindim"
+                    "Baskı altında çalışmayı ve zorlu son teslim tarihlerini karşılamayı öğrendim"
                 ],
-                "reflection_title": "Kişisel Yansıma:",
-                "reflection": "“42'de geçirdiğim zaman sadece kod yazmakla ilgili değildi — potansiyelimi keşfetmek, ömür boyu sürecek bağlantılar kurmak ve her zorluğun üstesinden gelmek için direnç geliştirmekle ilgiliydi. Sayısız gece boyunca hata ayıklamak, iş birliği ile problem çözmek ve paylaşılan zaferler sadece teknik becerilerimin değil, hayatın zorluklarına yaklaşımımın da temelini oluşturdu.”"
+                "image": "/42.png",
+                "link": "https://www.42.fr/en/",
+                "reflection_title": "Kişisel Düşünce:",
+                "reflection": "42'deki zamanım sadece kodlama hakkında değildi—potansiyelimi keşfetmek, yaşam boyu bağlantılar kurmak ve herhangi bir meydan okuma ile başa çıkabilecek dayanıklılığı geliştirmek hakkındaydı. Hata ayıklama ile geçirilen sayısız geceler, işbirlikçi problem çözme oturumları ve paylaşılan zaferler, sadece teknik becerilerimin değil, yaşamın zorluklarına yaklaşımımın da temelini oluşturdu."
             }
         ],
-        "key_experiences_title": "Ana Deneyimler:",
-        "looking_back_title": "Gerilere bakınca...",
-        "looking_back_text": "Ecole 42’de okul hayatı, gerçek öğrenmenin konfor alanlarının dışında gerçekleştiğini öğretti. Eşler arası model, projelerin yoğunluğu ve destekleyici topluluk büyümenin kaçınılmaz olduğu bir ortam yarattı. Bu deneyimler, bugün olduğum kişi olarak hem bir geliştirici hem de insan olmamda önemli rol oynadı."
+        "key_experiences_title": "Anahtar Deneyimler:",
+        "looking_back_title": "Geriye bakıldığında...",
+        "looking_back_text": "Ecole 42'deki okul hayatı bana gerçek öğrenmenin konfor alanlarının dışında gerçekleştiğini öğretti. Akran modeli, projelerin yoğunluğu ve destekleyici topluluk, büyümenin kaçınılmaz olduğu bir ortam yarattı. Bu deneyimler bugün kim olduğumu, hem bir geliştirici hem de bir insan olarak şekillendirmede etkili oldu."
     },
     "tech_stack": {
         "title": "teknoloji yığınım",
         "categories": {
-            "frontend": "Ön Yüz",
-            "backend": "Arka Uç",
+            "frontend": "Frontend",
+            "backend": "Backend",
             "database": "Veritabanı",
             "devops": "DevOps",
-            "learning": "Şu Anda Öğrenilenler"
+            "learning": "Şu Anda Öğreniyorum"
         },
         "link_label": {
             "technology": "Teknoloji",
             "focus": "Odak Alanı"
         },
-        "descriptions": {
-            "React": "Bileşen tabanlı mimari ile modern ve etkileşimli kullanıcı arayüzleri geliştirmek",
-            "C#": "Microsoft’un güçlü C tarzı dili ile nesne yönelimli uygulamalar geliştirmek",
-            "RabbitMQ": "Servisler arası asenkron iletişim için güvenilir mesaj aracısı",
-            "SignalR": ".NET uygulamaları için WebSockets ve diğerleri ile gerçek zamanlı web fonksiyonelliği",
-            "Docker": "Uygulamaları ölçeklenebilir ve tutarlı dağıtım için konteynerleştirmek",
-            "MSSQL": "Microsoft’un kurumsal sınıf ilişkisel veritabanı yönetim sistemi",
-            "PostgreSQL": "Dayanıklılığı ve genişletilebilirliği ile bilinen açık kaynak ilişkisel veritabanı",
-            "Nginx": "Uygulamaları sunmak için kullanılan yüksek performanslı HTTP sunucusu ve ters proxy",
-            "IIS": "ASP.NET uygulamalarını barındırmak için Microsoft’un web sunucusu",
-            "Next.js": "Sunucu tarafı render ile performanslı ve SEO dostu web uygulamaları oluşturmak",
-            "TypeScript": "Statik tip desteği ile JavaScript geliştirmesini daha ölçeklenebilir ve güvenilir yapmak",
-            "JavaScript": "Web’in temel dili ile dinamik istemci tarafı mantık oluşturmak",
-            ".NET": "Microsoft’un geliştirme çatısı ile sağlam ve yüksek performanslı uygulamalar geliştirmek",
-            "Python": "Çeşitli uygulama alanları için temiz, esnek ve yüksek seviyeli kod yazmak",
-            "Django": "Python’un yüksek seviyeli çatısı ile güvenli ve ölçeklenebilir web uygulamaları oluşturmak",
-            "FastAPI": "Asenkron yeteneklerle desteklenen hızlı ve modern API’ler yaratmak",
-            "SeriLogger": ".NET uygulamaları için yapılandırılmış günlükleme sağlayan loglama çatısı",
-            "GraphQL": "Esnek ve güçlü şema tabanlı sorgulama ile API’leri verimli sorgulamak",
-            "REST APIs": "Durumsuz HTTP metodları ve endpoint’leri kullanarak geleneksel web servisleri tasarlamak",
-            "UI/UX Design": "Ürünün kullanılabilirliği ve deneyimini artırmak için sezgisel ve kullanıcı odaklı tasarımlar yapmak"
-        }
+        "items": [
+            {
+                "name": "React",
+                "color": "text-blue-400",
+                "icon": "FaReact",
+                "description": "Bileşen tabanlı mimari ile modern ve etkileşimli kullanıcı arayüzleri geliştirme",
+                "category": "frontend",
+                "link": "https://reactjs.org/"
+            }, {
+                "name": "C#",
+                "color": "text-purple-500",
+                "icon": "TbBrandCSharp",
+                "description": "Microsoft'un güçlü C tarzı dili kullanarak nesne yönelimli uygulamalar geliştirme",
+                "category": "backend",
+                "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
+            }, {
+                "name": "RabbitMQ",
+                "color": "text-orange-500",
+                "icon": "SiRabbitmq",
+                "description": "Servisler arası asenkron iletişim için güvenilir mesaj aracısı",
+                "category": "backend",
+                "link": "https://www.rabbitmq.com/"
+            }, {
+                "name": "SignalR",
+                "color": "text-red-600",
+                "icon": "SiSignal",
+                "description": "WebSocket ve daha fazlasını kullanarak .NET uygulamaları için gerçek zamanlı web işlevselliği",
+                "category": "backend",
+                "link": "https://learn.microsoft.com/en-us/aspnet/core/signalr/introduction"
+            }, {
+                "name": "Docker",
+                "color": "text-blue-500",
+                "icon": "FaDocker",
+                "description": "Ölçeklenebilir ve tutarlı dağıtım için uygulamaları konteynerize etme",
+                "category": "devops",
+                "link": "https://www.docker.com/"
+            }, {
+                "name": "MSSQL",
+                "color": "text-blue-800",
+                "icon": "DiMsqlServer",
+                "description": "Microsoft'un kurumsal düzeyde ilişkisel veritabanı yönetim sistemi",
+                "category": "database",
+                "link": "https://www.microsoft.com/en-us/sql-server"
+            }, {
+                "name": "PostgreSQL",
+                "color": "text-blue-400",
+                "icon": "SiPostgresql",
+                "description": "Sağlamlığı ve genişletilebilirliği ile bilinen açık kaynak ilişkisel veritabanı",
+                "category": "database",
+                "link": "https://www.postgresql.org/"
+            }, {
+                "name": "Nginx",
+                "color": "text-green-600",
+                "icon": "SiNginx",
+                "description": "Uygulamaları sunmak için kullanılan yüksek performanslı HTTP sunucusu ve ters proxy",
+                "category": "devops",
+                "link": "https://www.nginx.com/"
+            }, {
+                "name": "IIS",
+                "color": "text-blue-700",
+                "icon": "MdBusiness",
+                "description": "ASP.NET uygulamalarını barındırmak için Microsoft'un web sunucusu",
+                "category": "devops",
+                "link": "https://www.microsoft.com/en-us/iis"
+            }, {
+                "name": "Next.js",
+                "color": "text-black",
+                "icon": "RiNextjsFill",
+                "description": "Sunucu tarafı rendering ile performanslı ve SEO dostu web uygulamaları oluşturma",
+                "category": "frontend",
+                "link": "https://nextjs.org/"
+            }, {
+                "name": "TypeScript",
+                "color": "text-blue-500",
+                "icon": "SiTypescript",
+                "description": "Gelişmiş ölçeklenebilirlik ve güvenilirlik için statik tipleme ile JavaScript geliştirmeyi güçlendirme",
+                "category": "frontend",
+                "link": "https://www.typescriptlang.org/"
+            }, {
+                "name": "JavaScript",
+                "color": "text-yellow-400",
+                "icon": "SiJavascript",
+                "description": "Web'in temel dili ile dinamik istemci tarafı mantığı oluşturma",
+                "category": "frontend",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+            }, {
+                "name": ".NET",
+                "color": "text-purple-600",
+                "icon": "AiOutlineDotNet",
+                "description": "Microsoft'un geliştirme framework'ü kullanarak sağlam ve yüksek performanslı uygulamalar geliştirme",
+                "category": "backend",
+                "link": "https://dotnet.microsoft.com/"
+            }, {
+                "name": "Python",
+                "color": "text-yellow-500",
+                "icon": "FaPython",
+                "description": "Çeşitli uygulama alanları için temiz, çok yönlü ve üst düzey kod yazma",
+                "category": "backend",
+                "link": "https://www.python.org/"
+            }, {
+                "name": "Django",
+                "color": "text-green-700",
+                "icon": "SiDjango",
+                "description": "Python'un üst düzey framework'ü ile güvenli ve ölçeklenebilir web uygulamaları oluşturma",
+                "category": "backend",
+                "link": "https://www.djangoproject.com/"
+            }, {
+                "name": "FastAPI",
+                "color": "text-teal-500",
+                "icon": "SiFastapi",
+                "description": "Asenkron yeteneklerle desteklenen Python ile hızlı ve modern API'ler oluşturma",
+                "category": "backend",
+                "link": "https://fastapi.tiangolo.com/"
+            }, {
+                "name": "SeriLogger",
+                "color": "text-yellow-600",
+                "icon": "FaFileAlt",
+                "description": ".NET uygulamaları için yapılandırılmış loglama yetenekleri sağlayan loglama framework'ü",
+                "category": "devops",
+                "link": "https://serilog.net/"
+            }, {
+                "name": "GraphQL",
+                "color": "text-pink-500",
+                "icon": "SiGraphql",
+                "description": "Esnek ve güçlü şema tabanlı yaklaşımla API'leri verimli bir şekilde sorgulama",
+                "category": "backend",
+                "link": "https://graphql.org/"
+            }, {
+                "name": "REST APIs",
+                "color": "text-blue-600",
+                "icon": "FaServer",
+                "description": "Durumsuz HTTP yöntemleri ve uç noktaları kullanarak geleneksel web servisleri tasarlama",
+                "category": "backend",
+                "link": "https://restfulapi.net/"
+            }, {
+                "name": "UI/UX Design",
+                "color": "text-purple-500",
+                "icon": "GiSkills",
+                "description": "Ürün kullanılabilirliği ve deneyimini iyileştirmek için sezgisel ve kullanıcı odaklı tasarımlar yaratma",
+                "category": "learning",
+                "link": "#"
+            }
+        ]
     },
     "not_found": {
         "title": "SAYFA BULUNAMADI",
         "description_main": "Eyvah! Bu sayfa, pazartesi sabahı motivasyonum gibi yok olmuş olabilir.",
         "description_secondary": "Belki kahve molasına çıktı ya da dijital boşlukta kayboldu."
+    },
+    "contact": {
+        "page_title": "iletişime geç",
+        "sections": {
+            "left": {
+                "title": "Hadi bağlanalım",
+                "description": "Her zaman yeni fırsatlar, işbirlikleri ve anlamlı konuşmalarla ilgileniyorum. Aklında bir proje varsa, teknoloji hakkında konuşmak istiyorsan veya sadece merhaba demek istiyorsan, çekinmeden iletişime geç!"
+            },
+            "contact_info": {
+                "email": {
+                    "label": "E-posta",
+                    "value": "nsyagz@gmail.com"
+                },
+                "location": {
+                    "label": "Konum",
+                    "value": "Kocaeli, Türkiye"
+                }
+            },
+            "social": {
+                "title": "Takip et",
+                "platforms": {
+                    "github": "GitHub",
+                    "linkedin": "LinkedIn",
+                    "twitter": "Twitter"
+                }
+            },
+            "quick_contact": {
+                "title": "Hızlı iletişimi tercih ediyor musun?",
+                "actions": {
+                    "email": "E-posta Gönder",
+                    "linkedin": "LinkedIn Mesajı"
+                }
+            },
+            "form": {
+                "title": "Mesaj gönder",
+                "fields": {
+                    "name": {
+                        "label": "Ad",
+                        "placeholder": "Adınız"
+                    },
+                    "email": {
+                        "label": "E-posta",
+                        "placeholder": "ornek@ornek.com"
+                    },
+                    "subject": {
+                        "label": "Konu",
+                        "placeholder": "Bu ne hakkında?"
+                    },
+                    "message": {
+                        "label": "Mesaj",
+                        "placeholder": "Projeniz, fikriniz hakkında anlatın veya sadece merhaba deyin..."
+                    }
+                },
+                "submit_button": {
+                    "default": "Mesaj Gönder",
+                    "loading": "Gönderiliyor..."
+                },
+                "success_message": "Mesaj başarıyla gönderildi! En kısa sürede size geri döneceğim.",
+                "footer_note": "* Genellikle 24 saat içinde yanıt veriyorum."
+            }
+        }
     }
 }

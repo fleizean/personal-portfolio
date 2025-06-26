@@ -16,12 +16,11 @@
     },
     "header": {
         "navigation": {
-            "home": "Home",
-            "about": "About",
-            "journey": "Journey",
-            "tech_stack": "Tech Stack",
-            "projects": "Projects",
-            "contact": "Contact"
+            "journey": "journey",
+            "tech_stack": "tech stack",
+            "projects": "projects",
+            "school_life": "school life",
+            "contact": "contact"
         },
         "language_switcher": {
             "aria_label": "Change language",
@@ -36,7 +35,7 @@
     "footer": {
         "location_label": "currently in",
         "location_name": "Kocaeli, Turkey",
-        "copyright": "© {{year}} fleizean",
+        "copyright": "© {{year}} Made with ❤️ by Enes Yağız",
         "email": "@fleizean"
     },
     "journey": {
@@ -57,7 +56,7 @@
                     "title": "CEO / Developer",
                     "place": "nasilbifirma",
                     "year": "2025 - Present",
-                    "description": "Leading development and strategy for a personal tech venture.",
+                    "description": "Building and managing a startup together with my friends.",
                     "type": "work",
                     "emoji": "🚀",
                     "link": "https://nasilbifirma.com",
@@ -144,32 +143,83 @@
         "items": {
             "present": [
                 {
-                    "name": "Noteisy",
+                    "projectName": "Noteisy",
+                    "type": "present",
+                    "icon": "📝",
                     "year": "2024",
-                    "description": "Noteisy is a note-taking application designed to help users organize their thoughts and ideas efficiently."
+                    "status": "development",
+                    "description": "Noteisy is a note-taking application designed to help users organize their thoughts and ideas efficiently.",
+                    "techStack": [
+                        "Next.js", "TypeScript", "TailwindCSS"
+                    ],
+                    "githubLink": "https://github.com/fleizean/noteisy",
+                    "liveLink": "https://noteisy.tech",
+                    "image": "/noteisy.png"
                 }, {
-                    "name": "Personal Portfolio",
+                    "projectName": "Personal Portfolio",
+                    "type": "present",
+                    "icon": "🌟",
                     "year": "2024",
-                    "description": "My personal portfolio website built with Next.js and TypeScript."
+                    "status": "completed",
+                    "description": "My personal portfolio website built with Next.js and TypeScript.",
+                    "techStack": [
+                        "Next.js", "TypeScript", "TailwindCSS"
+                    ],
+                    "githubLink": "https://github.com/fleizean/personal-portfolio",
+                    "liveLink": "https://fleizean.me",
+                    "image": "/logo.png"
                 }, {
-                    "name": "nasilbifirma",
+                    "projectName": "nasilbifirma",
+                    "type": "present",
+                    "icon": "🚀",
                     "year": "2024",
-                    "description": "Personal tech venture focused on innovative solutions."
+                    "status": "development",
+                    "description": "Personal tech venture focused on innovative solutions.",
+                    "techStack": [
+                        ".NET", "Next.js", "TypeScript", "TailwindCSS"
+                    ],
+                    "githubLink": "https://github.com/fleizean/nasilbifirma",
+                    "liveLink": "https://nasilbifirma.com",
+                    "image": "/nasilbifirma.png"
                 }
             ],
             "past": [
                 {
-                    "name": "spotifyfizyfit",
+                    "projectName": "spotifyfizyfit",
+                    "type": "past",
+                    "icon": "🎵",
                     "year": "2024",
-                    "description": "Selenium-based automation for Spotify to fizy playlist migration."
+                    "status": "completed",
+                    "description": "Selenium-based automation for Spotify to fizy playlist migration.",
+                    "techStack": [
+                        "Python", "Selenium", "Web Automation"
+                    ],
+                    "githubLink": "https://github.com/fleizean/spotifyfizyfit",
+                    "image": "/spotifyfizyfit.png"
                 }, {
-                    "name": "sleepwipe",
+                    "projectName": "sleepwipe",
+                    "type": "past",
+                    "icon": "💤",
                     "year": "2024",
-                    "description": "Sleepwipe is a software that prevents the computer from going into sleep mode."
+                    "status": "completed",
+                    "description": "Sleepwipe is a software that prevents the computer from going into sleep mode.",
+                    "techStack": [
+                        "C", "Bash"
+                    ],
+                    "githubLink": "https://github.com/fleizean/sleepwipe",
+                    "image": "/sleepwipe.png"
                 }, {
-                    "name": "webserv",
+                    "projectName": "webserv",
+                    "type": "past",
+                    "icon": "🐚",
                     "year": "2023",
-                    "description": "Nginx-like web server built from C++."
+                    "status": "completed",
+                    "description": "Nginx-like web server built from C++.",
+                    "techStack": [
+                        "C++", "HTTP", "Web Server"
+                    ],
+                    "githubLink": "https://github.com/fleizean/webserv",
+                    "image": "/webserv.png"
                 }
             ]
         }
@@ -189,8 +239,10 @@
                     "Gained experience in system administration, networks, and web development",
                     "Learned to work under pressure and meet challenging deadlines"
                 ],
+                "image": "/42.png",
+                "link": "https://www.42.fr/en/",
                 "reflection_title": "Personal Reflection:",
-                "reflection": "“My time at 42 wasn't just about coding—it was about discovering my potential, building lifelong connections, and developing the resilience to tackle any challenge. The countless nights spent debugging, the collaborative problem-solving sessions, and the shared victories formed the foundation of not just my technical skills, but my approach to life's challenges.”"
+                "reflection": "My time at 42 wasn't just about coding—it was about discovering my potential, building lifelong connections, and developing the resilience to tackle any challenge. The countless nights spent debugging, the collaborative problem-solving sessions, and the shared victories formed the foundation of not just my technical skills, but my approach to life's challenges."
             }
         ],
         "key_experiences_title": "Key Experiences:",
@@ -210,32 +262,214 @@
             "technology": "Technology",
             "focus": "Focus Area"
         },
-        "descriptions": {
-            "React": "Developing modern and interactive user interfaces with component-based architecture",
-            "C#": "Developing object-oriented applications using Microsoft's powerful C-style language",
-            "RabbitMQ": "Reliable message broker for asynchronous communication between services",
-            "SignalR": "Real-time web functionality for .NET applications using WebSockets and more",
-            "Docker": "Containerizing applications for scalable and consistent deployment",
-            "MSSQL": "Microsoft's enterprise-grade relational database management system",
-            "PostgreSQL": "Open-source relational database known for its robustness and extensibility",
-            "Nginx": "High-performance HTTP server and reverse proxy used for serving apps",
-            "IIS": "Microsoft's web server for hosting ASP.NET applications",
-            "Next.js": "Building performant and SEO-friendly web applications with server-side rendering",
-            "TypeScript": "Enhancing JavaScript development with static typing for improved scalability and reliability",
-            "JavaScript": "Creating dynamic client-side logic with the core language of the web",
-            ".NET": "Developing robust and high-performance applications using Microsoft's development framework",
-            "Python": "Writing clean, versatile, and high-level code for various application domains",
-            "Django": "Building secure and scalable web applications with Python's high-level framework",
-            "FastAPI": "Creating fast and modern APIs with Python, powered by asynchronous capabilities",
-            "SeriLogger": "Logging framework for .NET applications, providing structured logging capabilities",
-            "GraphQL": "Querying APIs efficiently with a flexible and powerful schema-based approach",
-            "REST APIs": "Designing conventional web services using stateless HTTP methods and endpoints",
-            "UI/UX Design": "Crafting intuitive and user-centered designs to improve product usability and experience"
-        }
+        "items": [
+            {
+                "name": "React",
+                "color": "text-blue-400",
+                "icon": "FaReact",
+                "description": "Developing modern and interactive user interfaces with component-based architecture",
+                "category": "frontend",
+                "link": "https://reactjs.org/"
+            }, {
+                "name": "C#",
+                "color": "text-purple-500",
+                "icon": "TbBrandCSharp",
+                "description": "Developing object-oriented applications using Microsoft's powerful C-style language",
+                "category": "backend",
+                "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
+            }, {
+                "name": "RabbitMQ",
+                "color": "text-orange-500",
+                "icon": "SiRabbitmq",
+                "description": "Reliable message broker for asynchronous communication between services",
+                "category": "backend",
+                "link": "https://www.rabbitmq.com/"
+            }, {
+                "name": "SignalR",
+                "color": "text-red-600",
+                "icon": "SiSignal",
+                "description": "Real-time web functionality for .NET applications using WebSockets and more",
+                "category": "backend",
+                "link": "https://learn.microsoft.com/en-us/aspnet/core/signalr/introduction"
+            }, {
+                "name": "Docker",
+                "color": "text-blue-500",
+                "icon": "FaDocker",
+                "description": "Containerizing applications for scalable and consistent deployment",
+                "category": "devops",
+                "link": "https://www.docker.com/"
+            }, {
+                "name": "MSSQL",
+                "color": "text-blue-800",
+                "icon": "DiMsqlServer",
+                "description": "Microsoft's enterprise-grade relational database management system",
+                "category": "database",
+                "link": "https://www.microsoft.com/en-us/sql-server"
+            }, {
+                "name": "PostgreSQL",
+                "color": "text-blue-400",
+                "icon": "SiPostgresql",
+                "description": "Open-source relational database known for its robustness and extensibility",
+                "category": "database",
+                "link": "https://www.postgresql.org/"
+            }, {
+                "name": "Nginx",
+                "color": "text-green-600",
+                "icon": "SiNginx",
+                "description": "High-performance HTTP server and reverse proxy used for serving apps",
+                "category": "devops",
+                "link": "https://www.nginx.com/"
+            }, {
+                "name": "IIS",
+                "color": "text-blue-700",
+                "icon": "MdBusiness",
+                "description": "Microsoft's web server for hosting ASP.NET applications",
+                "category": "devops",
+                "link": "https://www.microsoft.com/en-us/iis"
+            }, {
+                "name": "Next.js",
+                "color": "text-black",
+                "icon": "RiNextjsFill",
+                "description": "Building performant and SEO-friendly web applications with server-side rendering",
+                "category": "frontend",
+                "link": "https://nextjs.org/"
+            }, {
+                "name": "TypeScript",
+                "color": "text-blue-500",
+                "icon": "SiTypescript",
+                "description": "Enhancing JavaScript development with static typing for improved scalability and reliability",
+                "category": "frontend",
+                "link": "https://www.typescriptlang.org/"
+            }, {
+                "name": "JavaScript",
+                "color": "text-yellow-400",
+                "icon": "SiJavascript",
+                "description": "Creating dynamic client-side logic with the core language of the web",
+                "category": "frontend",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+            }, {
+                "name": ".NET",
+                "color": "text-purple-600",
+                "icon": "AiOutlineDotNet",
+                "description": "Developing robust and high-performance applications using Microsoft's development framework",
+                "category": "backend",
+                "link": "https://dotnet.microsoft.com/"
+            }, {
+                "name": "Python",
+                "color": "text-yellow-500",
+                "icon": "FaPython",
+                "description": "Writing clean, versatile, and high-level code for various application domains",
+                "category": "backend",
+                "link": "https://www.python.org/"
+            }, {
+                "name": "Django",
+                "color": "text-green-700",
+                "icon": "SiDjango",
+                "description": "Building secure and scalable web applications with Python's high-level framework",
+                "category": "backend",
+                "link": "https://www.djangoproject.com/"
+            }, {
+                "name": "FastAPI",
+                "color": "text-teal-500",
+                "icon": "SiFastapi",
+                "description": "Creating fast and modern APIs with Python, powered by asynchronous capabilities",
+                "category": "backend",
+                "link": "https://fastapi.tiangolo.com/"
+            }, {
+                "name": "SeriLogger",
+                "color": "text-yellow-600",
+                "icon": "FaFileAlt",
+                "description": "Logging framework for .NET applications, providing structured logging capabilities",
+                "category": "devops",
+                "link": "https://serilog.net/"
+            }, {
+                "name": "GraphQL",
+                "color": "text-pink-500",
+                "icon": "SiGraphql",
+                "description": "Querying APIs efficiently with a flexible and powerful schema-based approach",
+                "category": "backend",
+                "link": "https://graphql.org/"
+            }, {
+                "name": "REST APIs",
+                "color": "text-blue-600",
+                "icon": "FaServer",
+                "description": "Designing conventional web services using stateless HTTP methods and endpoints",
+                "category": "backend",
+                "link": "https://restfulapi.net/"
+            }, {
+                "name": "UI/UX Design",
+                "color": "text-purple-500",
+                "icon": "GiSkills",
+                "description": "Crafting intuitive and user-centered designs to improve product usability and experience",
+                "category": "learning",
+                "link": "#"
+            }
+        ]
     },
     "not_found": {
         "title": "NOT FOUND",
         "description_main": "Oops! This page seems to have vanished like my motivation on Monday mornings.",
         "description_secondary": "Maybe it's taking a coffee break or got lost in the digital void."
+    },
+    "contact": {
+        "page_title": "get in touch",
+        "sections": {
+            "left": {
+                "title": "Let's connect",
+                "description": "I'm always interested in new opportunities, collaborations, and meaningful conversations. Whether you have a project in mind, want to discuss technology, or just want to say hello, feel free to reach out!"
+            },
+            "contact_info": {
+                "email": {
+                    "label": "Email",
+                    "value": "nsyagz@gmail.com"
+                },
+                "location": {
+                    "label": "Location",
+                    "value": "Kocaeli, Turkey"
+                }
+            },
+            "social": {
+                "title": "Follow me",
+                "platforms": {
+                    "github": "GitHub",
+                    "linkedin": "LinkedIn",
+                    "twitter": "Twitter"
+                }
+            },
+            "quick_contact": {
+                "title": "Prefer quick contact?",
+                "actions": {
+                    "email": "Send Direct Email",
+                    "linkedin": "LinkedIn Message"
+                }
+            },
+            "form": {
+                "title": "Send a message",
+                "fields": {
+                    "name": {
+                        "label": "Name",
+                        "placeholder": "Your name"
+                    },
+                    "email": {
+                        "label": "Email",
+                        "placeholder": "your@email.com"
+                    },
+                    "subject": {
+                        "label": "Subject",
+                        "placeholder": "What's this about?"
+                    },
+                    "message": {
+                        "label": "Message",
+                        "placeholder": "Tell me about your project, idea, or just say hello..."
+                    }
+                },
+                "submit_button": {
+                    "default": "Send Message",
+                    "loading": "Sending..."
+                },
+                "success_message": "Message sent successfully! I'll get back to you soon.",
+                "footer_note": "* I typically respond within 24 hours."
+            }
+        }
     }
 }
