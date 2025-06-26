@@ -10,6 +10,7 @@ This is my personal portfolio website, continuously evolving with new sections a
 <p align="center">
   <img src="https://image.thum.io/get/width/800/crop/600/noanimate/https://fleizean.vercel.app" alt="Portfolio website preview" width="800"/>
 </p>
+
 # all updates
 June - 27
 - feat: add complete i18n system (TR/EN) + contact page
