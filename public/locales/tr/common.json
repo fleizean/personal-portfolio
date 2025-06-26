@@ -1,0 +1,241 @@
+{
+    "hero": {
+        "greeting": "Merhaba, ben Enes.",
+        "role": "junior full stack developer olarak",
+        "roleHighlight": "fırsatlarımı arıyorum",
+        "resumeButton": "özgeçmiş",
+        "contactButton": "bana ulaş",
+        "description": "kod ve tasarım yoluyla dijital deneyimler yaratıyorum. işlevsellik ve estetik arasındaki dengeyi keşfediyorum. 0'ları 1'e tutku ve hassasiyetle dönüştürüyorum. hadi bağlantı kuralım ve birlikte harika şeyler yaratalım!",
+        "social": {
+            "github": "GitHub profili",
+            "linkedin": "LinkedIn profili",
+            "youtube": "YouTube kanalı",
+            "intra42": "42 Network profili"
+        },
+        "image_alt": "bu benim, ha"
+    },
+    "header": {
+        "navigation": {
+            "home": "Ana Sayfa",
+            "about": "Hakkımda",
+            "journey": "Yolculuk",
+            "tech_stack": "Teknoloji Yığını",
+            "projects": "Projeler",
+            "contact": "İletişim"
+        },
+        "language_switcher": {
+            "aria_label": "Dili değiştir",
+            "loading": "Dil değiştiriliyor..."
+        },
+        "theme_toggle": {
+            "light": "Açık moda geç",
+            "dark": "Karanlık moda geç"
+        },
+        "skip_to_content": "Ana içeriğe atla"
+    },
+    "footer": {
+        "location_label": "şu anda",
+        "location_name": "Kocaeli, Türkiye",
+        "copyright": "© {{year}} fleizean",
+        "email": "@fleizean"
+    },
+    "journey": {
+        "section_title": "yolculuğum",
+        "present_section_title": "Şimdiki",
+        "past_section_title": "Geçmiş",
+        "items": {
+            "present": [
+                {
+                    "title": "Junior Full Stack Developer",
+                    "place": "Fırsat arıyorum",
+                    "year": "Şimdi",
+                    "description": "Yenilikçi projelere ve ekiplere katkıda bulunmak için aktif olarak fırsatlar arıyorum.",
+                    "type": "work",
+                    "emoji": "🔍",
+                    "link": "https://www.linkedin.com/in/fleizean/"
+                }, {
+                    "title": "CEO / Developer",
+                    "place": "nasilbifirma",
+                    "year": "2025 - Şimdi",
+                    "description": "Kişisel teknoloji girişiminin geliştirme ve strateji süreçlerini yönetiyorum.",
+                    "type": "work",
+                    "emoji": "🚀",
+                    "link": "https://nasilbifirma.com",
+                    "photo": "/nasilbifirma.png"
+                }
+            ],
+            "past": [
+                {
+                    "title": "Full Stack Developer",
+                    "place": "Solvent Yazılım",
+                    "year": "2024 - 2025",
+                    "description": "Modern frameworkler ile full-stack web uygulamaları geliştirdim ve bakımını yaptım.",
+                    "type": "work",
+                    "emoji": "💻",
+                    "link": "https://solventyazilim.com",
+                    "photo": "/solvent.png"
+                }, {
+                    "title": "Software Engineer",
+                    "place": "Ecole 42",
+                    "year": "2024",
+                    "description": "Yazılım geliştirme ve bilgisayar bilimleri odaklı akran öğrenmesi programından mezun oldum.",
+                    "type": "education",
+                    "emoji": "🧩",
+                    "link": "https://www.42.fr/en/",
+                    "photo": "/42.png"
+                }, {
+                    "title": "Bilgi Yönetimi",
+                    "place": "Dumlupınar Üniversitesi",
+                    "year": "2024",
+                    "description": "Bilgi sistemleri ve yönetimi odaklı lisans derecesi.",
+                    "type": "education",
+                    "emoji": "📊",
+                    "link": "https://www.kutahya.edu.tr/en"
+                }, {
+                    "title": "Freelance Developer",
+                    "place": "MEBS",
+                    "year": "2018",
+                    "description": "Revir yönetim sistemi ve diğer projeler üzerinde freelance geliştirici olarak çalıştım.",
+                    "type": "work",
+                    "emoji": "🌐",
+                    "link": "https://tr.wikipedia.org/wiki/MEBS_Okulu_ve_E%C4%9Fitim_Merkezi"
+                }, {
+                    "title": "IT Stajyeri",
+                    "place": "Türk Telekom",
+                    "year": "2018 - 2019",
+                    "description": "IT operasyonları ve geliştirme görevlerinde yardımcı oldum.",
+                    "type": "work",
+                    "emoji": "📱",
+                    "link": "https://www.turktelekom.com.tr",
+                    "photo": "/turk-telekom.png"
+                }, {
+                    "title": "Bilgisayar Bilimleri",
+                    "place": "İzmit Mesleki ve Teknik Anadolu Lisesi",
+                    "year": "2019",
+                    "description": "Bilgisayar bilimleri ve programlama odaklı teknik lise diploması.",
+                    "type": "education",
+                    "emoji": "🖥️",
+                    "link": "https://www.izmitmtal.k12.tr"
+                }, {
+                    "title": "Merhaba Dünya",
+                    "place": "Dünya Gezegeni",
+                    "year": "2002",
+                    "description": "Bu dünyadaki yolculuğuma başladım.",
+                    "type": "personal",
+                    "emoji": "👶",
+                    "link": "https://en.wikipedia.org/wiki/2002"
+                }
+            ]
+        }
+    },
+    "projects": {
+        "section_title": "projelerim",
+        "present_section_title": "Güncel",
+        "past_section_title": "Geçmiş",
+        "status_badges": {
+            "development": "Geliştirme Aşamasında",
+            "completed": "Tamamlandı",
+            "ongoing": "Devam Ediyor"
+        },
+        "links": {
+            "github": "GitHub",
+            "live_demo": "Canlı Demo"
+        },
+        "items": {
+            "present": [
+                {
+                    "name": "Noteisy",
+                    "year": "2024",
+                    "description": "Noteisy, kullanıcıların düşüncelerini ve fikirlerini verimli şekilde organize etmelerine yardımcı olan bir not alma uygulamasıdır."
+                }, {
+                    "name": "Kişisel Portföy",
+                    "year": "2024",
+                    "description": "Next.js ve TypeScript ile geliştirilmiş kişisel portföy web sitem."
+                }, {
+                    "name": "nasilbifirma",
+                    "year": "2024",
+                    "description": "Yenilikçi çözümler üzerine odaklanan kişisel teknoloji girişimi."
+                }
+            ],
+            "past": [
+                {
+                    "name": "spotifyfizyfit",
+                    "year": "2024",
+                    "description": "Spotify'dan fizy oynatma listesi göçü için Selenium tabanlı otomasyon."
+                }, {
+                    "name": "sleepwipe",
+                    "year": "2024",
+                    "description": "Bilgisayarın uyku moduna geçmesini engelleyen yazılım."
+                }, {
+                    "name": "webserv",
+                    "year": "2023",
+                    "description": "C++ ile geliştirilmiş Nginx benzeri web sunucusu."
+                }
+            ]
+        }
+    },
+    "school": {
+        "section_title": "okul hayatım",
+        "experiences": [
+            {
+                "title": "Ecole 42",
+                "period": "2021 - 2024",
+                "description": "Ecole 42, hem teknik becerilerimi hem de kişisel gelişimimi şekillendiren dönüştürücü bir yolculuktu. Bu eşler arası öğrenme ortamı, konfor alanımın dışına çıkmamı sağladı ve karmaşık problemlere yaratıcı ve sebatla yaklaşmayı öğretti.",
+                "highlights": [
+                    "Yoğun projelerle C, C++ ve çeşitli programlama paradigmalarında ustalaştım",
+                    "Takım projeleri ve eş değerlendirmeleri ile güçlü iş birliği becerileri geliştirdim",
+                    "Eşsiz 'yaparak öğrenme' yaklaşımıyla problem çözme yeteneklerimi ilerlettim",
+                    "Farklı geçmişlerden gelen arkadaşlarımla kalıcı dostluklar kurdum",
+                    "Sistem yönetimi, ağlar ve web geliştirme alanlarında deneyim kazandım",
+                    "Baskı altında çalışma ve zorlu teslim tarihlerini karşılama yeteneği edindim"
+                ],
+                "reflection_title": "Kişisel Yansıma:",
+                "reflection": "“42'de geçirdiğim zaman sadece kod yazmakla ilgili değildi — potansiyelimi keşfetmek, ömür boyu sürecek bağlantılar kurmak ve her zorluğun üstesinden gelmek için direnç geliştirmekle ilgiliydi. Sayısız gece boyunca hata ayıklamak, iş birliği ile problem çözmek ve paylaşılan zaferler sadece teknik becerilerimin değil, hayatın zorluklarına yaklaşımımın da temelini oluşturdu.”"
+            }
+        ],
+        "key_experiences_title": "Ana Deneyimler:",
+        "looking_back_title": "Gerilere bakınca...",
+        "looking_back_text": "Ecole 42’de okul hayatı, gerçek öğrenmenin konfor alanlarının dışında gerçekleştiğini öğretti. Eşler arası model, projelerin yoğunluğu ve destekleyici topluluk büyümenin kaçınılmaz olduğu bir ortam yarattı. Bu deneyimler, bugün olduğum kişi olarak hem bir geliştirici hem de insan olmamda önemli rol oynadı."
+    },
+    "tech_stack": {
+        "title": "teknoloji yığınım",
+        "categories": {
+            "frontend": "Ön Yüz",
+            "backend": "Arka Uç",
+            "database": "Veritabanı",
+            "devops": "DevOps",
+            "learning": "Şu Anda Öğrenilenler"
+        },
+        "link_label": {
+            "technology": "Teknoloji",
+            "focus": "Odak Alanı"
+        },
+        "descriptions": {
+            "React": "Bileşen tabanlı mimari ile modern ve etkileşimli kullanıcı arayüzleri geliştirmek",
+            "C#": "Microsoft’un güçlü C tarzı dili ile nesne yönelimli uygulamalar geliştirmek",
+            "RabbitMQ": "Servisler arası asenkron iletişim için güvenilir mesaj aracısı",
+            "SignalR": ".NET uygulamaları için WebSockets ve diğerleri ile gerçek zamanlı web fonksiyonelliği",
+            "Docker": "Uygulamaları ölçeklenebilir ve tutarlı dağıtım için konteynerleştirmek",
+            "MSSQL": "Microsoft’un kurumsal sınıf ilişkisel veritabanı yönetim sistemi",
+            "PostgreSQL": "Dayanıklılığı ve genişletilebilirliği ile bilinen açık kaynak ilişkisel veritabanı",
+            "Nginx": "Uygulamaları sunmak için kullanılan yüksek performanslı HTTP sunucusu ve ters proxy",
+            "IIS": "ASP.NET uygulamalarını barındırmak için Microsoft’un web sunucusu",
+            "Next.js": "Sunucu tarafı render ile performanslı ve SEO dostu web uygulamaları oluşturmak",
+            "TypeScript": "Statik tip desteği ile JavaScript geliştirmesini daha ölçeklenebilir ve güvenilir yapmak",
+            "JavaScript": "Web’in temel dili ile dinamik istemci tarafı mantık oluşturmak",
+            ".NET": "Microsoft’un geliştirme çatısı ile sağlam ve yüksek performanslı uygulamalar geliştirmek",
+            "Python": "Çeşitli uygulama alanları için temiz, esnek ve yüksek seviyeli kod yazmak",
+            "Django": "Python’un yüksek seviyeli çatısı ile güvenli ve ölçeklenebilir web uygulamaları oluşturmak",
+            "FastAPI": "Asenkron yeteneklerle desteklenen hızlı ve modern API’ler yaratmak",
+            "SeriLogger": ".NET uygulamaları için yapılandırılmış günlükleme sağlayan loglama çatısı",
+            "GraphQL": "Esnek ve güçlü şema tabanlı sorgulama ile API’leri verimli sorgulamak",
+            "REST APIs": "Durumsuz HTTP metodları ve endpoint’leri kullanarak geleneksel web servisleri tasarlamak",
+            "UI/UX Design": "Ürünün kullanılabilirliği ve deneyimini artırmak için sezgisel ve kullanıcı odaklı tasarımlar yapmak"
+        }
+    },
+    "not_found": {
+        "title": "SAYFA BULUNAMADI",
+        "description_main": "Eyvah! Bu sayfa, pazartesi sabahı motivasyonum gibi yok olmuş olabilir.",
+        "description_secondary": "Belki kahve molasına çıktı ya da dijital boşlukta kayboldu."
+    }
+}

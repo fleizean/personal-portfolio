@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import ClientLayout from "./ClientLayout";
 import "./globals.css";
 import { Metadata } from "next";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata: Metadata = {
   title: {
@@ -40,7 +41,9 @@ export default function RootLayout({
   return (
     <html lang="tr" suppressHydrationWarning>
       <body className={`${inter.className} bg-white antialiased`} suppressHydrationWarning>
-        <ClientLayout>{children}</ClientLayout>
+         <LanguageProvider>
+            <ClientLayout>{children}</ClientLayout>
+          </LanguageProvider>
       </body>
     </html>
   );

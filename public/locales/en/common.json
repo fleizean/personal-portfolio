@@ -1,0 +1,241 @@
+{
+    "hero": {
+        "greeting": "Hi, I'm Enes.",
+        "role": "junior full stack developer at",
+        "resumeButton": "resume",
+        "contactButton": "get in touch",
+        "roleHighlight": "looking",
+        "description": "crafting digital experiences through code and design. exploring the balance between functionality and aesthetics. turning 0s into 1s with passion and precision. so let's connect and create something amazing together!",
+        "social": {
+            "github": "GitHub profile",
+            "linkedin": "LinkedIn profile",
+            "youtube": "YouTube channel",
+            "intra42": "42 Network profile"
+        },
+        "image_alt": "its me btw"
+    },
+    "header": {
+        "navigation": {
+            "home": "Home",
+            "about": "About",
+            "journey": "Journey",
+            "tech_stack": "Tech Stack",
+            "projects": "Projects",
+            "contact": "Contact"
+        },
+        "language_switcher": {
+            "aria_label": "Change language",
+            "loading": "Changing language..."
+        },
+        "theme_toggle": {
+            "light": "Switch to light mode",
+            "dark": "Switch to dark mode"
+        },
+        "skip_to_content": "Skip to main content"
+    },
+    "footer": {
+        "location_label": "currently in",
+        "location_name": "Kocaeli, Turkey",
+        "copyright": "© {{year}} fleizean",
+        "email": "@fleizean"
+    },
+    "journey": {
+        "section_title": "my journey",
+        "present_section_title": "Present",
+        "past_section_title": "Past",
+        "items": {
+            "present": [
+                {
+                    "title": "Junior Full Stack Developer",
+                    "place": "Searching for opportunities",
+                    "year": "Present",
+                    "description": "Actively seeking opportunities to contribute to innovative projects and teams.",
+                    "type": "work",
+                    "emoji": "🔍",
+                    "link": "https://www.linkedin.com/in/fleizean/"
+                }, {
+                    "title": "CEO / Developer",
+                    "place": "nasilbifirma",
+                    "year": "2025 - Present",
+                    "description": "Leading development and strategy for a personal tech venture.",
+                    "type": "work",
+                    "emoji": "🚀",
+                    "link": "https://nasilbifirma.com",
+                    "photo": "/nasilbifirma.png"
+                }
+            ],
+            "past": [
+                {
+                    "title": "Full Stack Developer",
+                    "place": "Solvent Yazılım",
+                    "year": "2024 - 2025",
+                    "description": "Developed and maintained full-stack web applications with modern frameworks.",
+                    "type": "work",
+                    "emoji": "💻",
+                    "link": "https://solventyazilim.com",
+                    "photo": "/solvent.png"
+                }, {
+                    "title": "Software Engineer",
+                    "place": "Ecole 42",
+                    "year": "2024",
+                    "description": "Graduated from a peer-to-peer learning program focused on software development and computer science.",
+                    "type": "education",
+                    "emoji": "🧩",
+                    "link": "https://www.42.fr/en/",
+                    "photo": "/42.png"
+                }, {
+                    "title": "Information Management",
+                    "place": "Dumlupinar University",
+                    "year": "2024",
+                    "description": "Bachelor's degree with focus on information systems and management.",
+                    "type": "education",
+                    "emoji": "📊",
+                    "link": "https://www.kutahya.edu.tr/en"
+                }, {
+                    "title": "Freelance Developer",
+                    "place": "MEBS",
+                    "year": "2018",
+                    "description": "Worked on infirmary management system and other projects as a freelance developer.",
+                    "type": "work",
+                    "emoji": "🌐",
+                    "link": "https://tr.wikipedia.org/wiki/MEBS_Okulu_ve_E%C4%9Fitim_Merkezi"
+                }, {
+                    "title": "IT Intern",
+                    "place": "Türk Telekom",
+                    "year": "2018 - 2019",
+                    "description": "Assisted in IT operations and development tasks.",
+                    "type": "work",
+                    "emoji": "📱",
+                    "link": "https://www.turktelekom.com.tr",
+                    "photo": "/turk-telekom.png"
+                }, {
+                    "title": "Computer Science",
+                    "place": "Izmit Vocational and Technical Anatolian High School",
+                    "year": "2019",
+                    "description": "High school degree with technical focus on computer science and programming.",
+                    "type": "education",
+                    "emoji": "🖥️",
+                    "link": "https://www.izmitmtal.k12.tr"
+                }, {
+                    "title": "Hello World",
+                    "place": "Planet Earth",
+                    "year": "2002",
+                    "description": "Started my journey in this world.",
+                    "type": "personal",
+                    "emoji": "👶",
+                    "link": "https://en.wikipedia.org/wiki/2002"
+                }
+            ]
+        }
+    },
+    "projects": {
+        "section_title": "my projects",
+        "present_section_title": "Present",
+        "past_section_title": "Past",
+        "status_badges": {
+            "development": "In Development",
+            "completed": "Completed",
+            "ongoing": "Ongoing"
+        },
+        "links": {
+            "github": "GitHub",
+            "live_demo": "Live Demo"
+        },
+        "items": {
+            "present": [
+                {
+                    "name": "Noteisy",
+                    "year": "2024",
+                    "description": "Noteisy is a note-taking application designed to help users organize their thoughts and ideas efficiently."
+                }, {
+                    "name": "Personal Portfolio",
+                    "year": "2024",
+                    "description": "My personal portfolio website built with Next.js and TypeScript."
+                }, {
+                    "name": "nasilbifirma",
+                    "year": "2024",
+                    "description": "Personal tech venture focused on innovative solutions."
+                }
+            ],
+            "past": [
+                {
+                    "name": "spotifyfizyfit",
+                    "year": "2024",
+                    "description": "Selenium-based automation for Spotify to fizy playlist migration."
+                }, {
+                    "name": "sleepwipe",
+                    "year": "2024",
+                    "description": "Sleepwipe is a software that prevents the computer from going into sleep mode."
+                }, {
+                    "name": "webserv",
+                    "year": "2023",
+                    "description": "Nginx-like web server built from C++."
+                }
+            ]
+        }
+    },
+    "school": {
+        "section_title": "my school life",
+        "experiences": [
+            {
+                "title": "Ecole 42",
+                "period": "2021 - 2024",
+                "description": "Ecole 42 was a transformative journey that shaped both my technical skills and personal growth. This peer-to-peer learning environment pushed me beyond my comfort zone and taught me how to approach complex problems with creativity and perseverance.",
+                "highlights": [
+                    "Mastered C, C++, and various programming paradigms through intensive projects",
+                    "Built strong collaboration skills through team projects and peer evaluations",
+                    "Developed problem-solving abilities through the unique 'learn by doing' approach",
+                    "Formed lasting friendships with peers from diverse backgrounds",
+                    "Gained experience in system administration, networks, and web development",
+                    "Learned to work under pressure and meet challenging deadlines"
+                ],
+                "reflection_title": "Personal Reflection:",
+                "reflection": "“My time at 42 wasn't just about coding—it was about discovering my potential, building lifelong connections, and developing the resilience to tackle any challenge. The countless nights spent debugging, the collaborative problem-solving sessions, and the shared victories formed the foundation of not just my technical skills, but my approach to life's challenges.”"
+            }
+        ],
+        "key_experiences_title": "Key Experiences:",
+        "looking_back_title": "Looking back...",
+        "looking_back_text": "School life at Ecole 42 taught me that true learning happens outside of comfort zones. The peer-to-peer model, the intensity of projects, and the supportive community created an environment where growth was inevitable. These experiences have been instrumental in shaping who I am today, both as a developer and as a person."
+    },
+    "tech_stack": {
+        "title": "my tech stack",
+        "categories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "database": "Database",
+            "devops": "DevOps",
+            "learning": "Currently Learning"
+        },
+        "link_label": {
+            "technology": "Technology",
+            "focus": "Focus Area"
+        },
+        "descriptions": {
+            "React": "Developing modern and interactive user interfaces with component-based architecture",
+            "C#": "Developing object-oriented applications using Microsoft's powerful C-style language",
+            "RabbitMQ": "Reliable message broker for asynchronous communication between services",
+            "SignalR": "Real-time web functionality for .NET applications using WebSockets and more",
+            "Docker": "Containerizing applications for scalable and consistent deployment",
+            "MSSQL": "Microsoft's enterprise-grade relational database management system",
+            "PostgreSQL": "Open-source relational database known for its robustness and extensibility",
+            "Nginx": "High-performance HTTP server and reverse proxy used for serving apps",
+            "IIS": "Microsoft's web server for hosting ASP.NET applications",
+            "Next.js": "Building performant and SEO-friendly web applications with server-side rendering",
+            "TypeScript": "Enhancing JavaScript development with static typing for improved scalability and reliability",
+            "JavaScript": "Creating dynamic client-side logic with the core language of the web",
+            ".NET": "Developing robust and high-performance applications using Microsoft's development framework",
+            "Python": "Writing clean, versatile, and high-level code for various application domains",
+            "Django": "Building secure and scalable web applications with Python's high-level framework",
+            "FastAPI": "Creating fast and modern APIs with Python, powered by asynchronous capabilities",
+            "SeriLogger": "Logging framework for .NET applications, providing structured logging capabilities",
+            "GraphQL": "Querying APIs efficiently with a flexible and powerful schema-based approach",
+            "REST APIs": "Designing conventional web services using stateless HTTP methods and endpoints",
+            "UI/UX Design": "Crafting intuitive and user-centered designs to improve product usability and experience"
+        }
+    },
+    "not_found": {
+        "title": "NOT FOUND",
+        "description_main": "Oops! This page seems to have vanished like my motivation on Monday mornings.",
+        "description_secondary": "Maybe it's taking a coffee break or got lost in the digital void."
+    }
+}
