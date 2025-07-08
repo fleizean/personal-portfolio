@@ -5,9 +5,13 @@ import React from 'react';
 import Image from 'next/image';
 import { JourneyItem } from '@/types/journeyitem';
 import { useTranslation } from '@/context/LanguageContext';
+import { useTheme } from '@/context/ThemeContext';
 
 const JourneyContent: React.FC = () => {
     const { isLoading, t } = useTranslation("common");
+    const { theme } = useTheme();
+    const isDarkMode = theme === 'dark';
+
 
     if (isLoading) {
         return <div className="flex justify-center items-center h-screen">
@@ -100,7 +104,7 @@ const JourneyContent: React.FC = () => {
                                                         width={50}
                                                         height={50}
                                                         className={`object-cover transition-all duration-300 ${
-                                                            item.isBlackLogo 
+                                                            isDarkMode
                                                                 ? 'dark:invert dark:brightness-100 dark:contrast-100' 
                                                                 : 'dark:brightness-90 dark:contrast-110'
                                                         }`}
@@ -151,7 +155,7 @@ const JourneyContent: React.FC = () => {
                                                         width={50}
                                                         height={50}
                                                         className={`object-cover transition-all duration-300 ${
-                                                            item.isBlackLogo 
+                                                            isDarkMode 
                                                                 ? 'dark:invert dark:brightness-100 dark:contrast-100' 
                                                                 : 'dark:brightness-90 dark:contrast-110'
                                                         }`}
