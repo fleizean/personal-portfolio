@@ -12,6 +12,12 @@ This is my personal portfolio website, continuously evolving with new sections a
 </p>
 
 # all updates
+July - 8
+- feat: add dark theme system with toggle 
+
+- Dark theme system added.
+- Header updated with a dark theme toggle.
+
 June - 27
 - feat: add complete i18n system (TR/EN) + contact page
 
