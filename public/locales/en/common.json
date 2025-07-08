@@ -240,6 +240,7 @@
                     "Learned to work under pressure and meet challenging deadlines"
                 ],
                 "image": "/42.png",
+                "darkImage": "/42-dark.png",
                 "link": "https://www.42.fr/en/",
                 "reflection_title": "Personal Reflection:",
                 "reflection": "My time at 42 wasn't just about coding—it was about discovering my potential, building lifelong connections, and developing the resilience to tackle any challenge. The countless nights spent debugging, the collaborative problem-solving sessions, and the shared victories formed the foundation of not just my technical skills, but my approach to life's challenges."

@@ -3,6 +3,7 @@ import ClientLayout from "./ClientLayout";
 import "./globals.css";
 import { Metadata } from "next";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
   title: {
@@ -41,9 +42,11 @@ export default function RootLayout({
   return (
     <html lang="tr" suppressHydrationWarning>
       <body className={`${inter.className} bg-white antialiased`} suppressHydrationWarning>
-         <LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
             <ClientLayout>{children}</ClientLayout>
           </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

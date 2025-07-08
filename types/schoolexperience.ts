@@ -5,4 +5,5 @@ export interface SchoolExperience {
     highlights: string[];
     image?: string;
     link?: string;
+    darkImage?: string;
 }

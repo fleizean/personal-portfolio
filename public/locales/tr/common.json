@@ -240,6 +240,7 @@
                     "Baskı altında çalışmayı ve zorlu son teslim tarihlerini karşılamayı öğrendim"
                 ],
                 "image": "/42.png",
+                "darkImage": "/42-dark.png",
                 "link": "https://www.42.fr/en/",
                 "reflection_title": "Kişisel Düşünce:",
                 "reflection": "42'deki zamanım sadece kodlama hakkında değildi—potansiyelimi keşfetmek, yaşam boyu bağlantılar kurmak ve herhangi bir meydan okuma ile başa çıkabilecek dayanıklılığı geliştirmek hakkındaydı. Hata ayıklama ile geçirilen sayısız geceler, işbirlikçi problem çözme oturumları ve paylaşılan zaferler, sadece teknik becerilerimin değil, yaşamın zorluklarına yaklaşımımın da temelini oluşturdu."
