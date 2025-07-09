@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
     const copyrightText = t('footer.copyright').replace('{{year}}', currentYear.toString());
 
     return (
-        <footer className="relative w-full z-40 mt-auto">
+        <footer className="fixed bottom-0 w-full z-100 mt-auto dark:bg-gray-900 shadow-sm">
             <div className="flex flex-col justify-between items-center container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24">
                 <hr className="border-t border-gray-200 shadow-sm w-full dark:border-gray-700" />
                 <div className="flex flex-col sm:flex-row justify-between items-center py-4 w-full">

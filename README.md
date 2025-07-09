@@ -12,6 +12,9 @@ This is my personal portfolio website, continuously evolving with new sections a
 </p>
 
 # all updates
+July - 10
+- Some dark theme problems solved
+
 July - 8
 - feat: add dark theme system with toggle 
 

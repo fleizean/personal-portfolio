@@ -35,6 +35,10 @@ body {
   --border: #334155;
 }
 
+.pointer-cursor {
+  cursor: pointer !important;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

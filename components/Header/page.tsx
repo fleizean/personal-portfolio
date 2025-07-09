@@ -50,7 +50,7 @@ const Header = () => {
         <div className="flex flex-row justify-between items-center container mx-auto px-4 sm:px-6 md:px-20 lg:px-60">
             <nav className="flex items-center justify-between w-full py-4">
                 <div className='flex items-center space-x-4'>
-                    <Link href="/" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white">
+                    <Link href="/" className="text-gray-700 hover:text-black font-medium transition-colors dark:text-gray-300 dark:hover:text-white hover:underline">
                         fleizean
                     </Link>
                 </div>
@@ -58,31 +58,31 @@ const Header = () => {
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center">
                     <div className="flex items-center">
-                        <Link href="/journey" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white">
+                        <Link href="/journey" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white hover:underline">
                             {t('header.navigation.journey')}
                         </Link>
                         <span className="mx-2 text-gray-400">━</span>
                     </div>
                     <div className="flex items-center">
-                        <Link href="/tech-stack" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white">
+                        <Link href="/tech-stack" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white hover:underline">
                             {t('header.navigation.tech_stack')}
                         </Link>
                         <span className="mx-2 text-gray-400">━</span>
                     </div>
                     <div className="flex items-center">
-                        <Link href="/projects" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white">
+                        <Link href="/projects" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white hover:underline">
                             {t('header.navigation.projects')}
                         </Link>
                         <span className="mx-2 text-gray-400">━</span>
                     </div>
                     <div className="flex items-center">
-                        <Link href="/school-life" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white">
+                        <Link href="/school-life" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white hover:underline">
                             {t('header.navigation.school_life')}
                         </Link>
                         <span className="mx-2 text-gray-400">━</span>
                     </div>
                     <div className="flex items-center">
-                        <Link href="/contact" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white">
+                        <Link href="/contact" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white hover:underline">
                             {t('header.navigation.contact')}
                         </Link>
                     </div>
@@ -118,19 +118,19 @@ const Header = () => {
              {isMenuOpen && (
                 <div className="md:hidden bg-white dark:bg-gray-800 shadow-md">
                     <div className="px-4 py-3 space-y-3">
-                        <Link href="/journey" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white">
+                        <Link href="/journey" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white ">
                             {t('header.navigation.journey')}
                         </Link>
-                        <Link href="/tech-stack" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white">
+                        <Link href="/tech-stack" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white ">
                             {t('header.navigation.tech_stack')}
                         </Link>
-                        <Link href="/projects" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white">
+                        <Link href="/projects" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white ">
                             {t('header.navigation.projects')}
                         </Link>
-                        <Link href="/school-life" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white">
+                        <Link href="/school-life" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white ">
                             {t('header.navigation.school_life')}
                         </Link>
-                        <Link href="/contact" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white">
+                        <Link href="/contact" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white ">
                             {t('header.navigation.contact')}
                         </Link>
                     </div>

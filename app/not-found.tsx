@@ -13,7 +13,7 @@ const NotFound = () => {
     }
     
     return (
-        <div className="relative w-full z-50 transition-all duration-300 mt-15">
+        <div className="relative w-full z-50 transition-all duration-300 py-10 md:py-24 lg:py-32 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800 min-h-screen">
            <div className="container items-center container mx-auto justify-center px-8 lg:px-60 py-10">
             <h1 className="text-5xl mb-5">{t('not_found.title') || "Page Not Found"}</h1>
                 <p className="text-gray-500 mt-2">

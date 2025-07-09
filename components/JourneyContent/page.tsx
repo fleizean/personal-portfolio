@@ -5,12 +5,9 @@ import React from 'react';
 import Image from 'next/image';
 import { JourneyItem } from '@/types/journeyitem';
 import { useTranslation } from '@/context/LanguageContext';
-import { useTheme } from '@/context/ThemeContext';
 
 const JourneyContent: React.FC = () => {
     const { isLoading, t } = useTranslation("common");
-    const { theme } = useTheme();
-    const isDarkMode = theme === 'dark';
 
 
     if (isLoading) {
@@ -61,7 +58,7 @@ const JourneyContent: React.FC = () => {
     };
 
     return (
-        <section className="relative w-full z-50 transition-all duration-300 mt-15">
+        <section className="relative w-full z-50 transition-all duration-300 py-10 md:py-24 lg:py-32 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800">
             <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-60 py-6 sm:py-10">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700 dark:text-gray-300 dark:hover:text-white">{t('journey.section_title')}</h2>
 
@@ -90,24 +87,21 @@ const JourneyContent: React.FC = () => {
                                     {/* Photo area */}
                                     {item.photo && (
                                         <div className="flex items-center mt-3 sm:mt-0">
-                                            <div className="hidden sm:block h-14 border-l border-gray-200 dark:border-gray-700 mx-4"></div>
+                                            <div className="hidden md:block h-14 border-l border-gray-200 dark:border-gray-700 mx-4"></div>
                                             <Link
                                                 href={item.link || '#'}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 title={item.title}
+                                                className='flex-shrink-0'
                                             >
-                                                <div className="relative bg-transparent dark:bg-white dark:bg-opacity-10 p-1 rounded-md transition-all duration-300">
+                                                <div className="w-16 h-16 overflow-hidden rounded flex-shrink-0 bg-white dark:bg-gray-100">
                                                     <Image
                                                         src={item.photo}
                                                         alt={item.title}
                                                         width={50}
                                                         height={50}
-                                                        className={`object-cover transition-all duration-300 ${
-                                                            isDarkMode
-                                                                ? 'dark:invert dark:brightness-100 dark:contrast-100' 
-                                                                : 'dark:brightness-90 dark:contrast-110'
-                                                        }`}
+                                                        className="object-contain w-full h-full dark:brightness-90 transition-all duration-300"
                                                     />
                                                 </div>
                                             </Link>
@@ -141,24 +135,21 @@ const JourneyContent: React.FC = () => {
                                     </div>
                                     {item.photo && (
                                         <div className="flex items-center mt-3 sm:mt-0">
-                                            <div className="hidden sm:block h-14 border-l border-gray-200 dark:border-gray-700 mx-4"></div>
+                                            <div className="hidden md:block h-14 border-l border-gray-200 dark:border-gray-700 mx-4"></div>
                                             <Link
                                                 href={item.link || '#'}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 title={item.title}
+                                                className='flex-shrink-0'
                                             >
-                                                <div className="relative bg-transparent dark:bg-white dark:bg-opacity-10 p-1 rounded-md transition-all duration-300">
+                                                <div className="w-16 h-16 overflow-hidden rounded flex-shrink-0 bg-white dark:bg-gray-100">
                                                     <Image
                                                         src={item.photo}
                                                         alt={item.title}
-                                                        width={50}
-                                                        height={50}
-                                                        className={`object-cover transition-all duration-300 ${
-                                                            isDarkMode 
-                                                                ? 'dark:invert dark:brightness-100 dark:contrast-100' 
-                                                                : 'dark:brightness-90 dark:contrast-110'
-                                                        }`}
+                                                        width={64}
+                                                        height={64}
+                                                        className="object-contain w-full h-full dark:brightness-90 transition-all duration-300"
                                                     />
                                                 </div>
                                             </Link>

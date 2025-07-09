@@ -33,7 +33,7 @@ const ProjectsContent: React.FC = () => {
     };
 
     return (
-        <section className="relative w-full z-50 transition-all duration-300 mt-15">
+        <section className="relative w-full z-50 transition-all duration-300 py-10 md:py-24 lg:py-32 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800">
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-20 xl:px-60 py-10">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700 dark:text-gray-300 dark:hover:text-white">{t('projects.section_title')}</h2>
 
@@ -108,7 +108,7 @@ const ProjectsContent: React.FC = () => {
                                 alt={project.projectName}
                                 width={64}
                                 height={64}
-                                className="object-cover w-full h-full dark:brightness-90 transition-all duration-300"
+                                className="object-contain w-full h-full dark:brightness-90 transition-all duration-300"
                                 />
                             </div>
                             </Link>
@@ -191,7 +191,7 @@ const ProjectsContent: React.FC = () => {
                                 alt={project.projectName}
                                 width={64}
                                 height={64}
-                                className="object-cover w-full h-full dark:brightness-90 transition-all duration-300"
+                                className="object-contain w-full h-full dark:brightness-90 transition-all duration-300"
                                 />
                             </div>
                             </Link>
