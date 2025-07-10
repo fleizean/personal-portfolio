@@ -27,7 +27,7 @@ const Hero = () => {
     };
 
     return (
-        <section className="py-10 md:py-24 lg:py-32 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800">
+        <section className="py-20 md:py-28 lg:py-36 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800 min-h-screen">
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-20 xl:px-60">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
                     {/* Left Column - Text Content */}

@@ -58,7 +58,7 @@ const JourneyContent: React.FC = () => {
     };
 
     return (
-        <section className="relative w-full z-50 transition-all duration-300 py-10 md:py-24 lg:py-32 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800">
+        <section className="relative w-full z-50 transition-all duration-300 py-20 md:py-28 lg:py-36 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800">
             <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-20 xl:px-60 py-6 sm:py-10">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700 dark:text-gray-300 dark:hover:text-white">{t('journey.section_title')}</h2>
 
