@@ -10,7 +10,7 @@ const ProjectsContent: React.FC = () => {
     const { isLoading, t } = useTranslation("common");
         
     if (isLoading) {
-        return <div className="flex justify-center items-center h-screen">
+        return <div className="flex justify-center items-center min-h-screen">
             <div className="loader"></div>
         </div>;
     }
@@ -33,7 +33,7 @@ const ProjectsContent: React.FC = () => {
     };
 
     return (
-        <section className="relative w-full z-50 transition-all duration-300 py-20 md:py-28 lg:py-36 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800">
+        <section className="relative w-full z-50 transition-all duration-300 py-20 md:py-28 lg:py-36 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800 min-h-screen">
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-20 xl:px-60 py-10">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700 dark:text-gray-300 dark:hover:text-white">{t('projects.section_title')}</h2>
 
