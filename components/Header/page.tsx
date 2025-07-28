@@ -44,10 +44,10 @@ const Header = () => {
     }
     
     return (
-        <header className={`fixed top-0 left-0 right-0 w-full z-150 transition-all duration-300 ${
+        <header className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
             isScrolled ? 'bg-white dark:bg-gray-900 shadow-sm' : 'bg-white dark:bg-gray-900'
         }`}>        
-        <div className="flex flex-row justify-between items-center container mx-auto px-4 sm:px-6 md:px-20 lg:px-60">
+        <div className="flex flex-row justify-between items-center container mx-auto px-4 sm:px-6 md:px-8 lg:px-20 xl:px-60">
             <nav className="flex items-center justify-between w-full py-4">
                 <div className='flex items-center space-x-4'>
                     <Link href="/" className="text-gray-700 hover:text-black font-medium transition-colors dark:text-gray-300 dark:hover:text-white hover:underline">
@@ -116,7 +116,7 @@ const Header = () => {
             
              {/* Mobile Menu */}
              {isMenuOpen && (
-                <div className="md:hidden bg-white dark:bg-gray-800 shadow-md">
+                <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-800 shadow-md border-t border-gray-200 dark:border-gray-700">
                     <div className="px-4 py-3 space-y-3">
                         <Link href="/journey" className="block text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white ">
                             {t('header.navigation.journey')}

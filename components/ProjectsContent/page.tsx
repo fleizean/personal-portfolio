@@ -33,8 +33,8 @@ const ProjectsContent: React.FC = () => {
     };
 
     return (
-        <section className="relative w-full z-50 transition-all duration-300 py-20 md:py-28 lg:py-36 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800 min-h-screen">
-            <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-20 xl:px-60 py-10">
+        <section className="relative w-full z-10 transition-all duration-300 py-8 sm:py-12 md:py-16 lg:py-20 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800 min-h-screen">
+            <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-20 xl:px-60">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700 dark:text-gray-300 dark:hover:text-white">{t('projects.section_title')}</h2>
 
             {/* Present Projects */}
