@@ -143,18 +143,18 @@
         "items": {
             "present": [
                 {
-                    "projectName": "Noteisy",
+                    "projectName": "CVision",
                     "type": "present",
                     "icon": "📝",
                     "year": "2024",
                     "status": "development",
-                    "description": "Noteisy, kullanıcıların düşüncelerini ve fikirlerini verimli bir şekilde organize etmelerine yardımcı olmak için tasarlanmış bir not alma uygulamasıdır.",
+                    "description": "CVision, yapay zeka destekli analizlerle işe alım süreçlerinde devrim yaratan modern, açık kaynaklı bir CV analiz platformudur.",
                     "techStack": [
-                        "Next.js", "TypeScript", "TailwindCSS"
+                        "Next.js", "TypeScript", "TailwindCSS", "FastAPI", "Python", "Next.js", "Machine Learning"
                     ],
-                    "githubLink": "https://github.com/fleizean/noteisy",
-                    "liveLink": "https://noteisy.tech",
-                    "image": "/noteisy.png"
+                    "githubLink": "https://github.com/fleizean/cvision",
+                    "liveLink": "https://cvision.tech",
+                    "image": "/cvision.png"
                 }, {
                     "projectName": "Personal Portfolio",
                     "type": "present",

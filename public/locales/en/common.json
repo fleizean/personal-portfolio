@@ -143,18 +143,18 @@
         "items": {
             "present": [
                 {
-                    "projectName": "Noteisy",
+                    "projectName": "CVision",
                     "type": "present",
                     "icon": "📝",
                     "year": "2024",
                     "status": "development",
-                    "description": "Noteisy is a note-taking application designed to help users organize their thoughts and ideas efficiently.",
+                    "description": "CVision is a modern, open-source CV analysis platform that revolutionizes recruitment processes through AI-powered analysis.",
                     "techStack": [
-                        "Next.js", "TypeScript", "TailwindCSS"
+                        "Next.js", "TypeScript", "TailwindCSS", "FastAPI", "Python", "Next.js", "Machine Learning"
                     ],
-                    "githubLink": "https://github.com/fleizean/noteisy",
-                    "liveLink": "https://noteisy.tech",
-                    "image": "/noteisy.png"
+                    "githubLink": "https://github.com/fleizean/cvision",
+                    "liveLink": "https://cvision.tech",
+                    "image": "/cvision.png"
                 }, {
                     "projectName": "Personal Portfolio",
                     "type": "present",
