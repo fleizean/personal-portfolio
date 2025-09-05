@@ -150,7 +150,7 @@
                     "status": "development",
                     "description": "CVision, yapay zeka destekli analizlerle işe alım süreçlerinde devrim yaratan modern, açık kaynaklı bir CV analiz platformudur.",
                     "techStack": [
-                        "Next.js", "TypeScript", "TailwindCSS", "FastAPI", "Python", "Next.js", "Machine Learning"
+                        "Next.js", ".NET", "TypeScript", "TailwindCSS", "FastAPI", "Python", "Machine Learning"
                     ],
                     "githubLink": "https://github.com/fleizean/cvision",
                     "liveLink": "https://cvision.tech",
