@@ -4,8 +4,10 @@ import SchoolLifeContent from '@/components/SchoolLifeContent/page';
 
 export const metadata: Metadata = {
     title: 'School Life',
-    description: 'Explore my school life experiences, projects, and activities that shaped my journey.',
-    keywords: 'school life, projects, activities, experiences, education',
+    description: 'Explore my academic experiences, educational projects, and school activities that shaped my journey. From coursework to extracurricular achievements.',
+    alternates: {
+        canonical: '/school-life',
+    },
 };
 
 

@@ -4,8 +4,10 @@ import ContactContent from '@/components/ContactContent/page';
 
 export const metadata: Metadata = {
     title: 'Contact',
-    description: 'this is my contact page',
-    keywords: 'contact, email, phone, address',
+    description: 'Get in touch with me for collaboration opportunities, project inquiries, or just to say hello. Connect via email, social media, or through the contact form.',
+    alternates: {
+        canonical: '/contact',
+    },
 };
 
 

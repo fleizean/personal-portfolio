@@ -4,8 +4,10 @@ import TechStackContent from '@/components/TechStackContent/page';
 
 export const metadata: Metadata = {
     title: 'Tech Stack',
-    description: 'this is my tech stack page, showcasing the technologies I use in my projects.',
-    keywords: 'tech stack, technologies, programming languages, frameworks, tools',
+    description: 'Discover the technologies, programming languages, frameworks, and tools I use to build modern applications. From frontend to backend, explore my technical expertise.',
+    alternates: {
+        canonical: '/tech-stack',
+    },
 };
 
 

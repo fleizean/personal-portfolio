@@ -10,7 +10,48 @@ export const metadata: Metadata = {
     template: '%s - fleizean',
     default: 'fleizean - software, design and my life',
   },
-  description: "fleizean — software, design and my life",
+  description: "Software engineer and designer passionate about creating elegant solutions. Explore my journey, projects, tech stack, and connect with me for collaboration opportunities.",
+  authors: [{ name: 'Enes Yağız', url: 'https://fleizean.dev' }],
+  publisher: 'Enes Yağız',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  metadataBase: new URL('https://fleizean.dev'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'tr_TR',
+    url: 'https://fleizean.dev',
+    siteName: 'fleizean',
+    title: 'fleizean - software, design and my life',
+    description: 'Software engineer and designer passionate about creating elegant solutions. Explore my journey, projects, tech stack, and connect with me for collaboration opportunities.',
+    images: [
+      {
+        url: '/hero.png',
+        width: 1200,
+        height: 630,
+        alt: 'fleizean - software, design and my life',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@onlyflei',
+    creator: '@onlyflei',
+    title: 'fleizean - software, design and my life',
+    description: 'Software engineer and designer passionate about creating elegant solutions. Explore my journey, projects, tech stack, and connect with me for collaboration opportunities.',
+    images: ['/hero.png'],
+  },
   icons: {
     icon: [
       { url: 'favicons/favicon-96x96.png', sizes: '96x96', type: 'image/png' },

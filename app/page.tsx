@@ -3,26 +3,10 @@ import Hero from "@/components/Hero/page";
 
 export const metadata: Metadata = {
   title: "fleizean — software, design and my life",
-  description: "fleizean — software, design and my life",
-  icons: {
-    icon: [
-      { url: 'favicons/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-      { url: 'favicons/favicon.svg', type: 'image/svg+xml' },
-      { url: 'favicons/favicon.ico', rel: 'shortcut icon' },
-    ],
-    apple: [
-      { url: 'favicons/apple-touch-icon.png', sizes: '180x180' },
-    ],
-    other: [
-      {
-        rel: 'manifest',
-        url: 'favicons/site.webmanifest',
-      },
-    ]
+  description: "Software engineer and designer passionate about creating elegant solutions. Explore my journey, projects, tech stack, and connect with me for collaboration opportunities.",
+  alternates: {
+    canonical: '/',
   },
-  appleWebApp: {
-    title: 'fleizean',
-  }
 };
 
 
