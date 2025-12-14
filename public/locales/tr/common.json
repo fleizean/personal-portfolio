@@ -45,12 +45,12 @@
         "items": {
             "present": [
                 {
-                    "title": "Junior Full Stack Developer",
-                    "place": "fırsat arıyorum",
+                    "title": "Full Stack Developer",
+                    "place": "BKPrime Technology",
                     "year": "Şimdi",
-                    "description": "Yenilikçi projelere ve ekiplere katkıda bulunmak için aktif olarak fırsatlar arıyorum.",
+                    "description": "Şu anda Yazılım Geliştirici olarak çalışıyor, ölçeklenebilir web uygulamaları ve kurum içi sistemlerin geliştirilmesi ve bakımına katkı sağlıyorum.",
                     "type": "work",
-                    "emoji": "🔍",
+                    "emoji": "💼",
                     "link": "https://www.linkedin.com/in/fleizean/"
                 }, {
                     "title": "CEO / Developer",
