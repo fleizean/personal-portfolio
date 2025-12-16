@@ -20,7 +20,8 @@
             "tech_stack": "tech stack",
             "projects": "projects",
             "school_life": "school life",
-            "contact": "contact"
+            "contact": "contact",
+            "blogs": "blogs"
         },
         "language_switcher": {
             "aria_label": "Change language",
@@ -472,5 +473,10 @@
                 "footer_note": "* I typically respond within 24 hours."
             }
         }
+    },
+    "blog": {
+        "title": "its my blogs (im medium guru bro)",
+        "no_posts": "all my mediums gone bro wtf",
+        "view_all": "just view all bro"
     }
 }

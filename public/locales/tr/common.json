@@ -1,8 +1,8 @@
 {
     "hero": {
         "greeting": "Merhaba, ben Enes.",
-        "role": "junior full stack developer olarak",
-        "roleHighlight": "BKPrime Technology",
+        "role": "junior full stack developer,",
+        "roleHighlight": "BKPrime Technology'da",
         "resumeButton": "özgeçmiş",
         "contactButton": "bana ulaş",
         "description": "kod ve tasarım yoluyla dijital deneyimler yaratıyorum. işlevsellik ve estetik arasındaki dengeyi keşfediyorum. 0'ları 1'e tutku ve hassasiyetle dönüştürüyorum. hadi bağlantı kuralım ve birlikte harika şeyler yaratalım!",
@@ -20,7 +20,8 @@
             "tech_stack": "teknoloji yığını",
             "projects": "projeler",
             "school_life": "okul hayatı",
-            "contact": "iletişim"
+            "contact": "iletişim",
+            "blogs": "bloglarım"
         },
         "language_switcher": {
             "aria_label": "Dili değiştir",
@@ -472,5 +473,10 @@
                 "footer_note": "* Genellikle 24 saat içinde yanıt veriyorum."
             }
         }
+    },
+    "blog": {
+        "title": "bloglarım (medium’da kurduyum)",
+        "no_posts": "şu an hiç blog yok, nasıl ya?",
+        "view_all": "hepsini görüntüle"
     }
 }

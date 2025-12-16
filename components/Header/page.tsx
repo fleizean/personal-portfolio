@@ -82,6 +82,12 @@ const Header = () => {
                         <span className="mx-2 text-gray-400">━</span>
                     </div>
                     <div className="flex items-center">
+                        <Link href="/school-life" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white hover:underline">
+                            {t('header.navigation.blogs')}
+                        </Link>
+                        <span className="mx-2 text-gray-400">━</span>
+                    </div>
+                    <div className="flex items-center">
                         <Link href="/contact" className="text-gray-700 hover:text-black no-underline font-medium transition-colors dark:text-gray-300 dark:hover:text-white hover:underline">
                             {t('header.navigation.contact')}
                         </Link>
