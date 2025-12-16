@@ -13,7 +13,12 @@ This is my personal portfolio website, continuously evolving with new sections a
 
 ## 📋 All Updates
 
-### October 17, 2024
+### December 16, 2025
+#### feat: medium guru online in my website
+- Blogs page added for my medium
+- Some localization changed 
+
+### October 17, 2025
 #### 🚀 feat: comprehensive SEO optimization
 - Added complete meta tags (description, author, publisher, robots)
 - Implemented Twitter Card metadata (@onlyflei)
@@ -30,14 +35,14 @@ This is my personal portfolio website, continuously evolving with new sections a
 
 ---
 
-### July 10, 2024
+### July 10, 2025
 #### 🐛 fix: dark theme improvements
 - Resolved dark theme rendering issues
 - Fixed component styling inconsistencies
 
 ---
 
-### July 8, 2024
+### July 8, 2025
 #### 🌙 feat: dark theme system with toggle
 - Implemented complete dark theme system
 - Added theme toggle in header
@@ -45,7 +50,7 @@ This is my personal portfolio website, continuously evolving with new sections a
 
 ---
 
-### June 27, 2024
+### June 27, 2025
 #### 🌍 feat: complete i18n system (TR/EN) + contact page
 - Implemented LanguageContext and LanguageSwitcher
 - Converted all pages to use translation system
@@ -54,6 +59,6 @@ This is my personal portfolio website, continuously evolving with new sections a
 
 ---
 
-### June 21, 2024
+### June 21, 2025
 #### 🎉 First deployment
 - Initial portfolio website deployment
