@@ -48,15 +48,16 @@
                 {
                     "title": "Full Stack Developer",
                     "place": "BKPrime Technology",
-                    "year": "Şimdi",
+                    "year": "2025 - Devam Ediyor",
                     "description": "Şu anda Yazılım Geliştirici olarak çalışıyor, ölçeklenebilir web uygulamaları ve kurum içi sistemlerin geliştirilmesi ve bakımına katkı sağlıyorum.",
                     "type": "work",
                     "emoji": "💼",
-                    "link": "https://www.linkedin.com/in/fleizean/"
+                    "link": "https://www.linkedin.com/in/fleizean/",
+                    "photo": "/bk-prime.png"
                 }, {
                     "title": "CEO / Developer",
                     "place": "nasilbifirma",
-                    "year": "2025 - Şimdi",
+                    "year": "2025 - Devam Ediyor",
                     "description": "Arkadaşlarımla girişimimizin geliştirme ve strateji süreçlerini yönetiyorum.",
                     "type": "work",
                     "emoji": "🚀",
