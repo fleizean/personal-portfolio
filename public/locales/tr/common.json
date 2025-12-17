@@ -281,13 +281,6 @@
                 "category": "backend",
                 "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
             }, {
-                "name": "RabbitMQ",
-                "color": "text-orange-500",
-                "icon": "SiRabbitmq",
-                "description": "Servisler arası asenkron iletişim için güvenilir mesaj aracısı",
-                "category": "backend",
-                "link": "https://www.rabbitmq.com/"
-            }, {
                 "name": "SignalR",
                 "color": "text-red-600",
                 "icon": "SiSignal",
@@ -385,13 +378,6 @@
                 "description": ".NET uygulamaları için yapılandırılmış loglama yetenekleri sağlayan loglama framework'ü",
                 "category": "devops",
                 "link": "https://serilog.net/"
-            }, {
-                "name": "GraphQL",
-                "color": "text-pink-500",
-                "icon": "SiGraphql",
-                "description": "Esnek ve güçlü şema tabanlı yaklaşımla API'leri verimli bir şekilde sorgulama",
-                "category": "backend",
-                "link": "https://graphql.org/"
             }, {
                 "name": "REST APIs",
                 "color": "text-blue-600",

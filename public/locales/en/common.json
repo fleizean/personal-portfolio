@@ -280,14 +280,7 @@
                 "description": "Developing object-oriented applications using Microsoft's powerful C-style language",
                 "category": "backend",
                 "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
-            }, {
-                "name": "RabbitMQ",
-                "color": "text-orange-500",
-                "icon": "SiRabbitmq",
-                "description": "Reliable message broker for asynchronous communication between services",
-                "category": "backend",
-                "link": "https://www.rabbitmq.com/"
-            }, {
+            },  {
                 "name": "SignalR",
                 "color": "text-red-600",
                 "icon": "SiSignal",
@@ -385,13 +378,6 @@
                 "description": "Logging framework for .NET applications, providing structured logging capabilities",
                 "category": "devops",
                 "link": "https://serilog.net/"
-            }, {
-                "name": "GraphQL",
-                "color": "text-pink-500",
-                "icon": "SiGraphql",
-                "description": "Querying APIs efficiently with a flexible and powerful schema-based approach",
-                "category": "backend",
-                "link": "https://graphql.org/"
             }, {
                 "name": "REST APIs",
                 "color": "text-blue-600",
