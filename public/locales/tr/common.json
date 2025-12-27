@@ -145,19 +145,20 @@
         "items": {
             "present": [
                 {
-                    "projectName": "CVision",
+                    "projectName": "Workflow",
                     "type": "present",
-                    "icon": "📝",
-                    "year": "2024",
+                    "icon": "⏰",
+                    "year": "2025",
                     "status": "development",
-                    "description": "CVision, yapay zeka destekli analizlerle işe alım süreçlerinde devrim yaratan modern, açık kaynaklı bir CV analiz platformudur.",
+                    "description": "Workflow, çalışma saatlerinizi takip etmek için tasarlanmış güzel ve minimalist bir masaüstü uygulamasıdır. Electron ve SQLite ile geliştirilen bu uygulama, aralıksız takip, günlük hedefler ve ayrıntılı çalışma oturumu geçmişi ile motivasyonunuzu korumanıza yardımcı olur.",
                     "techStack": [
-                        "Next.js", ".NET", "TypeScript", "TailwindCSS", "FastAPI", "Python", "Machine Learning"
+                        "Electron.js", "SQLite", "TailwindCSS"
                     ],
-                    "githubLink": "https://github.com/fleizean/cvision",
-                    "liveLink": "https://cvision.tech",
-                    "image": "/cvision.png"
-                }, {
+                    "githubLink": "https://github.com/fleizean/workflow",
+                    "liveLink": "fleizean.github.io/workflow/",
+                    "image": "/Workflow.png"
+                },
+                {
                     "projectName": "Personal Portfolio",
                     "type": "present",
                     "icon": "🌟",
@@ -170,12 +171,15 @@
                     "githubLink": "https://github.com/fleizean/personal-portfolio",
                     "liveLink": "https://fleizean.me",
                     "image": "/logo.png"
-                }, {
+                }
+            ],
+            "past": [
+                {
                     "projectName": "nasilbifirma",
-                    "type": "present",
+                    "type": "past",
                     "icon": "🚀",
                     "year": "2024",
-                    "status": "development",
+                    "status": "completed",
                     "description": "Yenilikçi çözümlere odaklanan kişisel teknoloji girişimi.",
                     "techStack": [
                         ".NET", "Next.js", "TypeScript", "TailwindCSS"
@@ -183,9 +187,20 @@
                     "githubLink": "https://github.com/fleizean/nasilbifirma",
                     "liveLink": "https://nasilbifirma.com",
                     "image": "/nasilbifirma.png"
-                }
-            ],
-            "past": [
+                },
+                {
+                    "projectName": "CVision",
+                    "type": "past",
+                    "icon": "📝",
+                    "year": "2024",
+                    "status": "completed",
+                    "description": "CVision, yapay zeka destekli analizlerle işe alım süreçlerinde devrim yaratan modern, açık kaynaklı bir CV analiz platformudur.",
+                    "techStack": [
+                        "Next.js", ".NET", "TypeScript", "TailwindCSS", "FastAPI", "Python", "Machine Learning"
+                    ],
+                    "githubLink": "https://github.com/fleizean/cvision",
+                    "image": "/cvision.png"
+                },
                 {
                     "projectName": "spotifyfizyfit",
                     "type": "past",

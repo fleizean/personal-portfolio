@@ -145,19 +145,20 @@
         "items": {
             "present": [
                 {
-                    "projectName": "CVision",
+                    "projectName": "Workflow",
                     "type": "present",
-                    "icon": "📝",
-                    "year": "2024",
+                    "icon": "⏰",
+                    "year": "2025",
                     "status": "development",
-                    "description": "CVision is a modern, open-source CV analysis platform that revolutionizes recruitment processes through AI-powered analysis.",
+                    "description": "Workflow is a beautiful, minimalist desktop application for tracking your work hours. Built with Electron and SQLite, it helps you stay motivated with streak tracking, daily targets, and detailed work session history.",
                     "techStack": [
-                        "Next.js", "TypeScript", "TailwindCSS", "FastAPI", "Python", "Next.js", "Machine Learning"
+                        "Electron.js", "SQLite", "TailwindCSS"
                     ],
-                    "githubLink": "https://github.com/fleizean/cvision",
-                    "liveLink": "https://cvision.tech",
-                    "image": "/cvision.png"
-                }, {
+                    "githubLink": "https://github.com/fleizean/workflow",
+                    "liveLink": "fleizean.github.io/workflow/",
+                    "image": "/Workflow.png"
+                },
+                {
                     "projectName": "Personal Portfolio",
                     "type": "present",
                     "icon": "🌟",
@@ -170,12 +171,15 @@
                     "githubLink": "https://github.com/fleizean/personal-portfolio",
                     "liveLink": "https://fleizean.me",
                     "image": "/logo.png"
-                }, {
+                }
+            ],
+            "past": [
+                {
                     "projectName": "nasilbifirma",
-                    "type": "present",
+                    "type": "past",
                     "icon": "🚀",
                     "year": "2024",
-                    "status": "development",
+                    "status": "completed",
                     "description": "Personal tech venture focused on innovative solutions.",
                     "techStack": [
                         ".NET", "Next.js", "TypeScript", "TailwindCSS"
@@ -183,9 +187,20 @@
                     "githubLink": "https://github.com/fleizean/nasilbifirma",
                     "liveLink": "https://nasilbifirma.com",
                     "image": "/nasilbifirma.png"
-                }
-            ],
-            "past": [
+                },
+                {
+                    "projectName": "CVision",
+                    "type": "past",
+                    "icon": "📝",
+                    "year": "2024",
+                    "status": "development",
+                    "description": "CVision is a modern, open-source CV analysis platform that revolutionizes recruitment processes through AI-powered analysis.",
+                    "techStack": [
+                        "Next.js", "TypeScript", "TailwindCSS", "FastAPI", "Python", "Next.js", "Machine Learning"
+                    ],
+                    "githubLink": "https://github.com/fleizean/cvision",
+                    "image": "/cvision.png"
+                },
                 {
                     "projectName": "spotifyfizyfit",
                     "type": "past",
