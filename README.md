@@ -13,6 +13,17 @@ This is my personal portfolio website, continuously evolving with new sections a
 
 ## 📋 All Updates
 
+### January 3, 2026
+#### 🎨 feat: major UI redesign & gradient aesthetics
+- **Global Gradient Theme**: Implemented cohesive gradient borders and backgrounds throughout the site.
+- **Page Redesigns**:
+  - **Blog**: Modern card design with gradient accents and improved typography.
+  - **Contact**: Enhanced form with gradient focus states and interactive buttons.
+  - **Projects**: Redesigned status and tech stack badges for better visual hierarchy.
+- **Hero Section**: Refined visual elements and added dynamic interactions.
+- **Music Player**: Enhanced playback logic with responsive visual feedback.
+- **ScrollToTop**: Updated design to match the new aesthetic.
+
 ### December 16, 2025
 #### feat: medium guru online in my website
 - Blogs page added for my medium

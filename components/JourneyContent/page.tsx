@@ -70,24 +70,42 @@ const JourneyContent: React.FC = () => {
                             <li key={index} className="pb-3">
                                 <div className="flex flex-col sm:flex-row items-start justify-between">
                                     {/* Left content */}
-                                    <div className="flex items-baseline gap-2 w-full sm:w-auto">
-                                        <span className="text-lg">{item.emoji || getDefaultEmoji(item.type)}</span>
+                                    <div className="flex items-start gap-2 w-full sm:w-auto">
+                                        {/* Show photo on mobile if available, otherwise show emoji */}
+                                        {item.photo ? (
+                                            <>
+                                                <div className="block md:hidden flex-shrink-0">
+                                                    <div className="w-10 h-10 overflow-hidden rounded bg-white dark:bg-gray-100">
+                                                        <Image
+                                                            src={item.photo}
+                                                            alt={item.title}
+                                                            width={40}
+                                                            height={40}
+                                                            className="object-contain w-full h-full dark:brightness-90"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <span className="hidden md:block text-lg">{item.emoji || getDefaultEmoji(item.type)}</span>
+                                            </>
+                                        ) : (
+                                            <span className="text-lg">{item.emoji || getDefaultEmoji(item.type)}</span>
+                                        )}
                                         <div className="w-full">
                                             <div className="flex flex-wrap items-center gap-1">
-                                                <span className="font-xs text-gray-700 dark:text-gray-300 dark:hover:text-white">{item.title} at </span>
+                                                <span className="font-xs text-black dark:text-gray-300 dark:hover:text-white">{item.title} {t('journey.at')} </span>
                                                 <span className="font-medium text-black dark:text-gray-300 dark:hover:text-white">
                                                     <Link href={`${item.link}`} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white">{item.place}</Link>
                                                     <span className="text-gray-800 dark:text-gray-300 dark:hover:text-white"> • {item.year}</span>
                                                 </span>
                                             </div>
-                                            <p className="text-sm text-gray-500 mt-1 dark:text-gray-300 dark:hover:text-white">{item.description}</p>
+                                            <p className="text-sm text-black mt-1 dark:text-gray-300 dark:hover:text-white">{item.description}</p>
                                         </div>
                                     </div>
 
-                                    {/* Photo area */}
+                                    {/* Photo area - only show on desktop */}
                                     {item.photo && (
-                                        <div className="flex items-center mt-3 sm:mt-0">
-                                            <div className="hidden md:block h-14 border-l border-gray-200 dark:border-gray-700 mx-4"></div>
+                                        <div className="hidden md:flex items-center mt-3 sm:mt-0">
+                                            <div className="hidden md:block h-14 border-l border-gray-800 dark:border-gray-700 mx-4"></div>
                                             <Link
                                                 href={item.link || '#'}
                                                 target="_blank"
@@ -120,22 +138,41 @@ const JourneyContent: React.FC = () => {
                         {pastItems.map((item, index) => (
                             <li key={index} className="pb-3">
                                 <div className="flex flex-col sm:flex-row items-start justify-between">
-                                    <div className="flex items-baseline gap-2 w-full sm:w-auto">
-                                        <span className="text-lg">{item.emoji || getDefaultEmoji(item.type)}</span>
+                                    <div className="flex items-start gap-2 w-full sm:w-auto">
+                                        {/* Show photo on mobile if available, otherwise show emoji */}
+                                        {item.photo ? (
+                                            <>
+                                                <div className="block md:hidden flex-shrink-0">
+                                                    <div className="w-10 h-10 overflow-hidden rounded bg-white dark:bg-gray-100">
+                                                        <Image
+                                                            src={item.photo}
+                                                            alt={item.title}
+                                                            width={40}
+                                                            height={40}
+                                                            className="object-contain w-full h-full dark:brightness-90"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <span className="hidden md:block text-lg">{item.emoji || getDefaultEmoji(item.type)}</span>
+                                            </>
+                                        ) : (
+                                            <span className="text-lg">{item.emoji || getDefaultEmoji(item.type)}</span>
+                                        )}
                                         <div className="w-full">
                                             <div className="flex flex-wrap items-center gap-1">
-                                                <span className="font-xs text-gray-700 dark:text-gray-300 dark:hover:text-white">{item.title} at</span>
+                                                <span className="font-xs text-black dark:text-gray-300 dark:hover:text-white">{item.title} at</span>
                                                 <span className="font-medium text-black dark:text-gray-300 dark:hover:text-white">
                                                     <Link href={`${item.link}`} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white">{item.place}</Link>
                                                     <span className="text-gray-800 dark:text-gray-300 dark:hover:text-white"> • {item.year}</span>
                                                 </span>
                                             </div>
-                                            <p className="text-sm text-gray-500 mt-1 dark:text-gray-300 dark:hover:text-white">{item.description}</p>
+                                            <p className="text-sm text-black mt-1 dark:text-gray-300 dark:hover:text-white">{item.description}</p>
                                         </div>
                                     </div>
+                                    {/* Photo area - only show on desktop */}
                                     {item.photo && (
-                                        <div className="flex items-center mt-3 sm:mt-0">
-                                            <div className="hidden md:block h-14 border-l border-gray-200 dark:border-gray-700 mx-4"></div>
+                                        <div className="hidden md:flex items-center mt-3 sm:mt-0">
+                                            <div className="hidden md:block h-14 border-l border-gray-800 dark:border-gray-700 mx-4"></div>
                                             <Link
                                                 href={item.link || '#'}
                                                 target="_blank"

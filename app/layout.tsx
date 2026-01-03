@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: 'Software engineer and designer passionate about creating elegant solutions. Explore my journey, projects, tech stack, and connect with me for collaboration opportunities.',
     images: [
       {
-        url: '/hero.png',
+        url: '/hero/hero.png',
         width: 1200,
         height: 630,
         alt: 'fleizean - software, design and my life',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     creator: '@onlyflei',
     title: 'fleizean - software, design and my life',
     description: 'Software engineer and designer passionate about creating elegant solutions. Explore my journey, projects, tech stack, and connect with me for collaboration opportunities.',
-    images: ['/hero.png'],
+    images: ['/hero/hero.png'],
   },
   icons: {
     icon: [

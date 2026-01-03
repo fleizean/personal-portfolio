@@ -1,7 +1,7 @@
 {
     "hero": {
         "greeting": "Merhaba, ben Enes.",
-        "role": "junior full stack developer,",
+        "role": "full stack developer,",
         "roleHighlight": "BKPrime Technology'da",
         "resumeButton": "özgeçmiş",
         "contactButton": "bana ulaş",
@@ -43,6 +43,7 @@
         "section_title": "yolculuğum",
         "present_section_title": "Şimdiki",
         "past_section_title": "Geçmiş",
+        "at": "şirketinde",
         "items": {
             "present": [
                 {
@@ -53,8 +54,9 @@
                     "type": "work",
                     "emoji": "💼",
                     "link": "https://www.linkedin.com/in/fleizean/",
-                    "photo": "/bk-prime.png"
-                }, {
+                    "photo": "/others/bk-prime.png"
+                },
+                {
                     "title": "CEO / Developer",
                     "place": "nasilbifirma",
                     "year": "2025 - Devam Ediyor",
@@ -62,7 +64,7 @@
                     "type": "work",
                     "emoji": "🚀",
                     "link": "https://nasilbifirma.com",
-                    "photo": "/nasilbifirma.png"
+                    "photo": "/others/nasilbifirma.png"
                 }
             ],
             "past": [
@@ -74,8 +76,9 @@
                     "type": "work",
                     "emoji": "💻",
                     "link": "https://solventyazilim.com",
-                    "photo": "/solvent.png"
-                }, {
+                    "photo": "/others/solvent.png"
+                },
+                {
                     "title": "Software Engineer",
                     "place": "Ecole 42",
                     "year": "2024",
@@ -83,8 +86,9 @@
                     "type": "education",
                     "emoji": "🧩",
                     "link": "https://www.42.fr/en/",
-                    "photo": "/42.png"
-                }, {
+                    "photo": "/others/42.png"
+                },
+                {
                     "title": "Bilgi Yönetimi",
                     "place": "Dumlupınar Üniversitesi",
                     "year": "2024",
@@ -92,7 +96,8 @@
                     "type": "education",
                     "emoji": "📊",
                     "link": "https://www.kutahya.edu.tr/en"
-                }, {
+                },
+                {
                     "title": "Freelance Developer",
                     "place": "MEBS",
                     "year": "2018",
@@ -100,7 +105,8 @@
                     "type": "work",
                     "emoji": "🌐",
                     "link": "https://tr.wikipedia.org/wiki/MEBS_Okulu_ve_E%C4%9Fitim_Merkezi"
-                }, {
+                },
+                {
                     "title": "IT Stajyeri",
                     "place": "Türk Telekom",
                     "year": "2018 - 2019",
@@ -108,8 +114,9 @@
                     "type": "work",
                     "emoji": "📱",
                     "link": "https://www.turktelekom.com.tr",
-                    "photo": "/turk-telekom.png"
-                }, {
+                    "photo": "/others/turk-telekom.png"
+                },
+                {
                     "title": "Bilgisayar Bilimleri",
                     "place": "İzmit Mesleki ve Teknik Anadolu Lisesi",
                     "year": "2019",
@@ -117,7 +124,8 @@
                     "type": "education",
                     "emoji": "🖥️",
                     "link": "https://www.izmitmtal.k12.tr"
-                }, {
+                },
+                {
                     "title": "Merhaba Dünya",
                     "place": "Dünya Gezegeni",
                     "year": "2002",
@@ -152,11 +160,13 @@
                     "status": "development",
                     "description": "Workflow, çalışma saatlerinizi takip etmek için tasarlanmış güzel ve minimalist bir masaüstü uygulamasıdır. Electron ve SQLite ile geliştirilen bu uygulama, aralıksız takip, günlük hedefler ve ayrıntılı çalışma oturumu geçmişi ile motivasyonunuzu korumanıza yardımcı olur.",
                     "techStack": [
-                        "Electron.js", "SQLite", "TailwindCSS"
+                        "Electron.js",
+                        "SQLite",
+                        "TailwindCSS"
                     ],
                     "githubLink": "https://github.com/fleizean/workflow",
                     "liveLink": "https://fleizean.github.io/workflow",
-                    "image": "/Workflow.png"
+                    "image": "/others/Workflow.png"
                 },
                 {
                     "projectName": "Personal Portfolio",
@@ -166,7 +176,9 @@
                     "status": "completed",
                     "description": "Next.js ve TypeScript ile oluşturduğum kişisel portfolyo web sitesi.",
                     "techStack": [
-                        "Next.js", "TypeScript", "TailwindCSS"
+                        "Next.js",
+                        "TypeScript",
+                        "TailwindCSS"
                     ],
                     "githubLink": "https://github.com/fleizean/personal-portfolio",
                     "liveLink": "https://fleizean.me",
@@ -182,11 +194,14 @@
                     "status": "completed",
                     "description": "Yenilikçi çözümlere odaklanan kişisel teknoloji girişimi.",
                     "techStack": [
-                        ".NET", "Next.js", "TypeScript", "TailwindCSS"
+                        ".NET",
+                        "Next.js",
+                        "TypeScript",
+                        "TailwindCSS"
                     ],
                     "githubLink": "https://github.com/fleizean/nasilbifirma",
                     "liveLink": "https://nasilbifirma.com",
-                    "image": "/nasilbifirma.png"
+                    "image": "/others/nasilbifirma.png"
                 },
                 {
                     "projectName": "CVision",
@@ -196,10 +211,16 @@
                     "status": "completed",
                     "description": "CVision, yapay zeka destekli analizlerle işe alım süreçlerinde devrim yaratan modern, açık kaynaklı bir CV analiz platformudur.",
                     "techStack": [
-                        "Next.js", ".NET", "TypeScript", "TailwindCSS", "FastAPI", "Python", "Machine Learning"
+                        "Next.js",
+                        ".NET",
+                        "TypeScript",
+                        "TailwindCSS",
+                        "FastAPI",
+                        "Python",
+                        "Machine Learning"
                     ],
                     "githubLink": "https://github.com/fleizean/cvision",
-                    "image": "/cvision.png"
+                    "image": "/others/cvision.png"
                 },
                 {
                     "projectName": "spotifyfizyfit",
@@ -209,11 +230,14 @@
                     "status": "completed",
                     "description": "Spotify'dan fizy'ye çalma listesi taşıma için Selenium tabanlı otomasyon.",
                     "techStack": [
-                        "Python", "Selenium", "Web Automation"
+                        "Python",
+                        "Selenium",
+                        "Web Automation"
                     ],
                     "githubLink": "https://github.com/fleizean/spotifyfizyfit",
-                    "image": "/spotifyfizyfit.png"
-                }, {
+                    "image": "/others/spotifyfizyfit.png"
+                },
+                {
                     "projectName": "sleepwipe",
                     "type": "past",
                     "icon": "💤",
@@ -221,11 +245,13 @@
                     "status": "completed",
                     "description": "Bilgisayarın uyku moduna geçmesini engelleyen bir yazılım.",
                     "techStack": [
-                        "C", "Bash"
+                        "C",
+                        "Bash"
                     ],
                     "githubLink": "https://github.com/fleizean/sleepwipe",
-                    "image": "/sleepwipe.png"
-                }, {
+                    "image": "/others/sleepwipe.png"
+                },
+                {
                     "projectName": "webserv",
                     "type": "past",
                     "icon": "🐚",
@@ -233,10 +259,12 @@
                     "status": "completed",
                     "description": "C++ ile oluşturulmuş Nginx benzeri web sunucusu.",
                     "techStack": [
-                        "C++", "HTTP", "Web Server"
+                        "C++",
+                        "HTTP",
+                        "Web Server"
                     ],
                     "githubLink": "https://github.com/fleizean/webserv",
-                    "image": "/webserv.png"
+                    "image": "/others/webserv.png"
                 }
             ]
         }
@@ -256,8 +284,8 @@
                     "Sistem yönetimi, ağlar ve web geliştirme alanlarında deneyim kazandım",
                     "Baskı altında çalışmayı ve zorlu son teslim tarihlerini karşılamayı öğrendim"
                 ],
-                "image": "/42.png",
-                "darkImage": "/42-dark.png",
+                "image": "/others/42.png",
+                "darkImage": "/others/42-dark.png",
                 "link": "https://www.42.fr/en/",
                 "reflection_title": "Kişisel Düşünce:",
                 "reflection": "42'deki zamanım sadece kodlama hakkında değildi—potansiyelimi keşfetmek, yaşam boyu bağlantılar kurmak ve herhangi bir meydan okuma ile başa çıkabilecek dayanıklılığı geliştirmek hakkındaydı. Hata ayıklama ile geçirilen sayısız geceler, işbirlikçi problem çözme oturumları ve paylaşılan zaferler, sadece teknik becerilerimin değil, yaşamın zorluklarına yaklaşımımın da temelini oluşturdu."
@@ -288,119 +316,136 @@
                 "description": "Bileşen tabanlı mimari ile modern ve etkileşimli kullanıcı arayüzleri geliştirme",
                 "category": "frontend",
                 "link": "https://reactjs.org/"
-            }, {
+            },
+            {
                 "name": "C#",
                 "color": "text-purple-500",
                 "icon": "TbBrandCSharp",
                 "description": "Microsoft'un güçlü C tarzı dili kullanarak nesne yönelimli uygulamalar geliştirme",
                 "category": "backend",
                 "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
-            }, {
+            },
+            {
                 "name": "SignalR",
                 "color": "text-red-600",
                 "icon": "SiSignal",
                 "description": "WebSocket ve daha fazlasını kullanarak .NET uygulamaları için gerçek zamanlı web işlevselliği",
                 "category": "backend",
                 "link": "https://learn.microsoft.com/en-us/aspnet/core/signalr/introduction"
-            }, {
+            },
+            {
                 "name": "Docker",
                 "color": "text-blue-500",
                 "icon": "FaDocker",
                 "description": "Ölçeklenebilir ve tutarlı dağıtım için uygulamaları konteynerize etme",
                 "category": "devops",
                 "link": "https://www.docker.com/"
-            }, {
+            },
+            {
                 "name": "MSSQL",
                 "color": "text-blue-800",
                 "icon": "DiMsqlServer",
                 "description": "Microsoft'un kurumsal düzeyde ilişkisel veritabanı yönetim sistemi",
                 "category": "database",
                 "link": "https://www.microsoft.com/en-us/sql-server"
-            }, {
+            },
+            {
                 "name": "PostgreSQL",
                 "color": "text-blue-400",
                 "icon": "SiPostgresql",
                 "description": "Sağlamlığı ve genişletilebilirliği ile bilinen açık kaynak ilişkisel veritabanı",
                 "category": "database",
                 "link": "https://www.postgresql.org/"
-            }, {
+            },
+            {
                 "name": "Nginx",
                 "color": "text-green-600",
                 "icon": "SiNginx",
                 "description": "Uygulamaları sunmak için kullanılan yüksek performanslı HTTP sunucusu ve ters proxy",
                 "category": "devops",
                 "link": "https://www.nginx.com/"
-            }, {
+            },
+            {
                 "name": "IIS",
                 "color": "text-blue-700",
                 "icon": "MdBusiness",
                 "description": "ASP.NET uygulamalarını barındırmak için Microsoft'un web sunucusu",
                 "category": "devops",
                 "link": "https://www.microsoft.com/en-us/iis"
-            }, {
+            },
+            {
                 "name": "Next.js",
                 "color": "text-black",
                 "icon": "RiNextjsFill",
                 "description": "Sunucu tarafı rendering ile performanslı ve SEO dostu web uygulamaları oluşturma",
                 "category": "frontend",
                 "link": "https://nextjs.org/"
-            }, {
+            },
+            {
                 "name": "TypeScript",
                 "color": "text-blue-500",
                 "icon": "SiTypescript",
                 "description": "Gelişmiş ölçeklenebilirlik ve güvenilirlik için statik tipleme ile JavaScript geliştirmeyi güçlendirme",
                 "category": "frontend",
                 "link": "https://www.typescriptlang.org/"
-            }, {
+            },
+            {
                 "name": "JavaScript",
                 "color": "text-yellow-400",
                 "icon": "SiJavascript",
                 "description": "Web'in temel dili ile dinamik istemci tarafı mantığı oluşturma",
                 "category": "frontend",
                 "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-            }, {
+            },
+            {
                 "name": ".NET",
                 "color": "text-purple-600",
                 "icon": "AiOutlineDotNet",
                 "description": "Microsoft'un geliştirme framework'ü kullanarak sağlam ve yüksek performanslı uygulamalar geliştirme",
                 "category": "backend",
                 "link": "https://dotnet.microsoft.com/"
-            }, {
+            },
+            {
                 "name": "Python",
                 "color": "text-yellow-500",
                 "icon": "FaPython",
                 "description": "Çeşitli uygulama alanları için temiz, çok yönlü ve üst düzey kod yazma",
                 "category": "backend",
                 "link": "https://www.python.org/"
-            }, {
+            },
+            {
                 "name": "Django",
                 "color": "text-green-700",
                 "icon": "SiDjango",
                 "description": "Python'un üst düzey framework'ü ile güvenli ve ölçeklenebilir web uygulamaları oluşturma",
                 "category": "backend",
                 "link": "https://www.djangoproject.com/"
-            }, {
+            },
+            {
                 "name": "FastAPI",
                 "color": "text-teal-500",
                 "icon": "SiFastapi",
                 "description": "Asenkron yeteneklerle desteklenen Python ile hızlı ve modern API'ler oluşturma",
                 "category": "backend",
                 "link": "https://fastapi.tiangolo.com/"
-            }, {
+            },
+            {
                 "name": "SeriLogger",
                 "color": "text-yellow-600",
                 "icon": "FaFileAlt",
                 "description": ".NET uygulamaları için yapılandırılmış loglama yetenekleri sağlayan loglama framework'ü",
                 "category": "devops",
                 "link": "https://serilog.net/"
-            }, {
+            },
+            {
                 "name": "REST APIs",
                 "color": "text-blue-600",
                 "icon": "FaServer",
                 "description": "Durumsuz HTTP yöntemleri ve uç noktaları kullanarak geleneksel web servisleri tasarlama",
                 "category": "backend",
                 "link": "https://restfulapi.net/"
-            }, {
+            },
+            {
                 "name": "UI/UX Design",
                 "color": "text-purple-500",
                 "icon": "GiSkills",

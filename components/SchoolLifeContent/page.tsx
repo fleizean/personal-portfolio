@@ -33,10 +33,10 @@ const SchoolLifeContent: React.FC = () => {
                                         <span className="text-lg">🎓</span>
                                         <div className="w-full">
                                             <div className="flex flex-wrap items-center gap-1">
-                                                <span className="font-xs dark:text-gray-300 dark:hover:text-white">{experience.title}</span>
-                                                <span className="font-medium text-black dark:text-gray-300 dark:hover:text-white">
+                                                <span className="font-medium text-black dark:text-gray-300 dark:hover:text-white">{experience.title}</span>
+                                                <span className="font-xs text-black dark:text-gray-300 dark:hover:text-white">
                                                     {experience.link ? (
-                                                        <Link href={experience.link} target="_blank" rel="noopener noreferrer" className="text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white">
+                                                        <Link href={experience.link} target="_blank" rel="noopener noreferrer" className="text-black hover:text-black dark:text-gray-300 dark:hover:text-white">
                                                             • {experience.period}
                                                         </Link>
                                                     ) : (
@@ -44,29 +44,29 @@ const SchoolLifeContent: React.FC = () => {
                                                     )}
                                                 </span>
                                             </div>
-                                            <p className="text-sm text-gray-500 mt-1 dark:text-gray-400">{experience.description}</p>
-                                            
+                                            <p className="text-sm text-black mt-1 dark:text-gray-400">{experience.description}</p>
+
                                             <div className="mt-4">
                                                 <h4 className="font-semibold mb-2 dark:text-gray-300 dark:hover:text-white">{t('school.key_experiences_title')}</h4>
                                                 <ul className="list-disc pl-5 space-y-1">
                                                     {experience.highlights.map((highlight, i) => (
-                                                        <li key={i} className="text-sm text-gray-600 dark:text-gray-400">{highlight}</li>
+                                                        <li key={i} className="text-sm text-black dark:text-gray-400">{highlight}</li>
                                                     ))}
                                                 </ul>
                                             </div>
-                                            
+
                                             <div className="mt-6">
                                                 <h4 className="font-semibold mb-2 dark:text-gray-300 dark:hover:text-white">{t('school.experiences.0.reflection_title')}</h4>
-                                                <p className="text-sm text-gray-600 italic dark:text-gray-400">
+                                                <p className="text-sm text-black italic dark:text-gray-400">
                                                     &ldquo;{t('school.experiences.0.reflection')}&rdquo;
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     {experience.image && (
                                         <div className="flex items-center mt-4 md:mt-0">
-                                            <div className="hidden md:block h-14 border-l border-gray-200 dark:border-gray-700 mx-4"></div>
+                                            <div className="hidden md:block h-14 border-l border-gray-800 dark:border-gray-700 mx-4"></div>
                                             <Link
                                                 href={experience.link || '#'}
                                                 target="_blank"
@@ -106,7 +106,7 @@ const SchoolLifeContent: React.FC = () => {
                     <h3 className="font-bold mb-4 dark:text-gray-300 dark:hover:text-white">{t('school.looking_back_title')}</h3>
                     <div className="flex items-baseline gap-2">
                         <span className="text-lg flex-shrink-0">✨</span>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <p className="text-sm text-black dark:text-gray-400">
                             {t('school.looking_back_text')}
                         </p>
                     </div>
