@@ -13,7 +13,13 @@ const MusicPlayer: React.FC = () => {
     const [isDragging, setIsDragging] = useState(false);
     const [colorHue, setColorHue] = useState(200);
     const [hasSeekd, setHasSeeked] = useState(false);
-    const [currentTrack, setCurrentTrack] = useState('/music/24.mp3');
+    const [currentTrack, setCurrentTrack] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const completed = localStorage.getItem('musicCompleted') === 'true';
+            return completed ? '/music/24.2.mp3' : '/music/24.mp3';
+        }
+        return '/music/24.mp3';
+    });
     const audioRef = useRef<HTMLAudioElement>(null);
     const progressRef = useRef<HTMLDivElement>(null);
     const analyserRef = useRef<AnalyserNode | null>(null);
@@ -136,7 +142,9 @@ const MusicPlayer: React.FC = () => {
 
         const handleEnded = () => {
             // If current track is the first one, switch to the second one
-            if (currentTrack === '/music/24.mp3' && !hasSeekd) {
+            const alreadyCompleted = localStorage.getItem('musicCompleted') === 'true';
+            if (currentTrack === '/music/24.mp3' && !hasSeekd && !alreadyCompleted) {
+
                 setCurrentTrack('/music/24.2.mp3');
 
                 // Need to wait for state update and new source to load
@@ -145,6 +153,7 @@ const MusicPlayer: React.FC = () => {
                         audioRef.current.play().then(() => {
                             setIsPlaying(true);
                             localStorage.setItem('musicCompleted', 'true');
+                            setCurrentTrack('/music/24.2.mp3');
                             window.dispatchEvent(new Event('musicCompleted'));
                         }).catch(e => console.error("Auto-play failed:", e));
                     }

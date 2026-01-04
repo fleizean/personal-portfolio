@@ -176,9 +176,11 @@ const Hero = () => {
                                 priority
                             />
                             {heroImage === '/hero/hero-2.png' && !isGlitching && (
-                                <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-help">
+                               <div className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-help">
                                     <span className="text-white text-xs sm:text-sm font-mono text-center px-4 font-bold tracking-wider">
-                                        Mr. Robot<br />S3 E10 44:28
+                                        Mr. Robot<br />
+                                        shutdown - r<br />
+                                        S3 E10 • 44:28
                                     </span>
                                 </div>
                             )}
