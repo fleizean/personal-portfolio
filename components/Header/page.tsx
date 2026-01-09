@@ -37,6 +37,7 @@ const Header = () => {
         setIsMenuOpen(false);
     }, [pathname]);
 
+   
     if (isLoading) {
         return <div className="flex justify-center items-center h-screen">
             <div className="loader"></div>
@@ -44,7 +45,7 @@ const Header = () => {
     }
 
     return (
-        <header className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 backdrop-blur-md ${isScrolled ? 'bg-white/80 dark:bg-gray-900/80 shadow-sm' : 'bg-white/60 dark:bg-gray-900/60'
+        <header className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'backdrop-blur-md bg-white/80 dark:bg-gray-900/80 shadow-sm' : 'bg-transparent'
             }`}>
             <div className="flex flex-row justify-between items-center container mx-auto px-4 sm:px-6 md:px-8 lg:px-20 xl:px-60">
                 <nav className="flex items-center justify-between w-full py-4">
@@ -136,6 +137,7 @@ const Header = () => {
                     </div>
                 </div>
             )}
+
         </header>
     );
 };

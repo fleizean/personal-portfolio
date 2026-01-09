@@ -52,13 +52,6 @@ const Hero = () => {
         </div>;
     }
 
-    const handleResumeClick = () => {
-        const resumeFile = language === 'tr'
-            ? '/cv/ENES_YAGIZ_TR.pdf'
-            : '/cv/ENES_YAGIZ_EN.pdf';
-        window.location.href = resumeFile;
-    };
-
     return (
         <section className="py-10 sm:py-16 md:py-24 lg:py-32 min-h-screen">
             <style jsx>{`
@@ -147,17 +140,16 @@ const Hero = () => {
 
                         <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-2 sm:gap-0 mt-6">
                             <div className="flex items-center">
-                                [<button
-                                    className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:text-green-600"
-                                    onClick={handleResumeClick}
-                                >
-                                    {t('hero.resumeButton')}
-                                </button>]
+                                [<Link href="/cv">
+                                    <span className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:text-green-600 cursor-pointer">
+                                        {t('hero.resumeButton')}
+                                    </span>
+                                </Link>]
                             </div>
                             <span className="text-gray-700 dark:text-gray-300 mx-2 sm:mx-4 hidden sm:inline">━</span>
                             <div className="flex items-center">
                                 [<Link href="/contact"><button
-                                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:text-blue-600"
+                                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 dark:text-gray-300 dark:hover:text-blue-600 cursor-pointer"
                                 >
                                     {t('hero.contactButton')}
                                 </button></Link>]

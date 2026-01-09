@@ -521,6 +521,11 @@
             }
         }
     },
+    "cv": {
+        "open_new_tab": "Open in New Tab",
+        "download": "Download",
+        "mobile_note": "If the PDF doesn't display, please use the 'Open in New Tab' or 'Download' button above."
+    },
     "blog": {
         "title": "its my blogs (im medium guru bro)",
         "no_posts": "all my mediums gone bro wtf",

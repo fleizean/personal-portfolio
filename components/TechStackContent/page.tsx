@@ -13,6 +13,7 @@ import { DiMsqlServer } from 'react-icons/di';
 import { TechItem } from '@/types/techitem';
 import { useTranslation } from '@/context/LanguageContext';
 import { useTheme } from '@/context/ThemeContext'; // Import the theme hook
+import BackgroundGradient from '../BackgroundGradient/BackgroundGradient';
 
 type IconComponent = React.ComponentType<{ className?: string }>;
 
@@ -70,8 +71,11 @@ const TechStackContent: React.FC = () => {
     const backendItems = techItems.filter((item: TechItem) => item.category === 'backend');
     const learningItems = techItems.filter((item: TechItem) => item.category === 'learning');
 
+
+
     return (
-        <section className="relative w-full z-10 transition-all duration-300 py-8 sm:py-12 md:py-16 lg:py-20 dark:blue-900 dark:bg-opacity-50 dark:bg-gray-800 min-h-screen">
+        <section className="relative w-full z-10 transition-all duration-300 py-8 sm:py-12 md:py-16 lg:py-20 min-h-screen">
+            <BackgroundGradient />
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-20 xl:px-60">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-6 md:mb-10 text-gray-700 dark:text-gray-300">{t('tech_stack.title')}</h2>
 

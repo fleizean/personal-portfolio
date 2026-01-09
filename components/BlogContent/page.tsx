@@ -41,7 +41,7 @@ export default function BlogContent({ posts }: BlogContentProps) {
                                 rel="noopener noreferrer"
                                 className="group block bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-gradient"
                                 style={{
-                                    '--hover-border': 'linear-gradient(135deg, #6b5b95, #fc8dc7, #ffbd84)'
+                                    '--hover-border': 'linear-gradient(135deg, #2a2a2a, #555555, #7a7a7a)'
                                 } as React.CSSProperties}
                             >
                                 {post.thumbnail && (
@@ -82,8 +82,8 @@ export default function BlogContent({ posts }: BlogContentProps) {
                                                         className="text-xs px-2.5 py-1 rounded text-white font-medium"
                                                         style={{
                                                             background: index === 0
-                                                                ? 'linear-gradient(135deg, #6b5b95, #8b7ba8)'
-                                                                : 'linear-gradient(135deg, #fc8dc7, #ffbd84)'
+                                                                ? 'linear-gradient(135deg, #2a2a2a, #555555)'
+                                                                : 'linear-gradient(135deg, #555555, #7a7a7a)'
                                                         }}
                                                     >
                                                         {category}
@@ -104,7 +104,7 @@ export default function BlogContent({ posts }: BlogContentProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block px-8 py-3 text-white rounded-lg hover:opacity-90 hover:scale-105 transition-all duration-300 font-medium shadow-lg"
-                        style={{ background: 'linear-gradient(135deg, #6b5b95, #fc8dc7)' }}
+                        style={{ background: 'linear-gradient(135deg, #2a2a2a, #555555)' }}
                     >
                         {t('blog.view_all') || 'View All on Medium →'}
                     </a>

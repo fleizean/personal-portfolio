@@ -35,7 +35,7 @@ const ScrollToTop: React.FC = () => {
                 <button
                     onClick={scrollToTop}
                     className="fixed bottom-8 right-6 p-3 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
-                    style={{ background: 'linear-gradient(135deg, #6b5b95, #fc8dc7)' }}
+                    style={{ background: 'linear-gradient(135deg, #2a2a2a, #555555)' }}
                     aria-label="Scroll to top"
                 >
                     <IoIosArrowUp className="text-white text-2xl group-hover:translate-y-[-2px] transition-transform duration-300" />
