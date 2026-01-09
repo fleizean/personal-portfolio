@@ -59,7 +59,7 @@ const MusicPlayer: React.FC = () => {
         return `${minutes}:${seconds.toString().padStart(2, '0')}`;
     };
 
-    const updateProgress = (clientX: number) => {
+    const updateProgress = useCallback((clientX: number) => {
         if (!audioRef.current || !progressRef.current) return;
 
         const rect = progressRef.current.getBoundingClientRect();
@@ -70,7 +70,7 @@ const MusicPlayer: React.FC = () => {
         audioRef.current.currentTime = newTime;
         setCurrentTime(newTime);
         setHasSeeked(true); // Mark that user has seeked
-    };
+    }, [duration]);
 
     const handleProgressMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
         setIsDragging(true);
@@ -82,7 +82,7 @@ const MusicPlayer: React.FC = () => {
         if (isDragging) {
             updateProgress(e.clientX);
         }
-    }, [isDragging, duration]); // Added duration dependency as updateProgress uses it
+    }, [isDragging, updateProgress]);
 
     const handleMouseUp = useCallback(() => {
         setIsDragging(false);

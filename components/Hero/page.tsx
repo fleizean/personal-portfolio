@@ -7,11 +7,9 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa6';
 import { Si42 } from 'react-icons/si';
 import { useTranslation } from '@/context/LanguageContext';
-import { useLanguage } from '@/context/LanguageContext';
 
 const Hero = () => {
     const { isLoading, t } = useTranslation("common");
-    const { language } = useLanguage();
     const [heroImage, setHeroImage] = useState('/hero/hero.png');
 
     // Glitch effect state

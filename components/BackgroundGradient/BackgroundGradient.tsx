@@ -18,7 +18,6 @@ export default function BackgroundGradient() {
                     pointerEvents: 'none'
                 }}
             >
-                {/* @ts-ignore */}
                 <ShaderGradient
                     control="props"
                     animate="on"
