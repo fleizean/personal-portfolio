@@ -8,7 +8,7 @@ import commonEN from '../public/locales/en/common.json';
 type Language = 'tr' | 'en';
 
 type Translations = {
-  'common': typeof commonTR;
+  common: typeof commonTR;
   // Diğer namespace'ler buraya eklenecek
   // 'dashboard': typeof dashboardTR;
   // 'settings': typeof settingsTR;
@@ -16,10 +16,10 @@ type Translations = {
 
 const translations: Record<Language, Translations> = {
   tr: {
-    'common': commonTR,
+    common: commonTR,
   },
   en: {
-    'common': commonEN,
+    common: commonEN,
   },
 };
 
@@ -41,7 +41,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     try {
       const savedLanguage = localStorage.getItem('portfolio-language') as Language;
       const browserLanguage = navigator.language.startsWith('tr') ? 'tr' : 'en';
-      
+
       if (savedLanguage && ['tr', 'en'].includes(savedLanguage)) {
         setLanguage(savedLanguage);
       } else {
@@ -75,31 +75,36 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   // Çeviri fonksiyonu
-  const t = (namespace: keyof Translations, key: string, options?: { returnObjects?: boolean }): any => {
+  const t = (
+    namespace: keyof Translations,
+    key: string,
+    options?: { returnObjects?: boolean }
+  ): any => {
     if (!translations[language] || !translations[language][namespace]) {
       console.warn(`Translation not found: ${namespace}.${key} for language ${language}`);
       return options?.returnObjects ? [] : key;
     }
-    
+
     const namespaceData = translations[language][namespace];
     const result = getNestedValue(namespaceData, key);
-    
+
     // Eğer returnObjects true ise ve result bir object/array ise, olduğu gibi döndür
     if (options?.returnObjects && typeof result === 'object') {
       return result;
     }
-    
+
     return result;
   };
-  
 
   return (
-    <LanguageContext.Provider value={{ 
-      language, 
-      setLanguage: handleSetLanguage, 
-      t, 
-      isLoading 
-    }}>
+    <LanguageContext.Provider
+      value={{
+        language,
+        setLanguage: handleSetLanguage,
+        t,
+        isLoading,
+      }}
+    >
       {children}
     </LanguageContext.Provider>
   );
@@ -116,8 +121,9 @@ export function useLanguage() {
 // Kolay kullanım için hook
 export function useTranslation(namespace: keyof Translations) {
   const { t: contextT, language, isLoading } = useLanguage();
-  
-  const t = (key: string, options?: { returnObjects?: boolean }) => contextT(namespace, key, options);
-  
+
+  const t = (key: string, options?: { returnObjects?: boolean }) =>
+    contextT(namespace, key, options);
+
   return { t, i18n: { language }, isLoading };
 }

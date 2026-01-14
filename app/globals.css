@@ -15,7 +15,9 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Özel tema stilleri */
@@ -82,27 +84,31 @@ body {
 /* Mobile-specific improvements */
 @media (max-width: 768px) {
   /* Improve touch targets */
-  button, a, [role="button"] {
+  button,
+  a,
+  [role='button'] {
     min-height: 44px;
     min-width: 44px;
   }
-  
+
   /* Optimize text sizing for mobile */
   html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
   }
-  
+
   /* Prevent zoom on input focus */
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     font-size: 16px;
   }
-  
+
   /* Improve scrolling performance */
   * {
     -webkit-overflow-scrolling: touch;
   }
-  
+
   /* Optimize tap highlighting */
   * {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);

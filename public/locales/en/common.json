@@ -1,534 +1,510 @@
 {
-    "hero": {
-        "greeting": "Hi, I'm Enes.",
-        "role": "full stack developer at",
-        "resumeButton": "resume",
-        "contactButton": "get in touch",
-        "roleHighlight": "BKPrime Technology",
-        "description": "crafting digital experiences through code and design. exploring the balance between functionality and aesthetics. turning 0s into 1s with passion and precision. so let's connect and create something amazing together!",
-        "social": {
-            "github": "GitHub profile",
-            "linkedin": "LinkedIn profile",
-            "youtube": "YouTube channel",
-            "intra42": "42 Network profile"
-        },
-        "image_alt": "its me btw"
+  "hero": {
+    "greeting": "Hi, I'm Enes.",
+    "role": "full stack developer at",
+    "resumeButton": "resume",
+    "contactButton": "get in touch",
+    "roleHighlight": "BKPrime Technology",
+    "description": "crafting digital experiences through code and design. exploring the balance between functionality and aesthetics. turning 0s into 1s with passion and precision. so let's connect and create something amazing together!",
+    "social": {
+      "github": "GitHub profile",
+      "linkedin": "LinkedIn profile",
+      "youtube": "YouTube channel",
+      "intra42": "42 Network profile"
     },
-    "header": {
-        "navigation": {
-            "journey": "journey",
-            "tech_stack": "tech stack",
-            "projects": "projects",
-            "school_life": "school life",
-            "contact": "contact",
-            "blogs": "blogs"
-        },
-        "language_switcher": {
-            "aria_label": "Change language",
-            "loading": "Changing language..."
-        },
-        "theme_toggle": {
-            "light": "Switch to light mode",
-            "dark": "Switch to dark mode"
-        },
-        "skip_to_content": "Skip to main content"
+    "image_alt": "its me btw"
+  },
+  "header": {
+    "navigation": {
+      "journey": "journey",
+      "tech_stack": "tech stack",
+      "projects": "projects",
+      "school_life": "school life",
+      "contact": "contact",
+      "blogs": "blogs"
     },
-    "footer": {
-        "location_label": "currently in",
-        "location_name": "Kocaeli, Turkey",
-        "copyright": "© {{year}} Made with ❤️ by Enes Yağız",
-        "email": "@fleizean"
+    "language_switcher": {
+      "aria_label": "Change language",
+      "loading": "Changing language..."
     },
-    "journey": {
-        "section_title": "my journey",
-        "present_section_title": "Present",
-        "past_section_title": "Past",
-        "at": "at",
-        "items": {
-            "present": [
-                {
-                    "title": "Full Stack Developer",
-                    "place": "BKPrime Technology",
-                    "year": "Present",
-                    "description": "Currently working as a Software Developer, contributing to the development and maintenance of scalable web applications and internal systems.",
-                    "type": "work",
-                    "emoji": "💼",
-                    "link": "https://www.linkedin.com/in/fleizean/",
-                    "photo": "/others/bk-prime.png"
-                },
-                {
-                    "title": "CEO / Developer",
-                    "place": "nasilbifirma",
-                    "year": "2025 - Present",
-                    "description": "Building and managing a startup together with my friends.",
-                    "type": "work",
-                    "emoji": "🚀",
-                    "link": "https://nasilbifirma.com",
-                    "photo": "/others/nasilbifirma.png"
-                }
-            ],
-            "past": [
-                {
-                    "title": "Full Stack Developer",
-                    "place": "Solvent Yazılım",
-                    "year": "2024 - 2025",
-                    "description": "Developed and maintained full-stack web applications with modern frameworks.",
-                    "type": "work",
-                    "emoji": "💻",
-                    "link": "https://solventyazilim.com",
-                    "photo": "/others/solvent.png"
-                },
-                {
-                    "title": "Software Engineer",
-                    "place": "Ecole 42",
-                    "year": "2024",
-                    "description": "Graduated from a peer-to-peer learning program focused on software development and computer science.",
-                    "type": "education",
-                    "emoji": "🧩",
-                    "link": "https://www.42.fr/en/",
-                    "photo": "/others/42.png"
-                },
-                {
-                    "title": "Information Management",
-                    "place": "Dumlupinar University",
-                    "year": "2024",
-                    "description": "Bachelor's degree with focus on information systems and management.",
-                    "type": "education",
-                    "emoji": "📊",
-                    "link": "https://www.kutahya.edu.tr/en"
-                },
-                {
-                    "title": "Freelance Developer",
-                    "place": "MEBS",
-                    "year": "2018",
-                    "description": "Worked on infirmary management system and other projects as a freelance developer.",
-                    "type": "work",
-                    "emoji": "🌐",
-                    "link": "https://tr.wikipedia.org/wiki/MEBS_Okulu_ve_E%C4%9Fitim_Merkezi"
-                },
-                {
-                    "title": "IT Intern",
-                    "place": "Türk Telekom",
-                    "year": "2018 - 2019",
-                    "description": "Assisted in IT operations and development tasks.",
-                    "type": "work",
-                    "emoji": "📱",
-                    "link": "https://www.turktelekom.com.tr",
-                    "photo": "/others/turk-telekom.png"
-                },
-                {
-                    "title": "Computer Science",
-                    "place": "Izmit Vocational and Technical Anatolian High School",
-                    "year": "2019",
-                    "description": "High school degree with technical focus on computer science and programming.",
-                    "type": "education",
-                    "emoji": "🖥️",
-                    "link": "https://www.izmitmtal.k12.tr"
-                },
-                {
-                    "title": "Hello World",
-                    "place": "Planet Earth",
-                    "year": "2002",
-                    "description": "Started my journey in this world.",
-                    "type": "personal",
-                    "emoji": "👶",
-                    "link": "https://en.wikipedia.org/wiki/2002"
-                }
-            ]
+    "theme_toggle": {
+      "light": "Switch to light mode",
+      "dark": "Switch to dark mode"
+    },
+    "skip_to_content": "Skip to main content"
+  },
+  "footer": {
+    "location_label": "currently in",
+    "location_name": "Kocaeli, Turkey",
+    "copyright": "© {{year}} Made with ❤️ by Enes Yağız",
+    "email": "@fleizean"
+  },
+  "journey": {
+    "section_title": "my journey",
+    "present_section_title": "Present",
+    "past_section_title": "Past",
+    "at": "at",
+    "items": {
+      "present": [
+        {
+          "title": "Full Stack Developer",
+          "place": "BKPrime Technology",
+          "year": "Present",
+          "description": "Currently working as a Software Developer, contributing to the development and maintenance of scalable web applications and internal systems.",
+          "type": "work",
+          "emoji": "💼",
+          "link": "https://www.linkedin.com/in/fleizean/",
+          "photo": "/others/bk-prime.png"
+        },
+        {
+          "title": "CEO / Developer",
+          "place": "nasilbifirma",
+          "year": "2025 - Present",
+          "description": "Building and managing a startup together with my friends.",
+          "type": "work",
+          "emoji": "🚀",
+          "link": "https://nasilbifirma.com",
+          "photo": "/others/nasilbifirma.png"
         }
-    },
-    "projects": {
-        "section_title": "my projects",
-        "present_section_title": "Present",
-        "past_section_title": "Past",
-        "status_badges": {
-            "development": "In Development",
-            "completed": "Completed",
-            "ongoing": "Ongoing"
+      ],
+      "past": [
+        {
+          "title": "Full Stack Developer",
+          "place": "Solvent Yazılım",
+          "year": "2024 - 2025",
+          "description": "Developed and maintained full-stack web applications with modern frameworks.",
+          "type": "work",
+          "emoji": "💻",
+          "link": "https://solventyazilim.com",
+          "photo": "/others/solvent.png"
         },
-        "links": {
-            "github": "GitHub",
-            "live_demo": "Live Demo"
+        {
+          "title": "Software Engineer",
+          "place": "Ecole 42",
+          "year": "2024",
+          "description": "Graduated from a peer-to-peer learning program focused on software development and computer science.",
+          "type": "education",
+          "emoji": "🧩",
+          "link": "https://www.42.fr/en/",
+          "photo": "/others/42.png"
         },
-        "items": {
-            "present": [
-                {
-                    "projectName": "Workflow",
-                    "type": "present",
-                    "icon": "⏰",
-                    "year": "2025",
-                    "status": "development",
-                    "description": "Workflow is a beautiful, minimalist desktop application for tracking your work hours. Built with Electron and SQLite, it helps you stay motivated with streak tracking, daily targets, and detailed work session history.",
-                    "techStack": [
-                        "Electron.js",
-                        "SQLite",
-                        "TailwindCSS"
-                    ],
-                    "githubLink": "https://github.com/fleizean/workflow",
-                    "liveLink": "https://fleizean.github.io/workflow",
-                    "image": "/others/Workflow.png"
-                },
-                {
-                    "projectName": "Personal Portfolio",
-                    "type": "present",
-                    "icon": "🌟",
-                    "year": "2024",
-                    "status": "completed",
-                    "description": "My personal portfolio website built with Next.js and TypeScript.",
-                    "techStack": [
-                        "Next.js",
-                        "TypeScript",
-                        "TailwindCSS"
-                    ],
-                    "githubLink": "https://github.com/fleizean/personal-portfolio",
-                    "liveLink": "https://fleizean.me",
-                    "image": "/logo.png"
-                }
-            ],
-            "past": [
-                {
-                    "projectName": "nasilbifirma",
-                    "type": "past",
-                    "icon": "🚀",
-                    "year": "2024",
-                    "status": "completed",
-                    "description": "Personal tech venture focused on innovative solutions.",
-                    "techStack": [
-                        ".NET",
-                        "Next.js",
-                        "TypeScript",
-                        "TailwindCSS"
-                    ],
-                    "githubLink": "https://github.com/fleizean/nasilbifirma",
-                    "liveLink": "https://nasilbifirma.com",
-                    "image": "/others/nasilbifirma.png"
-                },
-                {
-                    "projectName": "CVision",
-                    "type": "past",
-                    "icon": "📝",
-                    "year": "2024",
-                    "status": "development",
-                    "description": "CVision is a modern, open-source CV analysis platform that revolutionizes recruitment processes through AI-powered analysis.",
-                    "techStack": [
-                        "Next.js",
-                        "TypeScript",
-                        "TailwindCSS",
-                        "FastAPI",
-                        "Python",
-                        "Next.js",
-                        "Machine Learning"
-                    ],
-                    "githubLink": "https://github.com/fleizean/cvision",
-                    "image": "/others/cvision.png"
-                },
-                {
-                    "projectName": "spotifyfizyfit",
-                    "type": "past",
-                    "icon": "🎵",
-                    "year": "2024",
-                    "status": "completed",
-                    "description": "Selenium-based automation for Spotify to fizy playlist migration.",
-                    "techStack": [
-                        "Python",
-                        "Selenium",
-                        "Web Automation"
-                    ],
-                    "githubLink": "https://github.com/fleizean/spotifyfizyfit",
-                    "image": "/others/spotifyfizyfit.png"
-                },
-                {
-                    "projectName": "sleepwipe",
-                    "type": "past",
-                    "icon": "💤",
-                    "year": "2024",
-                    "status": "completed",
-                    "description": "Sleepwipe is a software that prevents the computer from going into sleep mode.",
-                    "techStack": [
-                        "C",
-                        "Bash"
-                    ],
-                    "githubLink": "https://github.com/fleizean/sleepwipe",
-                    "image": "/others/sleepwipe.png"
-                },
-                {
-                    "projectName": "webserv",
-                    "type": "past",
-                    "icon": "🐚",
-                    "year": "2023",
-                    "status": "completed",
-                    "description": "Nginx-like web server built from C++.",
-                    "techStack": [
-                        "C++",
-                        "HTTP",
-                        "Web Server"
-                    ],
-                    "githubLink": "https://github.com/fleizean/webserv",
-                    "image": "/others/webserv.png"
-                }
-            ]
+        {
+          "title": "Information Management",
+          "place": "Dumlupinar University",
+          "year": "2024",
+          "description": "Bachelor's degree with focus on information systems and management.",
+          "type": "education",
+          "emoji": "📊",
+          "link": "https://www.kutahya.edu.tr/en"
+        },
+        {
+          "title": "Freelance Developer",
+          "place": "MEBS",
+          "year": "2018",
+          "description": "Worked on infirmary management system and other projects as a freelance developer.",
+          "type": "work",
+          "emoji": "🌐",
+          "link": "https://tr.wikipedia.org/wiki/MEBS_Okulu_ve_E%C4%9Fitim_Merkezi"
+        },
+        {
+          "title": "IT Intern",
+          "place": "Türk Telekom",
+          "year": "2018 - 2019",
+          "description": "Assisted in IT operations and development tasks.",
+          "type": "work",
+          "emoji": "📱",
+          "link": "https://www.turktelekom.com.tr",
+          "photo": "/others/turk-telekom.png"
+        },
+        {
+          "title": "Computer Science",
+          "place": "Izmit Vocational and Technical Anatolian High School",
+          "year": "2019",
+          "description": "High school degree with technical focus on computer science and programming.",
+          "type": "education",
+          "emoji": "🖥️",
+          "link": "https://www.izmitmtal.k12.tr"
+        },
+        {
+          "title": "Hello World",
+          "place": "Planet Earth",
+          "year": "2002",
+          "description": "Started my journey in this world.",
+          "type": "personal",
+          "emoji": "👶",
+          "link": "https://en.wikipedia.org/wiki/2002"
         }
-    },
-    "school": {
-        "section_title": "my school life",
-        "experiences": [
-            {
-                "title": "Ecole 42",
-                "period": "2021 - 2024",
-                "description": "Ecole 42 was a transformative journey that shaped both my technical skills and personal growth. This peer-to-peer learning environment pushed me beyond my comfort zone and taught me how to approach complex problems with creativity and perseverance.",
-                "highlights": [
-                    "Mastered C, C++, and various programming paradigms through intensive projects",
-                    "Built strong collaboration skills through team projects and peer evaluations",
-                    "Developed problem-solving abilities through the unique 'learn by doing' approach",
-                    "Formed lasting friendships with peers from diverse backgrounds",
-                    "Gained experience in system administration, networks, and web development",
-                    "Learned to work under pressure and meet challenging deadlines"
-                ],
-                "image": "/others/42.png",
-                "darkImage": "/others/42-dark.png",
-                "link": "https://www.42.fr/en/",
-                "reflection_title": "Personal Reflection:",
-                "reflection": "My time at 42 wasn't just about coding—it was about discovering my potential, building lifelong connections, and developing the resilience to tackle any challenge. The countless nights spent debugging, the collaborative problem-solving sessions, and the shared victories formed the foundation of not just my technical skills, but my approach to life's challenges."
-            }
-        ],
-        "key_experiences_title": "Key Experiences:",
-        "looking_back_title": "Looking back...",
-        "looking_back_text": "School life at Ecole 42 taught me that true learning happens outside of comfort zones. The peer-to-peer model, the intensity of projects, and the supportive community created an environment where growth was inevitable. These experiences have been instrumental in shaping who I am today, both as a developer and as a person."
-    },
-    "tech_stack": {
-        "title": "my tech stack",
-        "categories": {
-            "frontend": "Frontend",
-            "backend": "Backend",
-            "database": "Database",
-            "devops": "DevOps",
-            "learning": "Currently Learning"
-        },
-        "link_label": {
-            "technology": "Technology",
-            "focus": "Focus Area"
-        },
-        "items": [
-            {
-                "name": "React",
-                "color": "text-blue-400",
-                "icon": "FaReact",
-                "description": "Developing modern and interactive user interfaces with component-based architecture",
-                "category": "frontend",
-                "link": "https://reactjs.org/"
-            },
-            {
-                "name": "C#",
-                "color": "text-purple-500",
-                "icon": "TbBrandCSharp",
-                "description": "Developing object-oriented applications using Microsoft's powerful C-style language",
-                "category": "backend",
-                "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
-            },
-            {
-                "name": "SignalR",
-                "color": "text-red-600",
-                "icon": "SiSignal",
-                "description": "Real-time web functionality for .NET applications using WebSockets and more",
-                "category": "backend",
-                "link": "https://learn.microsoft.com/en-us/aspnet/core/signalr/introduction"
-            },
-            {
-                "name": "Docker",
-                "color": "text-blue-500",
-                "icon": "FaDocker",
-                "description": "Containerizing applications for scalable and consistent deployment",
-                "category": "devops",
-                "link": "https://www.docker.com/"
-            },
-            {
-                "name": "MSSQL",
-                "color": "text-blue-800",
-                "icon": "DiMsqlServer",
-                "description": "Microsoft's enterprise-grade relational database management system",
-                "category": "database",
-                "link": "https://www.microsoft.com/en-us/sql-server"
-            },
-            {
-                "name": "PostgreSQL",
-                "color": "text-blue-400",
-                "icon": "SiPostgresql",
-                "description": "Open-source relational database known for its robustness and extensibility",
-                "category": "database",
-                "link": "https://www.postgresql.org/"
-            },
-            {
-                "name": "Nginx",
-                "color": "text-green-600",
-                "icon": "SiNginx",
-                "description": "High-performance HTTP server and reverse proxy used for serving apps",
-                "category": "devops",
-                "link": "https://www.nginx.com/"
-            },
-            {
-                "name": "IIS",
-                "color": "text-blue-700",
-                "icon": "MdBusiness",
-                "description": "Microsoft's web server for hosting ASP.NET applications",
-                "category": "devops",
-                "link": "https://www.microsoft.com/en-us/iis"
-            },
-            {
-                "name": "Next.js",
-                "color": "text-black",
-                "icon": "RiNextjsFill",
-                "description": "Building performant and SEO-friendly web applications with server-side rendering",
-                "category": "frontend",
-                "link": "https://nextjs.org/"
-            },
-            {
-                "name": "TypeScript",
-                "color": "text-blue-500",
-                "icon": "SiTypescript",
-                "description": "Enhancing JavaScript development with static typing for improved scalability and reliability",
-                "category": "frontend",
-                "link": "https://www.typescriptlang.org/"
-            },
-            {
-                "name": "JavaScript",
-                "color": "text-yellow-400",
-                "icon": "SiJavascript",
-                "description": "Creating dynamic client-side logic with the core language of the web",
-                "category": "frontend",
-                "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-            },
-            {
-                "name": ".NET",
-                "color": "text-purple-600",
-                "icon": "AiOutlineDotNet",
-                "description": "Developing robust and high-performance applications using Microsoft's development framework",
-                "category": "backend",
-                "link": "https://dotnet.microsoft.com/"
-            },
-            {
-                "name": "Python",
-                "color": "text-yellow-500",
-                "icon": "FaPython",
-                "description": "Writing clean, versatile, and high-level code for various application domains",
-                "category": "backend",
-                "link": "https://www.python.org/"
-            },
-            {
-                "name": "Django",
-                "color": "text-green-700",
-                "icon": "SiDjango",
-                "description": "Building secure and scalable web applications with Python's high-level framework",
-                "category": "backend",
-                "link": "https://www.djangoproject.com/"
-            },
-            {
-                "name": "FastAPI",
-                "color": "text-teal-500",
-                "icon": "SiFastapi",
-                "description": "Creating fast and modern APIs with Python, powered by asynchronous capabilities",
-                "category": "backend",
-                "link": "https://fastapi.tiangolo.com/"
-            },
-            {
-                "name": "SeriLogger",
-                "color": "text-yellow-600",
-                "icon": "FaFileAlt",
-                "description": "Logging framework for .NET applications, providing structured logging capabilities",
-                "category": "devops",
-                "link": "https://serilog.net/"
-            },
-            {
-                "name": "REST APIs",
-                "color": "text-blue-600",
-                "icon": "FaServer",
-                "description": "Designing conventional web services using stateless HTTP methods and endpoints",
-                "category": "backend",
-                "link": "https://restfulapi.net/"
-            },
-            {
-                "name": "UI/UX Design",
-                "color": "text-purple-500",
-                "icon": "GiSkills",
-                "description": "Crafting intuitive and user-centered designs to improve product usability and experience",
-                "category": "learning",
-                "link": "#"
-            }
-        ]
-    },
-    "not_found": {
-        "title": "NOT FOUND",
-        "description_main": "Oops! This page seems to have vanished like my motivation on Monday mornings.",
-        "description_secondary": "Maybe it's taking a coffee break or got lost in the digital void."
-    },
-    "contact": {
-        "page_title": "get in touch",
-        "sections": {
-            "left": {
-                "title": "Let's connect",
-                "description": "I'm always interested in new opportunities, collaborations, and meaningful conversations. Whether you have a project in mind, want to discuss technology, or just want to say hello, feel free to reach out!"
-            },
-            "contact_info": {
-                "email": {
-                    "label": "Email",
-                    "value": "nsyagz@gmail.com"
-                },
-                "location": {
-                    "label": "Location",
-                    "value": "Kocaeli, Turkey"
-                }
-            },
-            "social": {
-                "title": "Follow me",
-                "platforms": {
-                    "github": "GitHub",
-                    "linkedin": "LinkedIn",
-                    "twitter": "Twitter"
-                }
-            },
-            "quick_contact": {
-                "title": "Prefer quick contact?",
-                "actions": {
-                    "email": "Send Direct Email",
-                    "linkedin": "LinkedIn Message"
-                }
-            },
-            "form": {
-                "title": "Send a message",
-                "fields": {
-                    "name": {
-                        "label": "Name",
-                        "placeholder": "Your name"
-                    },
-                    "email": {
-                        "label": "Email",
-                        "placeholder": "your@email.com"
-                    },
-                    "subject": {
-                        "label": "Subject",
-                        "placeholder": "What's this about?"
-                    },
-                    "message": {
-                        "label": "Message",
-                        "placeholder": "Tell me about your project, idea, or just say hello..."
-                    }
-                },
-                "submit_button": {
-                    "default": "Send Message",
-                    "loading": "Sending..."
-                },
-                "success_message": "Message sent successfully! I'll get back to you soon.",
-                "footer_note": "* I typically respond within 24 hours."
-            }
-        }
-    },
-    "cv": {
-        "open_new_tab": "Open in New Tab",
-        "download": "Download",
-        "mobile_note": "If the PDF doesn't display, please use the 'Open in New Tab' or 'Download' button above."
-    },
-    "blog": {
-        "title": "its my blogs (im medium guru bro)",
-        "no_posts": "all my mediums gone bro wtf",
-        "view_all": "just view all bro"
+      ]
     }
+  },
+  "projects": {
+    "section_title": "my projects",
+    "present_section_title": "Present",
+    "past_section_title": "Past",
+    "status_badges": {
+      "development": "In Development",
+      "completed": "Completed",
+      "ongoing": "Ongoing"
+    },
+    "links": {
+      "github": "GitHub",
+      "live_demo": "Live Demo"
+    },
+    "items": {
+      "present": [
+        {
+          "projectName": "Workflow",
+          "type": "present",
+          "icon": "⏰",
+          "year": "2025",
+          "status": "development",
+          "description": "Workflow is a beautiful, minimalist desktop application for tracking your work hours. Built with Electron and SQLite, it helps you stay motivated with streak tracking, daily targets, and detailed work session history.",
+          "techStack": ["Electron.js", "SQLite", "TailwindCSS"],
+          "githubLink": "https://github.com/fleizean/workflow",
+          "liveLink": "https://fleizean.github.io/workflow",
+          "image": "/others/Workflow.png"
+        },
+        {
+          "projectName": "Personal Portfolio",
+          "type": "present",
+          "icon": "🌟",
+          "year": "2024",
+          "status": "completed",
+          "description": "My personal portfolio website built with Next.js and TypeScript.",
+          "techStack": ["Next.js", "TypeScript", "TailwindCSS"],
+          "githubLink": "https://github.com/fleizean/personal-portfolio",
+          "liveLink": "https://fleizean.me",
+          "image": "/logo.png"
+        }
+      ],
+      "past": [
+        {
+          "projectName": "nasilbifirma",
+          "type": "past",
+          "icon": "🚀",
+          "year": "2024",
+          "status": "completed",
+          "description": "Personal tech venture focused on innovative solutions.",
+          "techStack": [".NET", "Next.js", "TypeScript", "TailwindCSS"],
+          "githubLink": "https://github.com/fleizean/nasilbifirma",
+          "liveLink": "https://nasilbifirma.com",
+          "image": "/others/nasilbifirma.png"
+        },
+        {
+          "projectName": "CVision",
+          "type": "past",
+          "icon": "📝",
+          "year": "2024",
+          "status": "development",
+          "description": "CVision is a modern, open-source CV analysis platform that revolutionizes recruitment processes through AI-powered analysis.",
+          "techStack": [
+            "Next.js",
+            "TypeScript",
+            "TailwindCSS",
+            "FastAPI",
+            "Python",
+            "Next.js",
+            "Machine Learning"
+          ],
+          "githubLink": "https://github.com/fleizean/cvision",
+          "image": "/others/cvision.png"
+        },
+        {
+          "projectName": "spotifyfizyfit",
+          "type": "past",
+          "icon": "🎵",
+          "year": "2024",
+          "status": "completed",
+          "description": "Selenium-based automation for Spotify to fizy playlist migration.",
+          "techStack": ["Python", "Selenium", "Web Automation"],
+          "githubLink": "https://github.com/fleizean/spotifyfizyfit",
+          "image": "/others/spotifyfizyfit.png"
+        },
+        {
+          "projectName": "sleepwipe",
+          "type": "past",
+          "icon": "💤",
+          "year": "2024",
+          "status": "completed",
+          "description": "Sleepwipe is a software that prevents the computer from going into sleep mode.",
+          "techStack": ["C", "Bash"],
+          "githubLink": "https://github.com/fleizean/sleepwipe",
+          "image": "/others/sleepwipe.png"
+        },
+        {
+          "projectName": "webserv",
+          "type": "past",
+          "icon": "🐚",
+          "year": "2023",
+          "status": "completed",
+          "description": "Nginx-like web server built from C++.",
+          "techStack": ["C++", "HTTP", "Web Server"],
+          "githubLink": "https://github.com/fleizean/webserv",
+          "image": "/others/webserv.png"
+        }
+      ]
+    }
+  },
+  "school": {
+    "section_title": "my school life",
+    "experiences": [
+      {
+        "title": "Ecole 42",
+        "period": "2021 - 2024",
+        "description": "Ecole 42 was a transformative journey that shaped both my technical skills and personal growth. This peer-to-peer learning environment pushed me beyond my comfort zone and taught me how to approach complex problems with creativity and perseverance.",
+        "highlights": [
+          "Mastered C, C++, and various programming paradigms through intensive projects",
+          "Built strong collaboration skills through team projects and peer evaluations",
+          "Developed problem-solving abilities through the unique 'learn by doing' approach",
+          "Formed lasting friendships with peers from diverse backgrounds",
+          "Gained experience in system administration, networks, and web development",
+          "Learned to work under pressure and meet challenging deadlines"
+        ],
+        "image": "/others/42.png",
+        "darkImage": "/others/42-dark.png",
+        "link": "https://www.42.fr/en/",
+        "reflection_title": "Personal Reflection:",
+        "reflection": "My time at 42 wasn't just about coding—it was about discovering my potential, building lifelong connections, and developing the resilience to tackle any challenge. The countless nights spent debugging, the collaborative problem-solving sessions, and the shared victories formed the foundation of not just my technical skills, but my approach to life's challenges."
+      }
+    ],
+    "key_experiences_title": "Key Experiences:",
+    "looking_back_title": "Looking back...",
+    "looking_back_text": "School life at Ecole 42 taught me that true learning happens outside of comfort zones. The peer-to-peer model, the intensity of projects, and the supportive community created an environment where growth was inevitable. These experiences have been instrumental in shaping who I am today, both as a developer and as a person."
+  },
+  "tech_stack": {
+    "title": "my tech stack",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "devops": "DevOps",
+      "learning": "Currently Learning"
+    },
+    "link_label": {
+      "technology": "Technology",
+      "focus": "Focus Area"
+    },
+    "items": [
+      {
+        "name": "React",
+        "color": "text-blue-400",
+        "icon": "FaReact",
+        "description": "Developing modern and interactive user interfaces with component-based architecture",
+        "category": "frontend",
+        "link": "https://reactjs.org/"
+      },
+      {
+        "name": "C#",
+        "color": "text-purple-500",
+        "icon": "TbBrandCSharp",
+        "description": "Developing object-oriented applications using Microsoft's powerful C-style language",
+        "category": "backend",
+        "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
+      },
+      {
+        "name": "SignalR",
+        "color": "text-red-600",
+        "icon": "SiSignal",
+        "description": "Real-time web functionality for .NET applications using WebSockets and more",
+        "category": "backend",
+        "link": "https://learn.microsoft.com/en-us/aspnet/core/signalr/introduction"
+      },
+      {
+        "name": "Docker",
+        "color": "text-blue-500",
+        "icon": "FaDocker",
+        "description": "Containerizing applications for scalable and consistent deployment",
+        "category": "devops",
+        "link": "https://www.docker.com/"
+      },
+      {
+        "name": "MSSQL",
+        "color": "text-blue-800",
+        "icon": "DiMsqlServer",
+        "description": "Microsoft's enterprise-grade relational database management system",
+        "category": "database",
+        "link": "https://www.microsoft.com/en-us/sql-server"
+      },
+      {
+        "name": "PostgreSQL",
+        "color": "text-blue-400",
+        "icon": "SiPostgresql",
+        "description": "Open-source relational database known for its robustness and extensibility",
+        "category": "database",
+        "link": "https://www.postgresql.org/"
+      },
+      {
+        "name": "Nginx",
+        "color": "text-green-600",
+        "icon": "SiNginx",
+        "description": "High-performance HTTP server and reverse proxy used for serving apps",
+        "category": "devops",
+        "link": "https://www.nginx.com/"
+      },
+      {
+        "name": "IIS",
+        "color": "text-blue-700",
+        "icon": "MdBusiness",
+        "description": "Microsoft's web server for hosting ASP.NET applications",
+        "category": "devops",
+        "link": "https://www.microsoft.com/en-us/iis"
+      },
+      {
+        "name": "Next.js",
+        "color": "text-black",
+        "icon": "RiNextjsFill",
+        "description": "Building performant and SEO-friendly web applications with server-side rendering",
+        "category": "frontend",
+        "link": "https://nextjs.org/"
+      },
+      {
+        "name": "TypeScript",
+        "color": "text-blue-500",
+        "icon": "SiTypescript",
+        "description": "Enhancing JavaScript development with static typing for improved scalability and reliability",
+        "category": "frontend",
+        "link": "https://www.typescriptlang.org/"
+      },
+      {
+        "name": "JavaScript",
+        "color": "text-yellow-400",
+        "icon": "SiJavascript",
+        "description": "Creating dynamic client-side logic with the core language of the web",
+        "category": "frontend",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+      },
+      {
+        "name": ".NET",
+        "color": "text-purple-600",
+        "icon": "AiOutlineDotNet",
+        "description": "Developing robust and high-performance applications using Microsoft's development framework",
+        "category": "backend",
+        "link": "https://dotnet.microsoft.com/"
+      },
+      {
+        "name": "Python",
+        "color": "text-yellow-500",
+        "icon": "FaPython",
+        "description": "Writing clean, versatile, and high-level code for various application domains",
+        "category": "backend",
+        "link": "https://www.python.org/"
+      },
+      {
+        "name": "Django",
+        "color": "text-green-700",
+        "icon": "SiDjango",
+        "description": "Building secure and scalable web applications with Python's high-level framework",
+        "category": "backend",
+        "link": "https://www.djangoproject.com/"
+      },
+      {
+        "name": "FastAPI",
+        "color": "text-teal-500",
+        "icon": "SiFastapi",
+        "description": "Creating fast and modern APIs with Python, powered by asynchronous capabilities",
+        "category": "backend",
+        "link": "https://fastapi.tiangolo.com/"
+      },
+      {
+        "name": "SeriLogger",
+        "color": "text-yellow-600",
+        "icon": "FaFileAlt",
+        "description": "Logging framework for .NET applications, providing structured logging capabilities",
+        "category": "devops",
+        "link": "https://serilog.net/"
+      },
+      {
+        "name": "REST APIs",
+        "color": "text-blue-600",
+        "icon": "FaServer",
+        "description": "Designing conventional web services using stateless HTTP methods and endpoints",
+        "category": "backend",
+        "link": "https://restfulapi.net/"
+      },
+      {
+        "name": "UI/UX Design",
+        "color": "text-purple-500",
+        "icon": "GiSkills",
+        "description": "Crafting intuitive and user-centered designs to improve product usability and experience",
+        "category": "learning",
+        "link": "#"
+      }
+    ]
+  },
+  "not_found": {
+    "title": "NOT FOUND",
+    "description_main": "Oops! This page seems to have vanished like my motivation on Monday mornings.",
+    "description_secondary": "Maybe it's taking a coffee break or got lost in the digital void."
+  },
+  "contact": {
+    "page_title": "get in touch",
+    "sections": {
+      "left": {
+        "title": "Let's connect",
+        "description": "I'm always interested in new opportunities, collaborations, and meaningful conversations. Whether you have a project in mind, want to discuss technology, or just want to say hello, feel free to reach out!"
+      },
+      "contact_info": {
+        "email": {
+          "label": "Email",
+          "value": "nsyagz@gmail.com"
+        },
+        "location": {
+          "label": "Location",
+          "value": "Kocaeli, Turkey"
+        }
+      },
+      "social": {
+        "title": "Follow me",
+        "platforms": {
+          "github": "GitHub",
+          "linkedin": "LinkedIn",
+          "twitter": "Twitter"
+        }
+      },
+      "quick_contact": {
+        "title": "Prefer quick contact?",
+        "actions": {
+          "email": "Send Direct Email",
+          "linkedin": "LinkedIn Message"
+        }
+      },
+      "form": {
+        "title": "Send a message",
+        "fields": {
+          "name": {
+            "label": "Name",
+            "placeholder": "Your name"
+          },
+          "email": {
+            "label": "Email",
+            "placeholder": "your@email.com"
+          },
+          "subject": {
+            "label": "Subject",
+            "placeholder": "What's this about?"
+          },
+          "message": {
+            "label": "Message",
+            "placeholder": "Tell me about your project, idea, or just say hello..."
+          }
+        },
+        "submit_button": {
+          "default": "Send Message",
+          "loading": "Sending..."
+        },
+        "success_message": "Message sent successfully! I'll get back to you soon.",
+        "footer_note": "* I typically respond within 24 hours."
+      }
+    }
+  },
+  "cv": {
+    "open_new_tab": "Open in New Tab",
+    "download": "Download",
+    "mobile_note": "If the PDF doesn't display, please use the 'Open in New Tab' or 'Download' button above."
+  },
+  "blog": {
+    "title": "its my blogs (im medium guru bro)",
+    "no_posts": "all my mediums gone bro wtf",
+    "view_all": "just view all bro"
+  }
 }

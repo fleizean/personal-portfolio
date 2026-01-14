@@ -31,15 +31,15 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   // Hydration tamamlandığında çalışır
   useEffect(() => {
     setMounted(true);
-    
+
     // Yerel depolamadan tema bilgisini al
     const savedTheme = localStorage.getItem('theme') as Theme;
     if (savedTheme) {
       setTheme(savedTheme);
     } else {
       // Sistem temasını kontrol et
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches 
-        ? 'dark' 
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
         : 'light';
       setTheme(systemTheme);
     }
@@ -51,14 +51,14 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
       const root = document.documentElement;
       root.classList.remove('light', 'dark');
       root.classList.add(theme);
-      
+
       // Yerel depolamaya kaydet
       localStorage.setItem('theme', theme);
     }
   }, [theme, mounted]);
 
   const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   // Hydration tamamlanmadan önce boş render et
@@ -66,9 +66,5 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     return null;
   }
 
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
 };

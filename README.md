@@ -1,4 +1,5 @@
 # [fleizean.dev](https://fleizean.dev)
+
 This is my personal portfolio website, continuously evolving with new sections as I develop and create more projects.
 
 <p align="center">
@@ -13,8 +14,27 @@ This is my personal portfolio website, continuously evolving with new sections a
 
 ## 📋 All Updates
 
+### January 14, 2026
+
+#### 🔧 feat: comprehensive linter and formatter setup
+
+- **Prettier Integration**: Added Prettier with consistent code formatting rules
+  - Configured 2-space indentation, single quotes, and 100-character line width
+  - Created `.prettierrc` and `.prettierignore` files
+- **Enhanced ESLint Configuration**: Extended ESLint with best practices
+  - Added TypeScript-specific rules and React hooks validation
+  - Configured code quality rules (no-console, prefer-const, eqeqeq)
+  - Integrated Prettier with ESLint to avoid conflicts
+- **New npm Scripts**:
+  - `npm run format`: Auto-format all code files
+  - `npm run format:check`: Check formatting without changes
+  - `npm run lint:fix`: Auto-fix linting issues
+- **Automated Code Quality**: Ensures consistent code style across the project
+
 ### January 3, 2026
+
 #### 🎨 feat: major UI redesign & gradient aesthetics
+
 - **Global Gradient Theme**: Implemented cohesive gradient borders and backgrounds throughout the site.
 - **Page Redesigns**:
   - **Blog**: Modern card design with gradient accents and improved typography.
@@ -25,12 +45,16 @@ This is my personal portfolio website, continuously evolving with new sections a
 - **ScrollToTop**: Updated design to match the new aesthetic.
 
 ### December 16, 2025
+
 #### feat: medium guru online in my website
+
 - Blogs page added for my medium
-- Some localization changed 
+- Some localization changed
 
 ### October 17, 2025
+
 #### 🚀 feat: comprehensive SEO optimization
+
 - Added complete meta tags (description, author, publisher, robots)
 - Implemented Twitter Card metadata (@onlyflei)
 - Added Open Graph tags for social media sharing
@@ -40,6 +64,7 @@ This is my personal portfolio website, continuously evolving with new sections a
 - Configured proper indexing and crawling rules
 
 #### 🌐 feat: custom domain integration
+
 - Migrated to fleizean.dev domain
 - Updated all metadata and canonical URLs
 - Configured domain-specific social sharing
@@ -47,14 +72,18 @@ This is my personal portfolio website, continuously evolving with new sections a
 ---
 
 ### July 10, 2025
+
 #### 🐛 fix: dark theme improvements
+
 - Resolved dark theme rendering issues
 - Fixed component styling inconsistencies
 
 ---
 
 ### July 8, 2025
+
 #### 🌙 feat: dark theme system with toggle
+
 - Implemented complete dark theme system
 - Added theme toggle in header
 - Applied dark mode across all components
@@ -62,7 +91,9 @@ This is my personal portfolio website, continuously evolving with new sections a
 ---
 
 ### June 27, 2025
+
 #### 🌍 feat: complete i18n system (TR/EN) + contact page
+
 - Implemented LanguageContext and LanguageSwitcher
 - Converted all pages to use translation system
 - Added contact form with API integration
@@ -71,5 +102,7 @@ This is my personal portfolio website, continuously evolving with new sections a
 ---
 
 ### June 21, 2025
+
 #### 🎉 First deployment
+
 - Initial portfolio website deployment
