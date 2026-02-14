@@ -157,12 +157,32 @@
           "type": "present",
           "icon": "⏰",
           "year": "2025",
-          "status": "development",
+          "status": "production",
           "description": "Workflow, çalışma saatlerinizi takip etmek için tasarlanmış güzel ve minimalist bir masaüstü uygulamasıdır. Electron ve SQLite ile geliştirilen bu uygulama, aralıksız takip, günlük hedefler ve ayrıntılı çalışma oturumu geçmişi ile motivasyonunuzu korumanıza yardımcı olur.",
           "techStack": ["Electron.js", "SQLite", "TailwindCSS"],
           "githubLink": "https://github.com/fleizean/workflow",
           "liveLink": "https://fleizean.github.io/workflow",
           "image": "/others/Workflow.png"
+        },
+        {
+          "projectName": "pkgdiff",
+          "type": "present",
+          "icon": "📦",
+          "year": "2025",
+          "status": "production",
+          "description": "pkgdiff, birden fazla paket kayıt sisteminde (NuGet, npm) paket sürümlerini karşılaştırmak için geliştirilmiş güçlü bir web uygulamasıdır. GitHub'dan otomatik sürüm notları kazıma, detaylı değişiklik günlükleri, ön sürüm filtreleme ve SignalR ile gerçek zamanlı ilerleme güncellemeleri sunar.",
+          "techStack": [
+            "ASP.NET Core",
+            "Angular",
+            "PostgreSQL",
+            "SignalR",
+            "Docker",
+            "Nginx",
+            "Hangfire"
+          ],
+          "githubLink": "https://github.com/fleizean/pkgdiff",
+          "liveLink": "https://pkgdiff.dev",
+          "image": "/others/pkgdiff.png"
         },
         {
           "projectName": "Personal Portfolio",

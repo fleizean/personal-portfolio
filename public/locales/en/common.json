@@ -157,12 +157,32 @@
           "type": "present",
           "icon": "⏰",
           "year": "2025",
-          "status": "development",
+          "status": "production",
           "description": "Workflow is a beautiful, minimalist desktop application for tracking your work hours. Built with Electron and SQLite, it helps you stay motivated with streak tracking, daily targets, and detailed work session history.",
           "techStack": ["Electron.js", "SQLite", "TailwindCSS"],
           "githubLink": "https://github.com/fleizean/workflow",
           "liveLink": "https://fleizean.github.io/workflow",
           "image": "/others/Workflow.png"
+        },
+        {
+          "projectName": "pkgdiff",
+          "type": "present",
+          "icon": "📦",
+          "year": "2025",
+          "status": "production",
+          "description": "pkgdiff is a powerful web application for comparing package versions across multiple registries (NuGet, npm). It automatically scrapes and analyzes release notes from GitHub, provides detailed changelogs, supports pre-release filtering, and features real-time progress updates via SignalR.",
+          "techStack": [
+            "ASP.NET Core",
+            "Angular",
+            "PostgreSQL",
+            "SignalR",
+            "Docker",
+            "Nginx",
+            "Hangfire"
+          ],
+          "githubLink": "https://github.com/fleizean/pkgdiff",
+          "liveLink": "https://pkgdiff.dev",
+          "image": "/others/pkgdiff.png"
         },
         {
           "projectName": "Personal Portfolio",

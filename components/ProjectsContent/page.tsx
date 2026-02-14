@@ -29,15 +29,21 @@ const ProjectsContent: React.FC = () => {
             In Development
           </span>
         );
-      case 'completed':
+      case 'production':
         return (
           <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-green-900/30 dark:text-green-300">
+            Production
+          </span>
+        );
+      case 'completed':
+        return (
+          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900/30 dark:text-blue-300">
             Completed
           </span>
         );
       case 'ongoing':
         return (
-          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900/30 dark:text-blue-300">
+          <span className="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-purple-900/30 dark:text-purple-300">
             Ongoing
           </span>
         );

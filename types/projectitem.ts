@@ -3,7 +3,7 @@ export interface ProjectItem {
   type: 'present' | 'past';
   icon: string;
   year: string;
-  status: 'development' | 'completed' | 'ongoing';
+  status: 'development' | 'production' | 'completed' | 'ongoing';
   description?: string;
   techStack?: string[];
   githubLink?: string;
