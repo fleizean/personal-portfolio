@@ -14,6 +14,26 @@ This is my personal portfolio website, continuously evolving with new sections a
 
 ## 📋 All Updates
 
+### February 14, 2026
+
+#### 📦 feat: added PkgDiff project to portfolio
+
+- **New Project Entry**: Added PkgDiff to projects showcase
+  - Added project card with tech stack (ASP.NET Core, Angular, PostgreSQL, SignalR, Docker, Nginx, Hangfire)
+  - Configured live demo link (https://pkgdiff.dev)
+  - Set production status badge with green styling
+
+- **Status Badge Update**: Enhanced project status indicators
+  - Added new `production` status with green badge
+  - Reorganized color scheme: production (green), completed (blue), ongoing (purple)
+  - Updated TypeScript types to include production status
+
+- **Project Details**: 
+  - Icon: 📦
+  - Description highlights: Multi-registry package comparison, GitHub release notes scraping, real-time SignalR updates, admin dashboard
+  - GitHub repository link included
+  - Placeholder for project screenshot (/others/pkgdiff.png)
+
 ### January 14, 2026
 
 #### 🔧 feat: comprehensive linter and formatter setup
