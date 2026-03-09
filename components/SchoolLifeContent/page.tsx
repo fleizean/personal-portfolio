@@ -34,39 +34,7 @@ const SchoolLifeContent: React.FC = () => {
             {schoolExperiences.map((experience, index) => (
               <li key={index} className="pb-3">
                 <div className="flex flex-col md:flex-row items-start justify-between gap-4">
-                  {experience.image && (
-                    <div className="flex items-center order-first md:order-last mt-0 md:mt-0">
-                      <Link
-                        href={experience.link || '#'}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title={experience.title}
-                        className="flex-shrink-0"
-                      >
-                        {experience.darkImage ? (
-                          <div className="relative w-[50px] h-[50px]">
-                            <Image
-                              src={theme === 'dark' ? experience.darkImage : experience.image}
-                              alt={experience.title}
-                              fill
-                              className="object-contain transition-all duration-300"
-                            />
-                          </div>
-                        ) : (
-                          <Image
-                            src={experience.image}
-                            alt={experience.title}
-                            width={50}
-                            height={50}
-                            className="object-cover dark:brightness-90 dark:contrast-75 transition-all duration-300"
-                          />
-                        )}
-                      </Link>
-                      <div className="hidden md:block h-14 border-l border-gray-800 dark:border-gray-700 mx-4"></div>
-                    </div>
-                  )}
-
-                  <div className="flex items-baseline gap-2 w-full md:w-auto order-last md:order-first">
+                  <div className="flex items-baseline gap-2 w-full md:w-auto">
                     <span className="text-lg">🎓</span>
                     <div className="w-full">
                       <div className="flex flex-wrap items-center gap-1">
