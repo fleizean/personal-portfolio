@@ -126,7 +126,7 @@ const ProjectsContent: React.FC = () => {
 
                   {/* Project Image */}
                   {project.image && (
-                    <div className="flex items-start mt-3 md:mt-0">
+                    <div className="hidden md:flex items-start mt-3 md:mt-0">
                       <div className="hidden md:block h-14 border-l border-gray-800 dark:border-gray-700 mx-4"></div>
                       <Link
                         href={project.githubLink || project.liveLink || '#'}
@@ -220,7 +220,7 @@ const ProjectsContent: React.FC = () => {
 
                   {/* Project Image */}
                   {project.image && (
-                    <div className="flex items-start mt-3 md:mt-0">
+                    <div className="hidden md:flex items-start mt-3 md:mt-0">
                       <div className="hidden md:block h-14 border-l border-gray-800 dark:border-gray-700 mx-4"></div>
                       <Link
                         href={project.githubLink || project.liveLink || '#'}

@@ -58,13 +58,13 @@
         },
         {
           "title": "CEO / Developer",
-          "place": "nasilbifirma",
+          "place": "pkgdiff",
           "year": "2025 - Present",
-          "description": "Building and managing a startup together with my friends.",
+          "description": "pkgdiff is a powerful web application for comparing package versions across multiple registries (NuGet, npm). It automatically scrapes and analyzes release notes from GitHub, provides detailed changelogs, supports pre-release filtering, and features real-time progress updates via SignalR.",
           "type": "work",
-          "emoji": "🚀",
-          "link": "https://nasilbifirma.com",
-          "photo": "/others/nasilbifirma.png"
+          "emoji": "📦",
+          "link": "https://pkgdiff.dev",
+          "photo": "/others/pkgdiff.png"
         }
       ],
       "past": [

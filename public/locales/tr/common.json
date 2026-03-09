@@ -58,13 +58,13 @@
         },
         {
           "title": "CEO / Developer",
-          "place": "nasilbifirma",
+          "place": "pkgdiff",
           "year": "2025 - Devam Ediyor",
-          "description": "Arkadaşlarımla girişimimizin geliştirme ve strateji süreçlerini yönetiyorum.",
+          "description": "pkgdiff, birden fazla paket kayıt sisteminde (NuGet, npm) paket sürümlerini karşılaştırmak için geliştirilmiş güçlü bir web uygulamasıdır. GitHub'dan otomatik sürüm notları kazıma, detaylı değişiklik günlükleri, ön sürüm filtreleme ve SignalR ile gerçek zamanlı ilerleme güncellemeleri sunar.",
           "type": "work",
-          "emoji": "🚀",
-          "link": "https://nasilbifirma.com",
-          "photo": "/others/nasilbifirma.png"
+          "emoji": "📦",
+          "link": "https://pkgdiff.dev",
+          "photo": "/others/pkgdiff.png"
         }
       ],
       "past": [
