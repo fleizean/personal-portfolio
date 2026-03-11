@@ -16,6 +16,18 @@ This is my personal portfolio website, continuously evolving with new sections a
 
 ### March 11, 2026
 
+#### 🗺️ feat: add react-simple-maps and update localization files
+
+- Added `react-simple-maps` dependency and TypeScript definitions
+- Created `TravelMap` component — interactive SVG world map centered on the Balkans with zoom/pan, visited country highlighting, city markers, and hover tooltips
+- Added travel map section to Journey page
+- Updated EN/TR localization files with new keys for travel map title and descriptions
+- Added photo links for educational and work experiences in localization files
+- Added new meta descriptions for all sections in localization files
+- Added institution images: Dumlupınar University and MEBS (`public/others/`)
+
+---
+
 #### ✨ feat: school life section enhancements
 
 - **42 Stats Badge**: Added badge42 stats badge to School Life section, centered below the section title with skeleton loading animation
