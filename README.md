@@ -14,6 +14,13 @@ This is my personal portfolio website, continuously evolving with new sections a
 
 ## 📋 All Updates
 
+### March 11, 2026
+
+#### ✨ feat: school life section enhancements
+
+- **42 Stats Badge**: Added badge42 stats badge to School Life section, centered below the section title with skeleton loading animation
+- **Localization Fix**: Added missing last sentence to Turkish reflection text in School Life section
+
 ### February 14, 2026
 
 #### 📦 feat: added PkgDiff project to portfolio
