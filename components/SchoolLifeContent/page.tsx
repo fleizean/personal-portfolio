@@ -10,6 +10,7 @@ import { useTheme } from '@/context/ThemeContext';
 const SchoolLifeContent: React.FC = () => {
   const { isLoading, t } = useTranslation('common');
   const { theme } = useTheme();
+  const [badgeLoaded, setBadgeLoaded] = React.useState(false);
 
   if (isLoading) {
     return (
@@ -28,6 +29,20 @@ const SchoolLifeContent: React.FC = () => {
         <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-gray-700 dark:text-gray-300 dark:hover:text-white">
           {t('school.section_title')}
         </h2>
+
+        <div className="flex justify-start mb-8">
+          <a href="https://github.com/oakoudad/badge42" className="block">
+            {!badgeLoaded && (
+              <div className="w-64 h-16 rounded-lg bg-gray-200 dark:bg-gray-700 animate-pulse" />
+            )}
+            <img
+              src="https://badge.mediaplus.ma/colorfulwaves/eyagiz?1337Badge=off&UM6P=off"
+              alt="eyagiz's 42 stats"
+              className={`transition-opacity duration-500 ${badgeLoaded ? 'opacity-100' : 'opacity-0 h-0'}`}
+              onLoad={() => setBadgeLoaded(true)}
+            />
+          </a>
+        </div>
 
         <div>
           <ul className="space-y-4">
