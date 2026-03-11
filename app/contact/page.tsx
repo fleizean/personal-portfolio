@@ -1,15 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
 import ContactContent from '@/components/ContactContent/page';
+import { getPageMetadata } from '@/lib/getPageMetadata';
 
-export const metadata: Metadata = {
-  title: 'Contact',
-  description:
-    'Get in touch with me for collaboration opportunities, project inquiries, or just to say hello. Connect via email, social media, or through the contact form.',
-  alternates: {
-    canonical: '/contact',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return getPageMetadata('contact', '/contact');
+}
 
 export default function Contact() {
   return <ContactContent />;

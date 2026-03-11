@@ -5,9 +5,11 @@ import React from 'react';
 import Image from 'next/image';
 import { JourneyItem } from '@/types/journeyitem';
 import { useTranslation } from '@/context/LanguageContext';
+import TravelMap from '@/components/TravelMap/TravelMap';
 
 const JourneyContent: React.FC = () => {
-  const { isLoading, t } = useTranslation('common');
+  const { isLoading, t, i18n } = useTranslation('common');
+  const isTR = i18n.language === 'tr';
 
   if (isLoading) {
     return (
@@ -74,6 +76,14 @@ const JourneyContent: React.FC = () => {
           {t('journey.section_title')}
         </h2>
 
+        {/* Travel Map */}
+        <div className="mb-10">
+          <h3 className="font-bold mb-4 text-gray-800 dark:text-gray-300 dark:hover:text-white">
+            {t('journey.travel_map_title')}
+          </h3>
+          <TravelMap />
+        </div>
+
         {/* Present Section */}
         <div className="mb-8">
           <h3 className="font-bold mb-4 text-gray-800 dark:text-gray-300 dark:hover:text-white">
@@ -108,22 +118,44 @@ const JourneyContent: React.FC = () => {
                     )}
                     <div className="w-full">
                       <div className="flex flex-wrap items-center gap-1">
-                        <span className="font-xs text-black dark:text-gray-300 dark:hover:text-white">
-                          {item.title} {t('journey.at')}{' '}
-                        </span>
-                        <span className="font-medium text-black dark:text-gray-300 dark:hover:text-white">
-                          <Link
-                            href={`${item.link}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white"
-                          >
-                            {item.place}
-                          </Link>
-                          <span className="text-gray-800 dark:text-gray-300 dark:hover:text-white">
-                            {' '}
-                            • {item.year}
-                          </span>
+                        {isTR ? (
+                          <>
+                            <span className="font-medium text-black dark:text-gray-300 dark:hover:text-white">
+                              <Link
+                                href={`${item.link}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white"
+                              >
+                                {item.place}
+                              </Link>
+                            </span>
+                            <span className="font-xs text-black dark:text-gray-300 dark:hover:text-white">
+                              {t('journey.at')}
+                            </span>
+                            <span className="font-xs text-black dark:text-gray-300 dark:hover:text-white">
+                              {item.title}
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <span className="font-xs text-black dark:text-gray-300 dark:hover:text-white">
+                              {item.title} {t('journey.at')}{' '}
+                            </span>
+                            <span className="font-medium text-black dark:text-gray-300 dark:hover:text-white">
+                              <Link
+                                href={`${item.link}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white"
+                              >
+                                {item.place}
+                              </Link>
+                            </span>
+                          </>
+                        )}
+                        <span className="text-gray-800 dark:text-gray-300 dark:hover:text-white">
+                          • {item.year}
                         </span>
                       </div>
                       <p className="text-sm text-black mt-1 dark:text-gray-300 dark:hover:text-white">
@@ -194,22 +226,44 @@ const JourneyContent: React.FC = () => {
                     )}
                     <div className="w-full">
                       <div className="flex flex-wrap items-center gap-1">
-                        <span className="font-xs text-black dark:text-gray-300 dark:hover:text-white">
-                          {item.title} at
-                        </span>
-                        <span className="font-medium text-black dark:text-gray-300 dark:hover:text-white">
-                          <Link
-                            href={`${item.link}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white"
-                          >
-                            {item.place}
-                          </Link>
-                          <span className="text-gray-800 dark:text-gray-300 dark:hover:text-white">
-                            {' '}
-                            • {item.year}
-                          </span>
+                        {isTR ? (
+                          <>
+                            <span className="font-medium text-black dark:text-gray-300 dark:hover:text-white">
+                              <Link
+                                href={`${item.link}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white"
+                              >
+                                {item.place}
+                              </Link>
+                            </span>
+                            <span className="font-xs text-black dark:text-gray-300 dark:hover:text-white">
+                              {t('journey.at')}
+                            </span>
+                            <span className="font-xs text-black dark:text-gray-300 dark:hover:text-white">
+                              {item.title}
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <span className="font-xs text-black dark:text-gray-300 dark:hover:text-white">
+                              {item.title} {t('journey.at')}{' '}
+                            </span>
+                            <span className="font-medium text-black dark:text-gray-300 dark:hover:text-white">
+                              <Link
+                                href={`${item.link}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white"
+                              >
+                                {item.place}
+                              </Link>
+                            </span>
+                          </>
+                        )}
+                        <span className="text-gray-800 dark:text-gray-300 dark:hover:text-white">
+                          • {item.year}
                         </span>
                       </div>
                       <p className="text-sm text-black mt-1 dark:text-gray-300 dark:hover:text-white">

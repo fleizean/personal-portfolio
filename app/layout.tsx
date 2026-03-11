@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - fleizean',
+    template: '%s — fleizean',
     default: 'fleizean - software, design and my life',
   },
   description:

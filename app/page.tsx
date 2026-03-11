@@ -1,14 +1,10 @@
 import { Metadata } from 'next';
 import Hero from '@/components/Hero/page';
+import { getPageMetadata } from '@/lib/getPageMetadata';
 
-export const metadata: Metadata = {
-  title: 'fleizean — software, design and my life',
-  description:
-    'Software engineer and designer passionate about creating elegant solutions. Explore my journey, projects, tech stack, and connect with me for collaboration opportunities.',
-  alternates: {
-    canonical: '/',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return getPageMetadata('home', '/');
+}
 
 export default function Home() {
   return (

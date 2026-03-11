@@ -1,15 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
 import SchoolLifeContent from '@/components/SchoolLifeContent/page';
+import { getPageMetadata } from '@/lib/getPageMetadata';
 
-export const metadata: Metadata = {
-  title: 'School Life',
-  description:
-    'Explore my academic experiences, educational projects, and school activities that shaped my journey. From coursework to extracurricular achievements.',
-  alternates: {
-    canonical: '/school-life',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return getPageMetadata('school_life', '/school-life');
+}
 
 export default function SchoolLife() {
   return <SchoolLifeContent />;

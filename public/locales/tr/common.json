@@ -41,6 +41,9 @@
   },
   "journey": {
     "section_title": "yolculuğum",
+    "travel_map_title": "Gittiğim Yerler",
+    "travel_map_visited_country": "Ziyaret edilen ülke",
+    "travel_map_visited_city": "Ziyaret edilen şehir",
     "present_section_title": "Şimdiki",
     "past_section_title": "Geçmiş",
     "at": "şirketinde",
@@ -95,7 +98,8 @@
           "description": "Bilgi sistemleri ve yönetimi odaklı lisans derecesi.",
           "type": "education",
           "emoji": "📊",
-          "link": "https://www.kutahya.edu.tr/en"
+          "link": "https://www.kutahya.edu.tr/en",
+          "photo": "/others/dumlupinar.png"
         },
         {
           "title": "Freelance Developer",
@@ -104,7 +108,8 @@
           "description": "Revir yönetim sistemi ve diğer projeler üzerinde freelance geliştirici olarak çalıştım.",
           "type": "work",
           "emoji": "🌐",
-          "link": "https://tr.wikipedia.org/wiki/MEBS_Okulu_ve_E%C4%9Fitim_Merkezi"
+          "link": "https://tr.wikipedia.org/wiki/MEBS_Okulu_ve_E%C4%9Fitim_Merkezi",
+          "photo": "/others/mebs.png"
         },
         {
           "title": "IT Stajyeri",
@@ -270,7 +275,7 @@
     "experiences": [
       {
         "title": "Ecole 42",
-        "period": "2021 - on going",
+        "period": "2021 - devam ediyor",
         "description": "Ecole 42, hem teknik becerilerimi hem de kişisel gelişimimi şekillendiren dönüştürücü bir yolculuktu. Bu akran öğrenmesi ortamı beni konfor alanımın dışına itti ve karmaşık problemlere yaratıcılık ve sebatla nasıl yaklaşacağımı öğretti.",
         "highlights": [
           "Yoğun projeler aracılığıyla C, C++ ve çeşitli programlama paradigmalarında ustalaştım",
@@ -526,5 +531,39 @@
     "title": "bloglarım (medium kurduyum)",
     "no_posts": "şu an hiç blog yok, nasıl ya?",
     "view_all": "hepsini görüntüle"
+  },
+  "meta": {
+    "home": {
+      "title": "fleizean — yazılım, tasarım ve hayatım",
+      "description": "Zarif çözümler üretmeye tutkulu bir yazılım mühendisi ve tasarımcı. Yolculuğumu, projelerimi, teknoloji yığınımı keşfet ve iş birliği fırsatları için benimle iletişime geç."
+    },
+    "journey": {
+      "title": "yolculuğum",
+      "description": "Öğrencilikten yazılım mühendisliğine uzanan profesyonel yolculuğumu takip et. Deneyimlerimi, dönüm noktalarımı ve kariyer gelişimimi keşfet."
+    },
+    "school_life": {
+      "title": "okul hayatım",
+      "description": "Yolculuğumu şekillendiren akademik deneyimlerimi, eğitim projelerimi ve okul aktivitelerimi keşfet."
+    },
+    "blog": {
+      "title": "blog",
+      "description": "Yazılım geliştirme, tasarım ve teknoloji üzerine yazdığım en güncel makalelerimi ve düşüncelerimi oku."
+    },
+    "contact": {
+      "title": "iletişim",
+      "description": "İş birliği fırsatları, proje teklifleri veya sadece merhaba demek için benimle iletişime geç. E-posta, sosyal medya veya iletişim formu üzerinden ulaşabilirsin."
+    },
+    "cv": {
+      "title": "cv / özgeçmiş",
+      "description": "Profesyonel CV'mi görüntüle ve indir. Türkçe ve İngilizce olarak mevcut."
+    },
+    "projects": {
+      "title": "projeler",
+      "description": "Web uygulamaları, yazılım projeleri ve yaratıcı çözümlerden oluşan portföyümü keşfet. Full-stack geliştirmeden sistem tasarımına kadar neler ürettiğimi gör."
+    },
+    "tech_stack": {
+      "title": "teknoloji yığını",
+      "description": "Modern uygulamalar geliştirmek için kullandığım teknolojileri, programlama dillerini, framework'leri ve araçları keşfet."
+    }
   }
 }

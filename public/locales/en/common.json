@@ -41,6 +41,9 @@
   },
   "journey": {
     "section_title": "my journey",
+    "travel_map_title": "Places I've Been",
+    "travel_map_visited_country": "Visited country",
+    "travel_map_visited_city": "Visited city",
     "present_section_title": "Present",
     "past_section_title": "Past",
     "at": "at",
@@ -95,7 +98,8 @@
           "description": "Bachelor's degree with focus on information systems and management.",
           "type": "education",
           "emoji": "📊",
-          "link": "https://www.kutahya.edu.tr/en"
+          "link": "https://www.kutahya.edu.tr/en",
+          "photo": "/others/dumlupinar.png"
         },
         {
           "title": "Freelance Developer",
@@ -104,7 +108,8 @@
           "description": "Worked on infirmary management system and other projects as a freelance developer.",
           "type": "work",
           "emoji": "🌐",
-          "link": "https://tr.wikipedia.org/wiki/MEBS_Okulu_ve_E%C4%9Fitim_Merkezi"
+          "link": "https://tr.wikipedia.org/wiki/MEBS_Okulu_ve_E%C4%9Fitim_Merkezi",
+          "photo": "/others/mebs.png"
         },
         {
           "title": "IT Intern",
@@ -526,5 +531,39 @@
     "title": "its my blogs (im medium guru bro)",
     "no_posts": "all my mediums gone bro wtf",
     "view_all": "just view all bro"
+  },
+  "meta": {
+    "home": {
+      "title": "fleizean — software, design and my life",
+      "description": "Software engineer and designer passionate about creating elegant solutions. Explore my journey, projects, tech stack, and connect with me for collaboration opportunities."
+    },
+    "journey": {
+      "title": "journey",
+      "description": "Follow my professional journey from student to software engineer. Explore my experiences, milestones, career growth, and the path that shaped who I am today."
+    },
+    "school_life": {
+      "title": "school life",
+      "description": "Explore my academic experiences, educational projects, and school activities that shaped my journey. From coursework to extracurricular achievements."
+    },
+    "blog": {
+      "title": "blog",
+      "description": "Read my latest articles and thoughts on software development, design, and technology."
+    },
+    "contact": {
+      "title": "contact",
+      "description": "Get in touch with me for collaboration opportunities, project inquiries, or just to say hello. Connect via email, social media, or through the contact form."
+    },
+    "cv": {
+      "title": "cv / resume",
+      "description": "View and download my professional CV/Resume. Available in Turkish and English."
+    },
+    "projects": {
+      "title": "projects",
+      "description": "Explore my portfolio of web applications, software projects, and creative solutions. From full-stack development to system design, discover what I have built."
+    },
+    "tech_stack": {
+      "title": "tech stack",
+      "description": "Discover the technologies, programming languages, frameworks, and tools I use to build modern applications. From frontend to backend, explore my technical expertise."
+    }
   }
 }

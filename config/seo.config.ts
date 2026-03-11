@@ -1,5 +1,5 @@
 const config = {
-  titleTemplate: '%s | Enes Yağız',
+  titleTemplate: '%s — fleizean',
   defaultTitle: 'Enes Yağız - Full Stack Developer',
   description:
     'Full Stack Developer crafting digital experiences through code and design. Exploring the balance between functionality and aesthetics.',
