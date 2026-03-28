@@ -1,7 +1,7 @@
 'use client';
 
 import { ShaderGradientCanvas, ShaderGradient } from 'shadergradient';
-import { useTheme } from 'next-themes';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function BackgroundGradient() {
   const { theme } = useTheme();
@@ -9,7 +9,7 @@ export default function BackgroundGradient() {
 
   return (
     <div className="absolute inset-0 w-full h-full -z-10">
-      {/* overlay */}
+      {/* Overlay */}
       <div
         className={`absolute inset-0 z-10 ${
           isDark ? 'bg-gray-900/40' : 'bg-white/40'
@@ -36,7 +36,7 @@ export default function BackgroundGradient() {
           cPolarAngle={80}
           cameraZoom={9.1}
 
-          /* LIGHT vs DARK renkleri */
+          /* theme'e göre renk */
           color1={isDark ? '#2a2a2a' : '#ffffff'}
           color2={isDark ? '#555555' : '#f1f5f9'}
           color3={isDark ? '#7a7a7a' : '#e5e7eb'}
