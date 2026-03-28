@@ -104,7 +104,7 @@ const ContactContent = () => {
                     {t('contact.sections.contact_info.email.label')}
                   </span>
                   <a
-                    href="mailto:nsyagz@gmail.com"
+                    href="mailto:enes.yagiz@pkgdiff.dev"
                     className="text-black hover:text-black dark:text-gray-300 dark:hover:text-white font-medium transition-colors"
                   >
                     {t('contact.sections.contact_info.email.value')}
@@ -157,7 +157,7 @@ const ContactContent = () => {
               </h4>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
                 <a
-                  href="mailto:nsyagz@gmail.com"
+                  href="mailto:enes.yagiz@pkgdiff.dev"
                   className="inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 rounded-lg hover:border-transparent transition-all duration-300 text-sm font-medium text-black dark:text-gray-300 w-full sm:w-auto"
                   style={
                     {

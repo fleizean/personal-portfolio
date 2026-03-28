@@ -1,12 +1,20 @@
 'use client';
 
 import { ShaderGradientCanvas, ShaderGradient } from 'shadergradient';
+import { useTheme } from 'next-themes';
 
 export default function BackgroundGradient() {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   return (
     <div className="absolute inset-0 w-full h-full -z-10">
-      {/* Stronger overlay in light theme for better text readability */}
-      <div className="absolute inset-0 bg-white/70 dark:bg-gray-900/40 z-10"></div>
+      {/* overlay */}
+      <div
+        className={`absolute inset-0 z-10 ${
+          isDark ? 'bg-gray-900/40' : 'bg-white/40'
+        }`}
+      ></div>
 
       <ShaderGradientCanvas
         style={{
@@ -21,21 +29,25 @@ export default function BackgroundGradient() {
         <ShaderGradient
           control="props"
           animate="on"
-          brightness={1}
+          brightness={isDark ? 1 : 1.4}
+
           cAzimuthAngle={180}
           cDistance={2.81}
           cPolarAngle={80}
           cameraZoom={9.1}
-          color1="#2a2a2a"
-          color2="#555555"
-          color3="#7a7a7a"
+
+          /* LIGHT vs DARK renkleri */
+          color1={isDark ? '#2a2a2a' : '#ffffff'}
+          color2={isDark ? '#555555' : '#f1f5f9'}
+          color3={isDark ? '#7a7a7a' : '#e5e7eb'}
+
           envPreset="city"
           grain="on"
           lightType="3d"
           positionX={0}
           positionY={0}
           positionZ={0}
-          reflection={0.1}
+          reflection={0.15}
           rotationX={50}
           rotationY={0}
           rotationZ={-60}

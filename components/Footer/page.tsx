@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
               {copyrightText}
             </span>
             <a
-              href="mailto:nsyagz@gmail.com"
+              href="mailto:enes.yagiz@pkgdiff.dev"
               className="text-gray-700 dark:text-gray-400 hover:text-black dark:hover:text-white no-underline text-sm font-medium transition-colors"
             >
               @fleizean
