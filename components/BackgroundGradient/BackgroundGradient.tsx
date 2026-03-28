@@ -12,7 +12,7 @@ export default function BackgroundGradient() {
       {/* Overlay */}
       <div
         className={`absolute inset-0 z-10 ${
-          isDark ? 'bg-gray-900/40' : 'bg-white/40'
+          isDark ? 'bg-gray-900/40' : 'bg-white/25'
         }`}
       ></div>
 
@@ -38,8 +38,8 @@ export default function BackgroundGradient() {
 
           /* theme'e göre renk */
           color1={isDark ? '#2a2a2a' : '#ffffff'}
-          color2={isDark ? '#555555' : '#f1f5f9'}
-          color3={isDark ? '#7a7a7a' : '#e5e7eb'}
+          color2={isDark ? '#555555' : '#e2e8f0'}
+          color3={isDark ? '#7a7a7a' : '#cbd5e1'}
 
           envPreset="city"
           grain="on"
@@ -57,7 +57,7 @@ export default function BackgroundGradient() {
           uDensity={1.5}
           uFrequency={0}
           uSpeed={0.3}
-          uStrength={1.5}
+          uStrength={2.2}
           uTime={8}
           wireframe={false}
         />
