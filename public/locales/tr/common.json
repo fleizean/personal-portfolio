@@ -68,6 +68,16 @@
           "emoji": "📦",
           "link": "https://pkgdiff.dev",
           "photo": "/others/pkgdiff.png"
+        },
+        {
+          "title": "CEO / Developer",
+          "place": "Gathly",
+          "year": "2026 - Devam Ediyor",
+          "description": "Gathly, düğün ve etkinliklerde misafirlerin tek bir QR kodu okutarak fotoğraf ve videolarını anında paylaşmasını sağlayan modern bir SaaS platformudur. Uygulama indirmeye gerek kalmadan medya toplama, özel galeriler, etkinlik yönetimi ve güvenli bulut depolama özellikleri sunar.",
+          "type": "work",
+          "emoji": "📸",
+          "link": "https://gathly.app",
+          "photo": "/others/gathly.png"
         }
       ],
       "past": [
@@ -200,6 +210,22 @@
           "githubLink": "https://github.com/fleizean/personal-portfolio",
           "liveLink": "https://fleizean.me",
           "image": "/logo.png"
+        },
+        {
+          "projectName": "Gathly",
+          "type": "present",
+          "icon": "📸",
+          "year": "2026",
+          "status": "in-progress",
+          "description": "Düğün ve etkinliklerde misafirlerin QR kod aracılığıyla uygulama indirmeden fotoğraf ve videolarını paylaşabildiği, organizatörlerin ise tüm anıları tek bir güvenli galeride yönetebildiği SaaS platformu.",
+          "techStack": [
+            "Angular",
+            "PostgreSQL",
+            ".NET"
+          ],
+          "githubLink": "",
+          "liveLink": "https://gathly.com",
+          "image": "/others/gathly.png"
         }
       ],
       "past": [

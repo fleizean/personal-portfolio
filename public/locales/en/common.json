@@ -68,6 +68,16 @@
           "emoji": "📦",
           "link": "https://pkgdiff.dev",
           "photo": "/others/pkgdiff.png"
+        },
+        {
+          "title": "CEO / Developer",
+          "place": "Gathly",
+          "year": "2026 - Present",
+          "description": "Gathly is a modern SaaS platform that enables wedding and event guests to instantly share photos and videos by scanning a single QR code. No app installation is required, while organizers can collect memories through private galleries, event management tools, and secure cloud storage.",
+          "type": "work",
+          "emoji": "📸",
+          "link": "https://gathly.app",
+          "photo": "/others/gathly.png"
         }
       ],
       "past": [
@@ -200,6 +210,22 @@
           "githubLink": "https://github.com/fleizean/personal-portfolio",
           "liveLink": "https://fleizean.me",
           "image": "/logo.png"
+        },
+        {
+          "projectName": "Gathly",
+          "type": "present",
+          "icon": "📸",
+          "year": "2026",
+          "status": "in-progress",
+          "description": "A SaaS platform that enables wedding and event guests to share photos and videos instantly by scanning a QR code—no app required. Organizers can collect, manage, and access all memories in a single secure gallery.",
+          "techStack": [
+            "Angular",
+            "PostgreSQL",
+            ".NET"
+          ],
+          "githubLink": "",
+          "liveLink": "https://gathly.com",
+          "image": "/others/gathly.png"
         }
       ],
       "past": [
