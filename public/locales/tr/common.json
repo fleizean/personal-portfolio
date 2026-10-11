@@ -208,7 +208,7 @@
           "description": "Next.js ve TypeScript ile oluşturduğum kişisel portfolyo web sitesi.",
           "techStack": ["Next.js", "TypeScript", "TailwindCSS"],
           "githubLink": "https://github.com/fleizean/personal-portfolio",
-          "liveLink": "https://fleizean.me",
+          "liveLink": "https://fleizean.dev",
           "image": "/logo.png"
         },
         {
@@ -518,33 +518,6 @@
           "email": "E-posta Gönder",
           "linkedin": "LinkedIn Mesajı"
         }
-      },
-      "form": {
-        "title": "Mesaj gönder",
-        "fields": {
-          "name": {
-            "label": "Ad",
-            "placeholder": "Adınız"
-          },
-          "email": {
-            "label": "E-posta",
-            "placeholder": "ornek@ornek.com"
-          },
-          "subject": {
-            "label": "Konu",
-            "placeholder": "Bu ne hakkında?"
-          },
-          "message": {
-            "label": "Mesaj",
-            "placeholder": "Projeniz, fikriniz hakkında anlatın veya sadece merhaba deyin..."
-          }
-        },
-        "submit_button": {
-          "default": "Mesaj Gönder",
-          "loading": "Gönderiliyor..."
-        },
-        "success_message": "Mesaj başarıyla gönderildi! En kısa sürede size geri döneceğim.",
-        "footer_note": "* Genellikle 24 saat içinde yanıt veriyorum."
       }
     }
   },

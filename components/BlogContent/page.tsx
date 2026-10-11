@@ -73,6 +73,7 @@ export default function BlogContent({ posts }: BlogContentProps) {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
+                        timeZone: 'Europe/Istanbul',
                       })}
                     </time>
 

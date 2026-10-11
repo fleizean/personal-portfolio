@@ -30,7 +30,7 @@ declare module 'react-simple-maps' {
     id: string;
   }
 
-  export interface GraticuleProps extends SVGProps<SVGPathElement> {}
+  export type GraticuleProps = SVGProps<SVGPathElement>;
 
   export interface GeographiesProps {
     geography: string | object;

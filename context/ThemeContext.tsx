@@ -28,21 +28,11 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme>('light');
   const [mounted, setMounted] = useState(false);
 
-  // Hydration tamamlandığında çalışır
+  // Tema sınıfını ilk boyamadan önce layout'taki inline script ekler
+  // (localStorage, yoksa sistem teması); burada sadece state'e alınır.
   useEffect(() => {
+    setTheme(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
     setMounted(true);
-
-    // Yerel depolamadan tema bilgisini al
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      // Sistem temasını kontrol et
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-      setTheme(systemTheme);
-    }
   }, []);
 
   useEffect(() => {
@@ -61,10 +51,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
-  // Hydration tamamlanmadan önce boş render et
-  if (!mounted) {
-    return null;
-  }
-
+  // İçerik sunucuda da render edilsin diye mount beklenmez; temaya bağlı
+  // görünüm dark: sınıflarıyla çözülür, state yalnızca mount sonrası güncellenir.
   return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
 };

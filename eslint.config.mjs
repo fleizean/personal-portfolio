@@ -1,17 +1,18 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+import tseslint from "typescript-eslint";
+import react from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
+import prettier from "eslint-config-prettier";
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript", "prettier"),
+  ...tseslint.configs.recommended,
   {
+    plugins: {
+      react,
+      "react-hooks": reactHooks,
+    },
+    settings: {
+      react: { version: "detect" },
+    },
     rules: {
       // React rules
       "react/react-in-jsx-scope": "off",
@@ -35,11 +36,9 @@ const eslintConfig = [
       "curly": ["error", "all"],
       "no-unused-expressions": "error",
       "no-duplicate-imports": "error",
-
-      // Next.js specific
-      "@next/next/no-html-link-for-pages": "off",
     },
   },
+  prettier,
   {
     ignores: [
       "node_modules/**",
@@ -47,6 +46,7 @@ const eslintConfig = [
       "out/**",
       "build/**",
       "dist/**",
+      "next-env.d.ts",
       "*.config.js",
       "*.config.mjs",
     ],

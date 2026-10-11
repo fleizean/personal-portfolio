@@ -208,7 +208,7 @@
           "description": "My personal portfolio website built with Next.js and TypeScript.",
           "techStack": ["Next.js", "TypeScript", "TailwindCSS"],
           "githubLink": "https://github.com/fleizean/personal-portfolio",
-          "liveLink": "https://fleizean.me",
+          "liveLink": "https://fleizean.dev",
           "image": "/logo.png"
         },
         {
@@ -518,33 +518,6 @@
           "email": "Send Direct Email",
           "linkedin": "LinkedIn Message"
         }
-      },
-      "form": {
-        "title": "Send a message",
-        "fields": {
-          "name": {
-            "label": "Name",
-            "placeholder": "Your name"
-          },
-          "email": {
-            "label": "Email",
-            "placeholder": "your@email.com"
-          },
-          "subject": {
-            "label": "Subject",
-            "placeholder": "What's this about?"
-          },
-          "message": {
-            "label": "Message",
-            "placeholder": "Tell me about your project, idea, or just say hello..."
-          }
-        },
-        "submit_button": {
-          "default": "Send Message",
-          "loading": "Sending..."
-        },
-        "success_message": "Message sent successfully! I'll get back to you soon.",
-        "footer_note": "* I typically respond within 24 hours."
       }
     }
   },

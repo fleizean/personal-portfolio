@@ -219,8 +219,9 @@ const Hero = () => {
             >
               <Image
                 src={heroImage}
-                alt="{t('hero.imageAlt')}"
+                alt={t('hero.image_alt')}
                 fill
+                sizes="(min-width: 1280px) 320px, (min-width: 1024px) 288px, (min-width: 768px) 256px, (min-width: 640px) 224px, 192px"
                 className="object-cover dark:brightness-75 dark:contrast-75 transition-all duration-300"
                 priority
               />

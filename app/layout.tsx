@@ -4,6 +4,7 @@ import './globals.css';
 import { Metadata } from 'next';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { getLanguage } from '@/lib/getLanguage';
 
 export const metadata: Metadata = {
   title: {
@@ -37,14 +38,6 @@ export const metadata: Metadata = {
     title: 'fleizean - software, design and my life',
     description:
       'Software engineer and designer passionate about creating elegant solutions. Explore my journey, projects, tech stack, and connect with me for collaboration opportunities.',
-    images: [
-      {
-        url: '/hero/hero.png',
-        width: 1200,
-        height: 630,
-        alt: 'fleizean - software, design and my life',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -53,7 +46,6 @@ export const metadata: Metadata = {
     title: 'fleizean - software, design and my life',
     description:
       'Software engineer and designer passionate about creating elegant solutions. Explore my journey, projects, tech stack, and connect with me for collaboration opportunities.',
-    images: ['/hero/hero.png'],
   },
   icons: {
     icon: [
@@ -76,12 +68,40 @@ export const metadata: Metadata = {
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+// İlk boyamadan önce tema sınıfını ekler; yoksa koyu tema kullananlar beyaz bir açılış görür
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.classList.add(t)}catch(e){}})()`;
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Enes Yağız',
+  alternateName: 'fleizean',
+  url: 'https://fleizean.dev',
+  image: 'https://fleizean.dev/hero/hero.png',
+  jobTitle: 'Full Stack Developer',
+  sameAs: [
+    'https://github.com/fleizean',
+    'https://www.linkedin.com/in/fleizean/',
+    'https://youtube.com/@fleizean',
+    'https://medium.com/@fleizean',
+  ],
+};
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const language = await getLanguage();
+
   return (
-    <html lang="tr" suppressHydrationWarning>
+    <html lang={language} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className={`${inter.className} bg-white antialiased`} suppressHydrationWarning>
         <ThemeProvider>
-          <LanguageProvider>
+          <LanguageProvider initialLanguage={language}>
             <ClientLayout>{children}</ClientLayout>
           </LanguageProvider>
         </ThemeProvider>

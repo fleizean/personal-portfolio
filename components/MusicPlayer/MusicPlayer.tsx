@@ -13,18 +13,19 @@ const MusicPlayer: React.FC = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [colorHue, setColorHue] = useState(200);
   const [hasSeekd, setHasSeeked] = useState(false);
-  const [currentTrack, setCurrentTrack] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const completed = localStorage.getItem('musicCompleted') === 'true';
-      return completed ? '/music/24.2.mp3' : '/music/24.mp3';
-    }
-    return '/music/24.mp3';
-  });
+  const [currentTrack, setCurrentTrack] = useState('/music/24.mp3');
   const audioRef = useRef<HTMLAudioElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const animationFrameRef = useRef<number | undefined>(undefined);
+
+  // localStorage sunucuda yok; ilk render sunucuyla aynı kalsın diye mount sonrası okunur
+  useEffect(() => {
+    if (localStorage.getItem('musicCompleted') === 'true') {
+      setCurrentTrack('/music/24.2.mp3');
+    }
+  }, []);
 
   const togglePlay = () => {
     if (audioRef.current) {

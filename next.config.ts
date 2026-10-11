@@ -1,6 +1,8 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  // Docker imajı için: yalnızca çalışma zamanında gereken dosyaları .next/standalone'a toplar
+  output: 'standalone',
   images: {
     remotePatterns: [
       {

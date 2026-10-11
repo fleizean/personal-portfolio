@@ -117,6 +117,8 @@ const Header = () => {
             <ThemeToggle />
             <button
               onClick={toggleMenu}
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
               className="text-black hover:text-black focus:outline-none dark:text-gray-300 dark:hover:text-white ml-2"
             >
               {isMenuOpen ? (

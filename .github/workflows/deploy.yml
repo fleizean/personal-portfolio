@@ -1,0 +1,131 @@
+name: Deploy
+
+# Repo public: bu workflow yalnizca main'e push ve elle tetiklemede calisir.
+# pull_request tetikleyicisi bilerek yok; fork PR'lari secret'lara erisemesin.
+# Action'lar etiket yerine commit SHA'sina sabitli: etiket sonradan baska koda
+# tasinsa bile SSH anahtarini goren kod degismez.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  # Arka arkaya push'larda iki deploy ayni anda calismasin.
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE: ghcr.io/${{ github.repository_owner }}/personal-portfolio
+
+jobs:
+  build:
+    name: İmajı derle ve gönder
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
+
+      - name: GHCR girişi
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # next build (tip kontrolu dahil) Dockerfile icinde calisir;
+      # derleme kirilirsa imaj gonderilmez, deploy da baslamaz.
+      - name: İmaj
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:latest
+            ${{ env.IMAGE }}:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    name: Sunucuya yay
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - name: SSH anahtarı
+        uses: webfactory/ssh-agent@dc588b651fe13675774614f8e6a936a468676387 # v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: known_hosts
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+
+          for attempt in 1 2 3 4 5; do
+            if ssh-keyscan -T 20 -H "$SERVER_HOST" >> ~/.ssh/known_hosts 2>/dev/null \
+               && [ -s ~/.ssh/known_hosts ]; then
+              echo "Host anahtarı alındı (deneme $attempt)."
+              exit 0
+            fi
+            echo "Deneme $attempt başarısız, tekrar deneniyor..."
+            sleep $((attempt * 5))
+          done
+
+          echo "HATA: host anahtarı 5 denemede alınamadı." >&2
+          exit 1
+
+      - name: Deploy
+        env:
+          GHCR_USER: ${{ github.actor }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          ssh -o ServerAliveInterval=30 -o ServerAliveCountMax=20 \
+            -o ConnectionAttempts=5 -o ConnectTimeout=20 \
+            "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}" \
+            "GHCR_USER='$GHCR_USER' GHCR_TOKEN='$GHCR_TOKEN' IMAGE_TAG='$IMAGE_TAG' bash -s" <<'ENDSSH'
+          set -euo pipefail
+          cd /opt/personal-portfolio
+
+          echo "==> Kod guncelleniyor"
+          git fetch --quiet origin main
+          git reset --hard origin/main
+
+          echo "==> GHCR girisi"
+          echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+
+          echo "==> Imaj cekiliyor ($IMAGE_TAG)"
+          IMAGE_TAG="$IMAGE_TAG" docker compose pull --quiet
+
+          echo "==> Servis yenileniyor"
+          IMAGE_TAG="$IMAGE_TAG" docker compose up -d --no-build --remove-orphans
+
+          echo "==> Saglik kontrolu"
+          PORT="$(grep -sE '^WEB_PORT=' .env | cut -d= -f2 || true)"
+          PORT="${PORT:-8083}"
+          ok=0
+          for i in $(seq 1 30); do
+            if curl -fsS -o /dev/null "http://127.0.0.1:${PORT}/"; then
+              ok=1; break
+            fi
+            sleep 2
+          done
+
+          if [ "$ok" -ne 1 ]; then
+            echo "HATA: saglik kontrolu gecmedi, son loglar:" >&2
+            docker compose logs --tail=60 web >&2
+            exit 1
+          fi
+
+          echo "==> Tamam"
+          docker compose ps
+          docker image prune -f >/dev/null
+          ENDSSH

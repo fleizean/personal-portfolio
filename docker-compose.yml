@@ -1,0 +1,25 @@
+# Proje adi dizin adindan bagimsiz sabit: container ismi her makinede ayni olsun.
+name: personal-portfolio
+
+services:
+  web:
+    # Uretimde imaj GitHub Actions'ta derlenip GHCR'a gonderilir, sunucu sadece ceker:
+    #   IMAGE_TAG=<sha> docker compose pull && docker compose up -d
+    # Yerelde denemek icin: docker compose up -d --build
+    image: ghcr.io/fleizean/personal-portfolio:${IMAGE_TAG:-latest}
+    build: .
+    restart: unless-stopped
+    ports:
+      # Sadece localhost'a ac: TLS'i sunucudaki nginx yapiyor.
+      - '127.0.0.1:${WEB_PORT:-8083}:3000'
+    healthcheck:
+      test: ['CMD-SHELL', 'wget -q -O /dev/null http://127.0.0.1:3000/ || exit 1']
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    logging:
+      driver: json-file
+      options:
+        max-size: '10m'
+        max-file: '3'

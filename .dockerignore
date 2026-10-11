@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.git
+.github
+deploy
+.env*
+*.md
+LICENSE
+Dockerfile
+.dockerignore
+docker-compose.yml
+npm-debug.log*
+*.tsbuildinfo

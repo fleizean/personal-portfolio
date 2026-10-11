@@ -32,7 +32,6 @@ const SchoolLifeContent: React.FC = () => {
             {!badgeLoaded && (
               <div className="w-64 h-16 rounded-lg bg-gray-200 dark:bg-gray-700 animate-pulse" />
             )}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://badge.mediaplus.ma/colorfulwaves/eyagiz?1337Badge=off&UM6P=off"
               alt="eyagiz's 42 stats"

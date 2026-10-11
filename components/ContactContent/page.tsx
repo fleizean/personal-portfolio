@@ -1,27 +1,12 @@
 'use client';
 
 import { useTranslation } from '@/context/LanguageContext';
-import React, { useState } from 'react';
+import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaX } from 'react-icons/fa6';
-import { useForm, SubmitHandler } from 'react-hook-form';
-
-interface ContactFormData {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
 
 const ContactContent = () => {
   const { isLoading, t } = useTranslation('common');
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-    reset,
-  } = useForm<ContactFormData>();
-  const [submitStatus, setSubmitStatus] = useState('');
 
   if (isLoading) {
     return (
@@ -30,30 +15,6 @@ const ContactContent = () => {
       </div>
     );
   }
-
-  const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
-    setSubmitStatus('');
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        setSubmitStatus('success');
-        reset();
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (error) {
-      setSubmitStatus('error');
-      console.error('Error submitting form:', error);
-    }
-  };
 
   const socialLinks = [
     {
@@ -129,11 +90,14 @@ const ContactContent = () => {
                 </div>
               </div>
             </div>
+          </div>
 
+          {/* Right Column */}
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 sm:p-6 space-y-4 sm:space-y-6 self-start">
             {/* Social Links */}
             <div>
               <h4 className="font-semibold mb-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
-                Follow me
+                {t('contact.sections.social.title')}
               </h4>
               <div className="flex flex-wrap gap-3 sm:gap-4">
                 {socialLinks.map((social, index) => (
@@ -150,8 +114,9 @@ const ContactContent = () => {
                 ))}
               </div>
             </div>
+
             {/* Quick Contact */}
-            <div className="pt-4 border-t border-gray-800 dark:border-gray-700">
+            <div className="pt-4 border-t border-gray-300 dark:border-gray-700">
               <h4 className="font-semibold mb-3 text-sm sm:text-base text-black dark:text-gray-300">
                 {t('contact.sections.quick_contact.title')}
               </h4>
@@ -184,124 +149,6 @@ const ContactContent = () => {
                 </a>
               </div>
             </div>
-          </div>
-
-          {/* Right Column - Form */}
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 sm:p-6">
-            <h3 className="font-bold mb-4 text-base sm:text-lg dark:text-gray-300">
-              {t('contact.sections.form.title')}
-            </h3>
-
-            <div className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    {t('contact.sections.form.fields.name.label')} *
-                  </label>
-                  <input
-                    type="text"
-                    {...register('name', { required: 'Name is required' })}
-                    className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-colors text-sm bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 ${
-                      errors.name
-                        ? 'border-red-500 focus:ring-red-400'
-                        : 'border-gray-300 dark:border-gray-600 focus:ring-purple-400 dark:focus:ring-purple-600'
-                    }`}
-                    placeholder={t('contact.sections.form.fields.name.placeholder')}
-                  />
-                  {errors.name && (
-                    <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    {t('contact.sections.form.fields.email.label')} *
-                  </label>
-                  <input
-                    type="email"
-                    {...register('email', {
-                      required: 'Email is required',
-                      pattern: {
-                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: 'Invalid email address',
-                      },
-                    })}
-                    className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-colors text-sm bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 ${
-                      errors.email
-                        ? 'border-red-500 focus:ring-red-400'
-                        : 'border-gray-300 dark:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-700'
-                    }`}
-                    placeholder={t('contact.sections.form.fields.email.placeholder')}
-                  />
-                  {errors.email && (
-                    <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
-                  )}
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  {t('contact.sections.form.fields.subject.label')} *
-                </label>
-                <input
-                  type="text"
-                  {...register('subject', { required: 'Subject is required' })}
-                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-colors text-sm bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 ${
-                    errors.subject
-                      ? 'border-red-500 focus:ring-red-400'
-                      : 'border-gray-300 dark:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-700'
-                  }`}
-                  placeholder={t('contact.sections.form.fields.subject.placeholder')}
-                />
-                {errors.subject && (
-                  <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  {t('contact.sections.form.fields.message.label')} *
-                </label>
-                <textarea
-                  {...register('message', { required: 'Message is required' })}
-                  rows={5}
-                  className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-colors text-sm resize-none bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 ${
-                    errors.message
-                      ? 'border-red-500 focus:ring-red-400'
-                      : 'border-gray-300 dark:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-700'
-                  }`}
-                  placeholder={t('contact.sections.form.fields.message.placeholder')}
-                />
-                {errors.message && (
-                  <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>
-                )}
-              </div>
-
-              <button
-                type="submit"
-                onClick={handleSubmit(onSubmit)}
-                disabled={isSubmitting}
-                className="w-full text-white py-2 px-4 rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-                style={{ background: 'linear-gradient(135deg, #2a2a2a, #555555)' }}
-              >
-                {isSubmitting
-                  ? t('contact.sections.form.submit_button.loading')
-                  : t('contact.sections.form.submit_button.default')}
-              </button>
-
-              {submitStatus === 'success' && (
-                <div
-                  className="p-3 rounded-lg text-white text-sm font-medium"
-                  style={{ background: 'linear-gradient(135deg, #2a2a2a, #555555)' }}
-                >
-                  {t('contact.sections.form.success_message')}
-                </div>
-              )}
-            </div>
-
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
-              {t('contact.sections.form.footer_note')}
-            </p>
           </div>
         </div>
       </div>

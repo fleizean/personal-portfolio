@@ -11,9 +11,7 @@ export default function BackgroundGradient() {
     <div className="absolute inset-0 w-full h-full -z-10">
       {/* Overlay */}
       <div
-        className={`absolute inset-0 z-10 ${
-          isDark ? 'bg-gray-900/40' : 'bg-white/25'
-        }`}
+        className="absolute inset-0 z-10 bg-white/25 dark:bg-gray-900/40"
       ></div>
 
       <ShaderGradientCanvas

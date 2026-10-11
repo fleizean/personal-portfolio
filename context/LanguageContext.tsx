@@ -4,8 +4,13 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 // Çeviri dosyalarını import et
 import commonTR from '../public/locales/tr/common.json';
 import commonEN from '../public/locales/en/common.json';
+import { Language, LANGUAGE_KEY, isLanguage } from '../lib/language';
 
-type Language = 'tr' | 'en';
+function persistLanguage(lang: Language) {
+  localStorage.setItem(LANGUAGE_KEY, lang);
+  document.cookie = `${LANGUAGE_KEY}=${lang}; path=/; max-age=31536000; samesite=lax`;
+  document.documentElement.lang = lang;
+}
 
 type Translations = {
   common: typeof commonTR;
@@ -32,38 +37,35 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
-  const [isLoading, setIsLoading] = useState(true);
+export function LanguageProvider({
+  children,
+  initialLanguage,
+}: {
+  children: React.ReactNode;
+  initialLanguage: Language;
+}) {
+  const [language, setLanguage] = useState<Language>(initialLanguage);
+  // Dil artık sunucuda belirleniyor; bileşenlerdeki isLoading kontrolleri için alan korunuyor
+  const isLoading = false;
 
-  // İlk yüklemede localStorage'dan dil tercihini al
+  // Çerezi olmayan eski ziyaretçiler: localStorage'daki tercihi uygula ve çereze taşı
   useEffect(() => {
     try {
-      const savedLanguage = localStorage.getItem('portfolio-language') as Language;
-      const browserLanguage = navigator.language.startsWith('tr') ? 'tr' : 'en';
-
-      if (savedLanguage && ['tr', 'en'].includes(savedLanguage)) {
+      const savedLanguage = localStorage.getItem(LANGUAGE_KEY);
+      if (isLanguage(savedLanguage)) {
         setLanguage(savedLanguage);
-      } else {
-        // Kullanıcı tercihi yoksa tarayıcı dilini kullan
-        setLanguage(browserLanguage);
-        localStorage.setItem('portfolio-language', browserLanguage);
+        persistLanguage(savedLanguage);
       }
     } catch (error) {
       console.warn('localStorage erişim hatası:', error);
-      setLanguage('en'); // Fallback
-    } finally {
-      setIsLoading(false);
     }
   }, []);
 
-  // Dil değiştiğinde localStorage'a kaydet
+  // Dil değiştiğinde localStorage'a ve çereze kaydet
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
     try {
-      localStorage.setItem('portfolio-language', lang);
-      // Sayfayı yenile (opsiyonel - tam çeviri için)
-      // window.location.reload();
+      persistLanguage(lang);
     } catch (error) {
       console.warn('localStorage yazma hatası:', error);
     }
