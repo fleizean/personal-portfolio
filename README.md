@@ -3,7 +3,7 @@
 This is my personal portfolio website, continuously evolving with new sections as I develop and create more projects.
 
 <p align="center">
-  <a href="https://fleizean.netlify.app">
+  <a href="https://fleizean.dev">
     <img src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A//fleizean.dev" alt="Website Status"/>
   </a>
 </p>
@@ -13,6 +13,49 @@ This is my personal portfolio website, continuously evolving with new sections a
 </p>
 
 ## 📋 All Updates
+
+### October 12, 2026
+
+#### 🚚 feat: self-hosting with Docker and GitHub Actions
+
+- Moved hosting from Netlify to my own server
+- Added `Dockerfile` (Next.js standalone output) and `docker-compose.yml`
+- Added `Deploy` workflow: builds the image, pushes it to GHCR and deploys over SSH
+- Added nginx vhost config under `deploy/` (TLS termination, www → apex redirect, security headers)
+
+---
+
+#### ⚡ feat: server-side rendering and SEO improvements
+
+- Page content is now rendered on the server instead of after hydration
+- Language is resolved on the server from a cookie or `Accept-Language`; `<html lang>` follows it
+- Theme class is applied before first paint, removing the white flash in dark mode
+- Added generated Open Graph / Twitter image and `Person` JSON-LD
+- Added `/blog` and `/cv` to the sitemap
+- Medium feed is cached for an hour; WebGL background is lazy-loaded
+
+---
+
+#### 🔒 chore: Next.js 16 upgrade and dependency cleanup
+
+- Upgraded to Next.js 16.4 and refreshed all dependencies — `npm audit` reports 0 vulnerabilities
+- Replaced `eslint-config-next` with `typescript-eslint` + React plugins; lint runs through the ESLint CLI
+- Removed unused packages: `next-seo`, `i18next`, `react-i18next`, `i18next-browser-languagedetector`
+
+---
+
+#### ✂️ refactor: contact page without the form
+
+- Removed the contact form, its API route and the `nodemailer` / `react-hook-form` dependencies
+- No environment variables are needed anymore; the page keeps email, location and social links
+
+---
+
+#### 🐛 fix: small corrections
+
+- Fixed hero image alt text that was rendered as a raw translation key
+- Updated the portfolio project link from the old `fleizean.me` domain to `fleizean.dev`
+- Added accessible label to the mobile menu button
 
 ### March 11, 2026
 
