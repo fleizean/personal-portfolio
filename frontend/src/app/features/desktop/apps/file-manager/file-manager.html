@@ -1,0 +1,156 @@
+<!-- Menü çubuğu -->
+<div class="flex shrink-0 gap-4 px-3 py-1 text-slate-500 dark:text-slate-400">
+  @for (item of i18n.list('os.files.menu'); track item) {
+    <span class="cursor-default">{{ item }}</span>
+  }
+</div>
+
+<!-- Araç çubuğu + yol çubuğu -->
+<div class="flex shrink-0 items-center gap-1 px-2 pb-2">
+  <button
+    type="button"
+    class="tool-button"
+    [attr.aria-label]="i18n.t('os.files.back')"
+    [title]="i18n.t('os.files.back')"
+    [disabled]="!canGoBack()"
+    (click)="step(-1)"
+  >
+    <svg lucideArrowLeft class="h-4 w-4"></svg>
+  </button>
+  <button
+    type="button"
+    class="tool-button"
+    [attr.aria-label]="i18n.t('os.files.forward')"
+    [title]="i18n.t('os.files.forward')"
+    [disabled]="!canGoForward()"
+    (click)="step(1)"
+  >
+    <svg lucideArrowRight class="h-4 w-4"></svg>
+  </button>
+  <button
+    type="button"
+    class="tool-button"
+    [attr.aria-label]="i18n.t('os.files.up')"
+    [title]="i18n.t('os.files.up')"
+    [disabled]="location().path.length === 0"
+    (click)="up()"
+  >
+    <svg lucideArrowUp class="h-4 w-4"></svg>
+  </button>
+  <button
+    type="button"
+    class="tool-button"
+    [attr.aria-label]="i18n.t('os.files.home')"
+    [title]="i18n.t('os.files.home')"
+    (click)="go({ root: 'home', path: [] })"
+  >
+    <svg lucideHouse class="h-4 w-4"></svg>
+  </button>
+
+  <nav
+    aria-label="path"
+    class="ml-1 flex h-8 min-w-0 flex-1 items-center overflow-x-auto rounded border border-slate-300 bg-white px-1 dark:border-[#33373f] dark:bg-[#1a1c21]"
+  >
+    @for (crumb of crumbs(); track crumb.path.join('/'); let i = $index, last = $last) {
+      <span class="flex shrink-0 items-center">
+        @if (i > 0) {
+          <svg lucideChevronRight class="h-3.5 w-3.5 text-slate-400"></svg>
+        }
+        <button
+          type="button"
+          class="flex items-center gap-1 rounded px-2 py-1 font-bold hover:bg-slate-200 dark:hover:bg-[#2c3038]"
+          [class]="last ? 'text-slate-800 dark:text-slate-100' : 'text-slate-500 dark:text-slate-400'"
+          (click)="goTo(crumb.path)"
+        >
+          @if (i === 0 && location().root === 'home') {
+            <svg lucideHouse class="h-3.5 w-3.5"></svg>
+          }
+          {{ crumb.label }}
+        </button>
+      </span>
+    }
+  </nav>
+</div>
+
+<div class="flex min-h-0 flex-1 border-t border-slate-300 dark:border-[#2e323a]">
+  <!-- Kenar çubuğu -->
+  <aside
+    class="hidden w-48 shrink-0 overflow-y-auto border-r border-slate-300 py-2 sm:block dark:border-[#2e323a]"
+  >
+    <p class="mb-1 px-3 font-bold text-slate-700 dark:text-slate-300">
+      {{ i18n.t('os.places.title') }}
+    </p>
+    @for (place of places(); track place.label) {
+      <button
+        type="button"
+        class="flex w-full items-center gap-2 px-3 py-1 text-left"
+        [class]="
+          isCurrent(place.location)
+            ? 'bg-[#367bf0] text-white'
+            : 'hover:bg-slate-200 dark:hover:bg-[#2c3038]'
+        "
+        (click)="go(place.location)"
+      >
+        <app-node-icon kind="dir" [glyph]="place.node.glyph" [size]="18" />
+        <span class="truncate">{{ place.label }}</span>
+      </button>
+    }
+
+    <p class="mb-1 mt-3 px-3 font-bold text-slate-700 dark:text-slate-300">
+      {{ i18n.t('os.places.network') }}
+    </p>
+    @for (link of network(); track link.url) {
+      <a
+        class="flex items-center gap-2 px-3 py-1 hover:bg-slate-200 dark:hover:bg-[#2c3038]"
+        target="_blank"
+        rel="noopener noreferrer"
+        [href]="link.url"
+      >
+        <svg lucideGlobe class="h-[18px] w-[18px] shrink-0 text-slate-500 dark:text-slate-400"></svg>
+        <span class="truncate">{{ link.label }}</span>
+      </a>
+    }
+  </aside>
+
+  <!-- Klasör içeriği -->
+  <div class="flex min-w-0 flex-1 flex-col">
+    <div class="min-h-0 flex-1 overflow-y-auto p-3" (click)="clearSelection($event)">
+      @if (dir().children.length === 0) {
+        <p class="mt-10 text-center text-slate-500 dark:text-slate-400">
+          {{ dir().emptyText ?? i18n.t('os.files.empty') }}
+        </p>
+      } @else {
+        <ul class="grid grid-cols-[repeat(auto-fill,minmax(104px,1fr))] gap-1">
+          @for (node of dir().children; track node.name) {
+            <li>
+              <button
+                type="button"
+                class="group flex w-full flex-col items-center gap-1 rounded p-1.5 outline-none focus-visible:ring-2 focus-visible:ring-[#367bf0]"
+                (click)="click(node)"
+                (dblclick)="open(node)"
+                (keydown.enter)="open(node)"
+              >
+                <app-node-icon [kind]="node.kind" [glyph]="node.glyph" [size]="52" />
+                <span
+                  class="line-clamp-2 rounded px-1 text-center leading-tight [overflow-wrap:anywhere]"
+                  [class]="
+                    selected() === node.name
+                      ? 'bg-[#367bf0] text-white'
+                      : 'group-hover:bg-slate-200 dark:group-hover:bg-[#2c3038]'
+                  "
+                >
+                  {{ node.name }}
+                </span>
+              </button>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+    <div
+      class="shrink-0 border-t border-slate-300 px-3 py-1.5 text-xs text-slate-500 dark:border-[#2e323a] dark:text-slate-400"
+    >
+      {{ i18n.t('os.files.items', { n: dir().children.length }) }}
+    </div>
+  </div>
+</div>

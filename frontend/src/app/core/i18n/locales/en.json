@@ -1,0 +1,129 @@
+{
+  "os": {
+    "menu": {
+      "applications": "Applications",
+      "files": "File Manager",
+      "cv": "Resume",
+      "contact": "Contact",
+      "blog": "Blog"
+    },
+    "panel": {
+      "workspace": "Workspace",
+      "language": "Change language",
+      "theme": "Toggle theme"
+    },
+    "window": {
+      "minimize": "Minimize",
+      "maximize": "Maximize",
+      "restore": "Restore",
+      "close": "Close"
+    },
+    "files": {
+      "menu": [
+        "File",
+        "Edit",
+        "View",
+        "Go",
+        "Help"
+      ],
+      "back": "Back",
+      "forward": "Forward",
+      "up": "Parent folder",
+      "home": "Home folder",
+      "items": "{{n}} items",
+      "empty": "This folder is empty",
+      "trash_empty": "Trash is empty. Old portfolio versions were recycled long ago."
+    },
+    "places": {
+      "title": "Places",
+      "network": "Network",
+      "trash": "Trash"
+    },
+    "folders": {
+      "current": "current",
+      "archive": "archive"
+    },
+    "desktop": {
+      "home": "Home"
+    },
+    "pdf": {
+      "open": "Open in new tab",
+      "download": "Download"
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "fleizean — software, design and my life",
+      "description": "Software engineer and designer passionate about creating elegant solutions. Explore my journey, projects, tech stack, and connect with me for collaboration opportunities."
+    },
+    "journey": {
+      "title": "journey",
+      "description": "Follow my professional journey from student to software engineer. Explore my experiences, milestones, career growth, and the path that shaped who I am today."
+    },
+    "school_life": {
+      "title": "school life",
+      "description": "Explore my academic experiences, educational projects, and school activities that shaped my journey. From coursework to extracurricular achievements."
+    },
+    "blog": {
+      "title": "blog",
+      "description": "Read my latest articles and thoughts on software development, design, and technology."
+    },
+    "contact": {
+      "title": "contact",
+      "description": "Get in touch with me for collaboration opportunities, project inquiries, or just to say hello. Connect via email, social media, or through the contact form."
+    },
+    "cv": {
+      "title": "cv / resume",
+      "description": "View and download my professional CV/Resume. Available in Turkish and English."
+    },
+    "projects": {
+      "title": "projects",
+      "description": "Explore my portfolio of web applications, software projects, and creative solutions. From full-stack development to system design, discover what I have built."
+    },
+    "tech_stack": {
+      "title": "tech stack",
+      "description": "Discover the technologies, programming languages, frameworks, and tools I use to build modern applications. From frontend to backend, explore my technical expertise."
+    }
+  },
+  "actions": {
+    "resume": "resume",
+    "contact": "get in touch"
+  },
+  "social": {
+    "github": "GitHub profile",
+    "linkedin": "LinkedIn profile",
+    "youtube": "YouTube channel",
+    "intra42": "42 Network profile"
+  },
+  "project": {
+    "status": {
+      "development": "In Development",
+      "completed": "Completed",
+      "ongoing": "Ongoing",
+      "production": "Live"
+    },
+    "links": {
+      "github": "GitHub",
+      "live_demo": "Live Demo"
+    }
+  },
+  "tech": {
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "devops": "DevOps",
+      "learning": "Currently Learning"
+    }
+  },
+  "contact": {
+    "email": "Email",
+    "location": "Location",
+    "send_email": "Send Direct Email"
+  },
+  "not_found": {
+    "title": "NOT FOUND",
+    "description_main": "Oops! This page seems to have vanished like my motivation on Monday mornings.",
+    "description_secondary": "Maybe it's taking a coffee break or got lost in the digital void."
+  }
+}

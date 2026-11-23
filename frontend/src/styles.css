@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+
+/* Yazı tipleri paketle birlikte gelir: ziyaretçi tarayıcısı Google'a istek atmaz */
+@import '@fontsource/cantarell/latin-400.css';
+@import '@fontsource/cantarell/latin-700.css';
+@import '@fontsource/cantarell/latin-ext-400.css';
+@import '@fontsource/cantarell/latin-ext-700.css';
+@import '@fontsource/jetbrains-mono/latin-400.css';
+@import '@fontsource/jetbrains-mono/latin-700.css';
+@import '@fontsource/jetbrains-mono/latin-ext-400.css';
+@import '@fontsource/jetbrains-mono/latin-ext-700.css';
+
+/* Tema, <html> üzerindeki .dark sınıfıyla seçilir (index.html'deki betik ekler) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-os: 'Cantarell', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: #10162b;
+  }
+}
+
+@layer components {
+  .os-mono {
+    font-family: var(--font-mono);
+  }
+
+  .panel-button {
+    @apply flex h-[30px] min-w-[30px] items-center justify-center rounded px-1.5 hover:bg-black/5 dark:hover:bg-white/10;
+  }
+
+  .panel-button--active {
+    @apply bg-black/10 dark:bg-white/15;
+  }
+
+  .panel-separator {
+    @apply mx-1 h-5 w-px bg-black/15 dark:bg-white/15;
+  }
+
+  .title-button {
+    @apply flex h-[18px] w-[18px] items-center justify-center rounded-full bg-slate-300 text-transparent transition-colors hover:bg-slate-400 hover:text-slate-800 dark:bg-[#3a3e48] dark:hover:bg-[#4b505c] dark:hover:text-white;
+  }
+
+  .title-button--danger {
+    @apply hover:bg-[#e5484d] hover:text-white dark:hover:bg-[#e5484d];
+  }
+
+  .tool-button {
+    @apply flex h-8 w-8 items-center justify-center rounded hover:bg-slate-200 disabled:opacity-35 disabled:hover:bg-transparent dark:hover:bg-[#2c3038];
+  }
+
+  .tool-link {
+    @apply flex items-center gap-1.5 rounded px-2 py-1.5 hover:bg-slate-200 dark:hover:bg-[#2c3038];
+  }
+}

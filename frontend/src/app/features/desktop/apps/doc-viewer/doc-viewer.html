@@ -1,0 +1,67 @@
+@let d = doc();
+@if (d.image) {
+  <div
+    class="relative float-right mb-3 ml-4 h-24 w-24 overflow-hidden rounded border border-slate-200 bg-slate-50 sm:h-32 sm:w-32 dark:border-[#2e323a] dark:bg-[#22252c]"
+  >
+    <img [ngSrc]="d.image" alt="" fill sizes="128px" class="object-contain p-2" />
+  </div>
+}
+
+<h1 class="text-lg font-bold text-slate-900 dark:text-white">
+  <span class="text-[#367bf0]"># </span>{{ d.title }}
+</h1>
+@if (d.subtitle) {
+  <p class="text-slate-500 dark:text-slate-400">
+    <span class="text-[#367bf0]">&gt; </span>{{ d.subtitle }}
+  </p>
+}
+
+@if (d.meta?.length) {
+  <dl class="mt-3">
+    @for (m of d.meta; track m.label) {
+      <div class="flex gap-2">
+        <dt class="text-[#b46ef0]">{{ m.label }}:</dt>
+        <dd>{{ m.value }}</dd>
+      </div>
+    }
+  </dl>
+}
+
+@if (d.body) {
+  <p class="mt-3 whitespace-pre-line">{{ d.body }}</p>
+}
+
+@if (d.list?.length) {
+  <ul class="mt-3 space-y-1">
+    @for (item of d.list; track item) {
+      <li class="flex gap-2"><span class="text-[#367bf0]">-</span><span>{{ item }}</span></li>
+    }
+  </ul>
+}
+
+@if (d.tags?.length) {
+  <p class="mt-3 flex flex-wrap gap-x-2 gap-y-1">
+    @for (tag of d.tags; track tag) {
+      <span class="text-[#30a46c]">`{{ tag }}`</span>
+    }
+  </p>
+}
+
+@if (d.links?.length) {
+  <ul class="clear-both mt-4 space-y-0.5">
+    @for (link of d.links; track link.href) {
+      <li>
+        <a
+          class="group"
+          rel="noopener noreferrer"
+          [href]="link.href"
+          [attr.target]="link.href.startsWith('mailto:') ? null : '_blank'"
+        >
+          <span class="text-slate-400">[</span
+          ><span class="text-[#367bf0] group-hover:underline">{{ link.label }}</span
+          ><span class="text-slate-400">]({{ link.href.replace('mailto:', '') }})</span>
+        </a>
+      </li>
+    }
+  </ul>
+}

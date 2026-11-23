@@ -1,0 +1,67 @@
+<app-wallpaper />
+
+<app-panel [menu]="menu()" [launchers]="launchers()" />
+
+<main class="relative min-h-0 flex-1">
+  <!-- Masaüstü ikonları -->
+  <ul
+    class="absolute inset-0 flex flex-col flex-wrap content-start gap-2 p-3 max-md:flex-row"
+    (pointerdown)="clearIconSelection($event)"
+  >
+    @for (icon of desktopIcons(); track icon.key) {
+      <li>
+        <button
+          type="button"
+          class="group flex w-[88px] flex-col items-center gap-1 rounded p-1 outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          (click)="clickIcon(icon)"
+          (dblclick)="openIcon(icon)"
+          (keydown.enter)="openIcon(icon)"
+        >
+          <app-node-icon [kind]="icon.node.kind" [glyph]="icon.node.glyph" [size]="52" />
+          <span
+            class="rounded px-1 text-center leading-tight text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]"
+            [class]="selectedIcon() === icon.key ? 'bg-[#367bf0]' : 'group-hover:bg-white/15'"
+          >
+            {{ icon.label }}
+          </span>
+        </button>
+      </li>
+    }
+  </ul>
+
+  <!-- Pencereler -->
+  @for (win of store.windows(); track win.id) {
+    <app-window-frame [win]="win" [focused]="store.focusedId() === win.id" [compact]="compact()">
+      @switch (win.content.app) {
+        @case ('files') {
+          @if (home(); as home) {
+            <app-file-manager
+              [location]="win.content.location"
+              [home]="home"
+              [trash]="trash()"
+              [network]="profile()?.socials ?? []"
+              [singleClick]="compact()"
+              (navigated)="onNavigated(win, $event)"
+              (fileOpened)="openFile($event)"
+            />
+          }
+        }
+        @case ('about') {
+          @if (profile(); as profile) {
+            <app-about
+              [profile]="profile"
+              (openCv)="openNamedFile('cv.pdf')"
+              (openContact)="openNamedFile('contact.sh')"
+            />
+          }
+        }
+        @case ('doc') {
+          <app-doc-viewer [doc]="win.content.doc" />
+        }
+        @case ('pdf') {
+          <app-pdf-viewer [src]="cvSrc()" />
+        }
+      }
+    </app-window-frame>
+  }
+</main>

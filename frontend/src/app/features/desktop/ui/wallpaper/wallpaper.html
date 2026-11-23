@@ -1,0 +1,79 @@
+<svg class="h-full w-full" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="wp-base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f8bf0" />
+      <stop offset="0.45" stop-color="#3567d6" />
+      <stop offset="0.8" stop-color="#2d50b8" />
+      <stop offset="1" stop-color="#5b4fc4" />
+    </linearGradient>
+    <radialGradient id="wp-violet" cx="1" cy="1" r="0.55">
+      <stop offset="0" stop-color="#7a52d1" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#7a52d1" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="slab-face" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a85ee" />
+      <stop offset="1" stop-color="#2b58c0" />
+    </linearGradient>
+    <linearGradient id="slab-face-light" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5a96f3" />
+      <stop offset="1" stop-color="#3b72dc" />
+    </linearGradient>
+    <linearGradient id="slab-face-deep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3f8fe0" />
+      <stop offset="1" stop-color="#4ab0ea" />
+    </linearGradient>
+    <linearGradient id="slab-side" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6fc3f5" />
+      <stop offset="1" stop-color="#3b8fe0" />
+    </linearGradient>
+    <filter id="slab-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="-10" dy="16" stdDeviation="18" flood-color="#071a45" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#wp-base)" />
+
+  <!-- Sol alttaki kristal doku -->
+  <g>
+    <path d="M0 230 L760 900 L0 900 Z" fill="#0a2452" />
+    @for (shard of shards; track $index) {
+      <polygon [attr.points]="shard.points" [attr.fill]="shard.fill" [attr.opacity]="shard.opacity" />
+    }
+  </g>
+
+  <rect width="1600" height="900" fill="url(#wp-violet)" />
+
+  <!-- Eğik bloklar -->
+  @for (slab of slabs; track $index) {
+    <g filter="url(#slab-shadow)" [attr.transform]="'rotate(' + slab.rotate + ' ' + slab.cx + ' ' + slab.cy + ')'">
+      <polygon [attr.points]="sidePoints(slab)" fill="url(#slab-side)" />
+      <rect
+        [attr.x]="faceX(slab)"
+        [attr.y]="faceY(slab)"
+        [attr.width]="slab.w"
+        [attr.height]="slab.h"
+        [attr.fill]="'url(#' + slab.face + ')'"
+      />
+    </g>
+  }
+
+</svg>
+
+<!-- Koyu temada duvar kâğıdı bir ton karartılır -->
+<div class="absolute inset-0 bg-black/0 transition-colors dark:bg-[#050b1f]/45"></div>
+
+<!-- İşaret karartmanın üstünde durur, iki temada da parlak kalır -->
+<svg class="absolute inset-0 h-full w-full" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="mark-glow" x="-30%" y="-60%" width="160%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#ffffff" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  <!-- fleizean işareti -->
+  <g filter="url(#mark-glow)" class="mark">
+    <text x="610" y="468" text-anchor="end" class="mark-prompt">~/</text>
+    <rect x="626" y="408" width="356" height="84" rx="8" fill="none" stroke="#ffffff" stroke-width="5" />
+    <text x="804" y="466" text-anchor="middle" class="mark-text">fleizean</text>
+  </g>
+</svg>
+<div class="grain absolute inset-0 opacity-[0.05]"></div>

@@ -1,45 +1,18 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env*.local
+# Ortam değişkenleri ve sırlar: repo public, asla commit edilmez
 .env
+.env.*
+!.env.example
+*.pem
+*.key
 
-# vercel
-.vercel
+# Bağımlılıklar ve derleme çıktıları (alt projelerin kendi .gitignore'ları da var)
+node_modules/
+dist/
+.angular/
+bin/
+obj/
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# PWA files
-public/sw.js
-public/workbox-*.js
-public/worker-*.js
-public/sw.js.map
-public/workbox-*.js.map
-public/worker-*.js.map
-
-package-lock.json
+# Sistem ve editör dosyaları
+.DS_Store
+Thumbs.db
+*.log

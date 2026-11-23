@@ -7,13 +7,14 @@ services:
     #   IMAGE_TAG=<sha> docker compose pull && docker compose up -d
     # Yerelde denemek icin: docker compose up -d --build
     image: ghcr.io/fleizean/personal-portfolio:${IMAGE_TAG:-latest}
-    build: .
+    build: ./frontend
     restart: unless-stopped
     ports:
       # Sadece localhost'a ac: TLS'i sunucudaki nginx yapiyor.
       - '127.0.0.1:${WEB_PORT:-8083}:3000'
     healthcheck:
-      test: ['CMD-SHELL', 'wget -q -O /dev/null http://127.0.0.1:3000/ || exit 1']
+      # Angular SSR yalnizca izinli host adlarina yanit verir
+      test: ['CMD-SHELL', "wget -q -O /dev/null --header='Host: fleizean.dev' http://127.0.0.1:3000/ || exit 1"]
       interval: 30s
       timeout: 5s
       retries: 3

@@ -14,6 +14,20 @@ This is my personal portfolio website, continuously evolving with new sections a
 
 ## 📋 All Updates
 
+### November 23, 2026
+
+#### 🖥️ feat: desktop-style redesign, rebuilt with Angular
+
+- Replaced the Next.js app with an Angular 22 app (standalone, zoneless, signals) under `frontend/`
+- The home page is now a desktop: top panel with workspaces, draggable and resizable windows, a file manager and a markdown viewer
+- Projects, journey, tech stack and school live as folders and files; old URLs such as `/projects` and `/cv` open the matching window
+- Layered architecture: `domain` (models and ports), `data` (content source), `core` (i18n, theme, SEO), `features`, `shared`
+- Server-side rendering with the language read from a cookie; host header allow-list on the SSR server
+- WebGL background removed; wallpaper is plain SVG and fonts are self-hosted
+- Added `backend/` for the upcoming .NET API
+
+---
+
 ### October 12, 2026
 
 #### 🚚 feat: self-hosting with Docker and GitHub Actions

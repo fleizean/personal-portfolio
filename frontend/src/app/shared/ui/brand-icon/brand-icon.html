@@ -1,0 +1,18 @@
+<svg viewBox="0 0 24 24" class="h-full w-full" fill="currentColor">
+  @if (path(); as d) {
+    <path [attr.d]="d" />
+  } @else {
+    <rect x="1" y="1" width="22" height="22" rx="3" />
+    <text
+      x="12"
+      y="17.5"
+      text-anchor="middle"
+      font-family="Arial, sans-serif"
+      font-weight="700"
+      font-size="14"
+      class="fill-white dark:fill-[#1a1c21]"
+    >
+      in
+    </text>
+  }
+</svg>

@@ -1,0 +1,67 @@
+<div
+  class="relative flex h-9 shrink-0 select-none items-center px-2"
+  [class.cursor-grab]="!maximized()"
+  [class]="
+    focused() ? 'bg-[#e8ebf0] dark:bg-[#1a1c22]' : 'bg-[#eef0f3] dark:bg-[#1e2026]'
+  "
+  (pointerdown)="startDrag($event)"
+  (dblclick)="toggleMaximize()"
+>
+  <app-node-icon [kind]="isFolder() ? 'dir' : 'file'" [glyph]="win().glyph" [size]="18" />
+  <span
+    class="pointer-events-none absolute inset-x-28 truncate text-center text-xs font-bold"
+    [class]="
+      focused() ? 'text-slate-700 dark:text-slate-300' : 'text-slate-400 dark:text-slate-500'
+    "
+  >
+    {{ win().title }}
+  </span>
+
+  <div class="ml-auto flex items-center gap-1.5">
+    <button
+      type="button"
+      class="title-button"
+      [attr.aria-label]="i18n.t('os.window.minimize')"
+      [title]="i18n.t('os.window.minimize')"
+      (click)="minimize()"
+    >
+      <svg lucideMinus class="h-3 w-3"></svg>
+    </button>
+    @if (!compact()) {
+      <button
+        type="button"
+        class="title-button"
+        [attr.aria-label]="i18n.t(win().maximized ? 'os.window.restore' : 'os.window.maximize')"
+        [title]="i18n.t(win().maximized ? 'os.window.restore' : 'os.window.maximize')"
+        (click)="toggleMaximize()"
+      >
+        @if (win().maximized) {
+          <svg lucideMinimize2 class="h-3 w-3"></svg>
+        } @else {
+          <svg lucideMaximize2 class="h-3 w-3"></svg>
+        }
+      </button>
+    }
+    <button
+      type="button"
+      class="title-button title-button--danger"
+      [attr.aria-label]="i18n.t('os.window.close')"
+      [title]="i18n.t('os.window.close')"
+      (click)="close()"
+    >
+      <svg lucideX class="h-3 w-3"></svg>
+    </button>
+  </div>
+</div>
+
+<div class="min-h-0 flex-1">
+  <ng-content />
+</div>
+
+@if (!maximized()) {
+  <div
+    aria-hidden="true"
+    class="absolute bottom-0 right-0 h-4 w-4 cursor-nwse-resize"
+    (pointerdown)="startResize($event)"
+  ></div>
+}

@@ -1,0 +1,129 @@
+{
+  "os": {
+    "menu": {
+      "applications": "Uygulamalar",
+      "files": "Dosya Yöneticisi",
+      "cv": "Özgeçmiş",
+      "contact": "İletişim",
+      "blog": "Blog"
+    },
+    "panel": {
+      "workspace": "Çalışma alanı",
+      "language": "Dili değiştir",
+      "theme": "Temayı değiştir"
+    },
+    "window": {
+      "minimize": "Küçült",
+      "maximize": "Büyüt",
+      "restore": "Eski boyutuna getir",
+      "close": "Kapat"
+    },
+    "files": {
+      "menu": [
+        "Dosya",
+        "Düzen",
+        "Görünüm",
+        "Git",
+        "Yardım"
+      ],
+      "back": "Geri",
+      "forward": "İleri",
+      "up": "Üst klasör",
+      "home": "Ev klasörü",
+      "items": "{{n}} öğe",
+      "empty": "Bu klasör boş",
+      "trash_empty": "Çöp kutusu boş. Eski portfolyo sürümleri çoktan geri dönüştürüldü."
+    },
+    "places": {
+      "title": "Yerler",
+      "network": "Ağ",
+      "trash": "Çöp Kutusu"
+    },
+    "folders": {
+      "current": "şimdiki",
+      "archive": "arşiv"
+    },
+    "desktop": {
+      "home": "Ev"
+    },
+    "pdf": {
+      "open": "Yeni sekmede aç",
+      "download": "İndir"
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "fleizean — yazılım, tasarım ve hayatım",
+      "description": "Zarif çözümler üretmeye tutkulu bir yazılım mühendisi ve tasarımcı. Yolculuğumu, projelerimi, teknoloji yığınımı keşfet ve iş birliği fırsatları için benimle iletişime geç."
+    },
+    "journey": {
+      "title": "yolculuğum",
+      "description": "Öğrencilikten yazılım mühendisliğine uzanan profesyonel yolculuğumu takip et. Deneyimlerimi, dönüm noktalarımı ve kariyer gelişimimi keşfet."
+    },
+    "school_life": {
+      "title": "okul hayatım",
+      "description": "Yolculuğumu şekillendiren akademik deneyimlerimi, eğitim projelerimi ve okul aktivitelerimi keşfet."
+    },
+    "blog": {
+      "title": "blog",
+      "description": "Yazılım geliştirme, tasarım ve teknoloji üzerine yazdığım en güncel makalelerimi ve düşüncelerimi oku."
+    },
+    "contact": {
+      "title": "iletişim",
+      "description": "İş birliği fırsatları, proje teklifleri veya sadece merhaba demek için benimle iletişime geç. E-posta, sosyal medya veya iletişim formu üzerinden ulaşabilirsin."
+    },
+    "cv": {
+      "title": "cv / özgeçmiş",
+      "description": "Profesyonel CV'mi görüntüle ve indir. Türkçe ve İngilizce olarak mevcut."
+    },
+    "projects": {
+      "title": "projeler",
+      "description": "Web uygulamaları, yazılım projeleri ve yaratıcı çözümlerden oluşan portföyümü keşfet. Full-stack geliştirmeden sistem tasarımına kadar neler ürettiğimi gör."
+    },
+    "tech_stack": {
+      "title": "teknoloji yığını",
+      "description": "Modern uygulamalar geliştirmek için kullandığım teknolojileri, programlama dillerini, framework'leri ve araçları keşfet."
+    }
+  },
+  "actions": {
+    "resume": "özgeçmiş",
+    "contact": "bana ulaş"
+  },
+  "social": {
+    "github": "GitHub profili",
+    "linkedin": "LinkedIn profili",
+    "youtube": "YouTube kanalı",
+    "intra42": "42 Network profili"
+  },
+  "project": {
+    "status": {
+      "development": "Geliştiriliyor",
+      "completed": "Tamamlandı",
+      "ongoing": "Devam Ediyor",
+      "production": "Yayında"
+    },
+    "links": {
+      "github": "GitHub",
+      "live_demo": "Canlı Demo"
+    }
+  },
+  "tech": {
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Veritabanı",
+      "devops": "DevOps",
+      "learning": "Şu Anda Öğreniyorum"
+    }
+  },
+  "contact": {
+    "email": "E-posta",
+    "location": "Konum",
+    "send_email": "E-posta Gönder"
+  },
+  "not_found": {
+    "title": "SAYFA BULUNAMADI",
+    "description_main": "Eyvah! Bu sayfa, pazartesi sabahı motivasyonum gibi yok olmuş olabilir.",
+    "description_secondary": "Belki kahve molasına çıktı ya da dijital boşlukta kayboldu."
+  }
+}
