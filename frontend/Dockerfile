@@ -1,20 +1,20 @@
 # syntax=docker/dockerfile:1
 
 # --- deps: yalnızca kilit dosyasındaki sürümler kurulur ---
-FROM node:24-alpine AS deps
+FROM node:26-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
 
 # --- build: Angular SSR derlemesi (tip ve şablon kontrolleri dahil) ---
-FROM node:24-alpine AS build
+FROM node:26-alpine AS build
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
 # --- run: sunucu paketi bağımlılıkları içinde taşır, node_modules gerekmez ---
-FROM node:24-alpine
+FROM node:26-alpine
 WORKDIR /app
 ENV NODE_ENV=production \
     PORT=3000
