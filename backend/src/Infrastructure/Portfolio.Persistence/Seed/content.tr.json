@@ -1,0 +1,404 @@
+{
+  "profile": {
+    "name": "Enes Yağız",
+    "greeting": "Merhaba, ben Enes.",
+    "role": "full stack developer,",
+    "company": "BKPrime Technology'da",
+    "description": "kod ve tasarım yoluyla dijital deneyimler yaratıyorum. işlevsellik ve estetik arasındaki dengeyi keşfediyorum. 0'ları 1'e tutku ve hassasiyetle dönüştürüyorum. hadi bağlantı kuralım ve birlikte harika şeyler yaratalım!",
+    "portraitAlt": "bu benim, ha",
+    "email": "enes.yagiz@pkgdiff.dev",
+    "location": "Kocaeli, Türkiye",
+    "contactTitle": "Hadi bağlanalım",
+    "contactText": "Her zaman yeni fırsatlar, işbirlikleri ve anlamlı konuşmalarla ilgileniyorum. Aklında bir proje varsa, teknoloji hakkında konuşmak istiyorsan veya sadece merhaba demek istiyorsan, çekinmeden iletişime geç!",
+    "socials": [
+      {
+        "kind": "github",
+        "label": "github",
+        "url": "https://github.com/fleizean"
+      },
+      {
+        "kind": "linkedin",
+        "label": "linkedin",
+        "url": "https://www.linkedin.com/in/fleizean/"
+      },
+      {
+        "kind": "youtube",
+        "label": "youtube",
+        "url": "https://youtube.com/@fleizean"
+      },
+      {
+        "kind": "intra42",
+        "label": "42",
+        "url": "https://profile.intra.42.fr/users/eyagiz"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "Workflow",
+      "year": "2025",
+      "status": "production",
+      "description": "Workflow, çalışma saatlerinizi takip etmek için tasarlanmış güzel ve minimalist bir masaüstü uygulamasıdır. Electron ve SQLite ile geliştirilen bu uygulama, aralıksız takip, günlük hedefler ve ayrıntılı çalışma oturumu geçmişi ile motivasyonunuzu korumanıza yardımcı olur.",
+      "techStack": [
+        "Electron.js",
+        "SQLite",
+        "TailwindCSS"
+      ],
+      "githubUrl": "https://github.com/fleizean/workflow",
+      "liveUrl": "https://fleizean.github.io/workflow",
+      "image": "/others/Workflow.png",
+      "current": true
+    },
+    {
+      "name": "pkgdiff",
+      "year": "2025",
+      "status": "production",
+      "description": "pkgdiff, birden fazla paket kayıt sisteminde (NuGet, npm) paket sürümlerini karşılaştırmak için geliştirilmiş güçlü bir web uygulamasıdır. GitHub'dan otomatik sürüm notları kazıma, detaylı değişiklik günlükleri, ön sürüm filtreleme ve SignalR ile gerçek zamanlı ilerleme güncellemeleri sunar.",
+      "techStack": [
+        "ASP.NET Core",
+        "Angular",
+        "PostgreSQL",
+        "SignalR",
+        "Docker",
+        "Nginx",
+        "Hangfire"
+      ],
+      "githubUrl": "https://github.com/fleizean/pkgdiff",
+      "liveUrl": "https://pkgdiff.dev",
+      "image": "/others/pkgdiff.png",
+      "current": true
+    },
+    {
+      "name": "Personal Portfolio",
+      "year": "2024",
+      "status": "completed",
+      "description": "Next.js ve TypeScript ile oluşturduğum kişisel portfolyo web sitesi.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS"
+      ],
+      "githubUrl": "https://github.com/fleizean/personal-portfolio",
+      "liveUrl": "https://fleizean.dev",
+      "image": "/logo.png",
+      "current": true
+    },
+    {
+      "name": "Gathly",
+      "year": "2026",
+      "status": "in-progress",
+      "description": "Düğün ve etkinliklerde misafirlerin QR kod aracılığıyla uygulama indirmeden fotoğraf ve videolarını paylaşabildiği, organizatörlerin ise tüm anıları tek bir güvenli galeride yönetebildiği SaaS platformu.",
+      "techStack": [
+        "Angular",
+        "PostgreSQL",
+        ".NET"
+      ],
+      "liveUrl": "https://gathly.app",
+      "image": "/others/gathly.png",
+      "current": true
+    },
+    {
+      "name": "nasilbifirma",
+      "year": "2024",
+      "status": "completed",
+      "description": "Yenilikçi çözümlere odaklanan kişisel teknoloji girişimi.",
+      "techStack": [
+        ".NET",
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS"
+      ],
+      "githubUrl": "https://github.com/fleizean/nasilbifirma",
+      "liveUrl": "https://nasilbifirma.com",
+      "image": "/others/nasilbifirma.png",
+      "current": false
+    },
+    {
+      "name": "CVision",
+      "year": "2024",
+      "status": "completed",
+      "description": "CVision, yapay zeka destekli analizlerle işe alım süreçlerinde devrim yaratan modern, açık kaynaklı bir CV analiz platformudur.",
+      "techStack": [
+        "Next.js",
+        ".NET",
+        "TypeScript",
+        "TailwindCSS",
+        "FastAPI",
+        "Python",
+        "Machine Learning"
+      ],
+      "githubUrl": "https://github.com/fleizean/cvision",
+      "image": "/others/cvision.png",
+      "current": false
+    },
+    {
+      "name": "spotifyfizyfit",
+      "year": "2024",
+      "status": "completed",
+      "description": "Spotify'dan fizy'ye çalma listesi taşıma için Selenium tabanlı otomasyon.",
+      "techStack": [
+        "Python",
+        "Selenium",
+        "Web Automation"
+      ],
+      "githubUrl": "https://github.com/fleizean/spotifyfizyfit",
+      "image": "/others/spotifyfizyfit.png",
+      "current": false
+    },
+    {
+      "name": "sleepwipe",
+      "year": "2024",
+      "status": "completed",
+      "description": "Bilgisayarın uyku moduna geçmesini engelleyen bir yazılım.",
+      "techStack": [
+        "C",
+        "Bash"
+      ],
+      "githubUrl": "https://github.com/fleizean/sleepwipe",
+      "image": "/others/sleepwipe.png",
+      "current": false
+    },
+    {
+      "name": "webserv",
+      "year": "2023",
+      "status": "completed",
+      "description": "C++ ile oluşturulmuş Nginx benzeri web sunucusu.",
+      "techStack": [
+        "C++",
+        "HTTP",
+        "Web Server"
+      ],
+      "githubUrl": "https://github.com/fleizean/webserv",
+      "image": "/others/webserv.png",
+      "current": false
+    }
+  ],
+  "journey": [
+    {
+      "title": "Full Stack Developer",
+      "place": "BKPrime Technology",
+      "period": "2025 - Devam Ediyor",
+      "description": "Şu anda Yazılım Geliştirici olarak çalışıyor, ölçeklenebilir web uygulamaları ve kurum içi sistemlerin geliştirilmesi ve bakımına katkı sağlıyorum.",
+      "kind": "work",
+      "link": "https://www.linkedin.com/in/fleizean/",
+      "image": "/others/bk-prime.png",
+      "current": true
+    },
+    {
+      "title": "CEO / Developer",
+      "place": "pkgdiff",
+      "period": "2025 - Devam Ediyor",
+      "description": "pkgdiff, birden fazla paket kayıt sisteminde (NuGet, npm) paket sürümlerini karşılaştırmak için geliştirilmiş güçlü bir web uygulamasıdır. GitHub'dan otomatik sürüm notları kazıma, detaylı değişiklik günlükleri, ön sürüm filtreleme ve SignalR ile gerçek zamanlı ilerleme güncellemeleri sunar.",
+      "kind": "work",
+      "link": "https://pkgdiff.dev",
+      "image": "/others/pkgdiff.png",
+      "current": true
+    },
+    {
+      "title": "CEO / Developer",
+      "place": "Gathly",
+      "period": "2026 - Devam Ediyor",
+      "description": "Gathly, düğün ve etkinliklerde misafirlerin tek bir QR kodu okutarak fotoğraf ve videolarını anında paylaşmasını sağlayan modern bir SaaS platformudur. Uygulama indirmeye gerek kalmadan medya toplama, özel galeriler, etkinlik yönetimi ve güvenli bulut depolama özellikleri sunar.",
+      "kind": "work",
+      "link": "https://gathly.app",
+      "image": "/others/gathly.png",
+      "current": true
+    },
+    {
+      "title": "Full Stack Developer",
+      "place": "Solvent Yazılım",
+      "period": "2024 - 2025",
+      "description": "Modern frameworkler ile full-stack web uygulamaları geliştirdim ve bakımını yaptım.",
+      "kind": "work",
+      "link": "https://solventyazilim.com",
+      "image": "/others/solvent.png",
+      "current": false
+    },
+    {
+      "title": "Software Engineer",
+      "place": "Ecole 42",
+      "period": "2024",
+      "description": "Yazılım geliştirme ve bilgisayar bilimleri odaklı akran öğrenmesi programından mezun oldum.",
+      "kind": "education",
+      "link": "https://www.42.fr/en/",
+      "image": "/others/42.png",
+      "current": false
+    },
+    {
+      "title": "Bilgi Yönetimi",
+      "place": "Dumlupınar Üniversitesi",
+      "period": "2024",
+      "description": "Bilgi sistemleri ve yönetimi odaklı lisans derecesi.",
+      "kind": "education",
+      "link": "https://www.kutahya.edu.tr/en",
+      "image": "/others/dumlupinar.png",
+      "current": false
+    },
+    {
+      "title": "Freelance Developer",
+      "place": "MEBS",
+      "period": "2018",
+      "description": "Revir yönetim sistemi ve diğer projeler üzerinde freelance geliştirici olarak çalıştım.",
+      "kind": "work",
+      "link": "https://tr.wikipedia.org/wiki/MEBS_Okulu_ve_E%C4%9Fitim_Merkezi",
+      "image": "/others/mebs.png",
+      "current": false
+    },
+    {
+      "title": "IT Stajyeri",
+      "place": "Türk Telekom",
+      "period": "2018 - 2019",
+      "description": "IT operasyonları ve geliştirme görevlerinde yardımcı oldum.",
+      "kind": "work",
+      "link": "https://www.turktelekom.com.tr",
+      "image": "/others/turk-telekom.png",
+      "current": false
+    },
+    {
+      "title": "Bilgisayar Bilimleri",
+      "place": "İzmit Mesleki ve Teknik Anadolu Lisesi",
+      "period": "2019",
+      "description": "Bilgisayar bilimleri ve programlama odaklı teknik lise diploması.",
+      "kind": "education",
+      "link": "https://www.izmitmtal.k12.tr",
+      "current": false
+    },
+    {
+      "title": "Merhaba Dünya",
+      "place": "Dünya Gezegeni",
+      "period": "2002",
+      "description": "Bu dünyadaki yolculuğuma başladım.",
+      "kind": "personal",
+      "link": "https://en.wikipedia.org/wiki/2002",
+      "current": false
+    }
+  ],
+  "technologies": [
+    {
+      "name": "React",
+      "category": "frontend",
+      "description": "Bileşen tabanlı mimari ile modern ve etkileşimli kullanıcı arayüzleri geliştirme",
+      "link": "https://reactjs.org/"
+    },
+    {
+      "name": "C#",
+      "category": "backend",
+      "description": "Microsoft'un güçlü C tarzı dili kullanarak nesne yönelimli uygulamalar geliştirme",
+      "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
+    },
+    {
+      "name": "SignalR",
+      "category": "backend",
+      "description": "WebSocket ve daha fazlasını kullanarak .NET uygulamaları için gerçek zamanlı web işlevselliği",
+      "link": "https://learn.microsoft.com/en-us/aspnet/core/signalr/introduction"
+    },
+    {
+      "name": "Docker",
+      "category": "devops",
+      "description": "Ölçeklenebilir ve tutarlı dağıtım için uygulamaları konteynerize etme",
+      "link": "https://www.docker.com/"
+    },
+    {
+      "name": "MSSQL",
+      "category": "database",
+      "description": "Microsoft'un kurumsal düzeyde ilişkisel veritabanı yönetim sistemi",
+      "link": "https://www.microsoft.com/en-us/sql-server"
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "database",
+      "description": "Sağlamlığı ve genişletilebilirliği ile bilinen açık kaynak ilişkisel veritabanı",
+      "link": "https://www.postgresql.org/"
+    },
+    {
+      "name": "Nginx",
+      "category": "devops",
+      "description": "Uygulamaları sunmak için kullanılan yüksek performanslı HTTP sunucusu ve ters proxy",
+      "link": "https://www.nginx.com/"
+    },
+    {
+      "name": "IIS",
+      "category": "devops",
+      "description": "ASP.NET uygulamalarını barındırmak için Microsoft'un web sunucusu",
+      "link": "https://www.microsoft.com/en-us/iis"
+    },
+    {
+      "name": "Next.js",
+      "category": "frontend",
+      "description": "Sunucu tarafı rendering ile performanslı ve SEO dostu web uygulamaları oluşturma",
+      "link": "https://nextjs.org/"
+    },
+    {
+      "name": "TypeScript",
+      "category": "frontend",
+      "description": "Gelişmiş ölçeklenebilirlik ve güvenilirlik için statik tipleme ile JavaScript geliştirmeyi güçlendirme",
+      "link": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "JavaScript",
+      "category": "frontend",
+      "description": "Web'in temel dili ile dinamik istemci tarafı mantığı oluşturma",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    },
+    {
+      "name": ".NET",
+      "category": "backend",
+      "description": "Microsoft'un geliştirme framework'ü kullanarak sağlam ve yüksek performanslı uygulamalar geliştirme",
+      "link": "https://dotnet.microsoft.com/"
+    },
+    {
+      "name": "Python",
+      "category": "backend",
+      "description": "Çeşitli uygulama alanları için temiz, çok yönlü ve üst düzey kod yazma",
+      "link": "https://www.python.org/"
+    },
+    {
+      "name": "Django",
+      "category": "backend",
+      "description": "Python'un üst düzey framework'ü ile güvenli ve ölçeklenebilir web uygulamaları oluşturma",
+      "link": "https://www.djangoproject.com/"
+    },
+    {
+      "name": "FastAPI",
+      "category": "backend",
+      "description": "Asenkron yeteneklerle desteklenen Python ile hızlı ve modern API'ler oluşturma",
+      "link": "https://fastapi.tiangolo.com/"
+    },
+    {
+      "name": "SeriLogger",
+      "category": "devops",
+      "description": ".NET uygulamaları için yapılandırılmış loglama yetenekleri sağlayan loglama framework'ü",
+      "link": "https://serilog.net/"
+    },
+    {
+      "name": "REST APIs",
+      "category": "backend",
+      "description": "Durumsuz HTTP yöntemleri ve uç noktaları kullanarak geleneksel web servisleri tasarlama",
+      "link": "https://restfulapi.net/"
+    },
+    {
+      "name": "UI/UX Design",
+      "category": "learning",
+      "description": "Ürün kullanılabilirliği ve deneyimini iyileştirmek için sezgisel ve kullanıcı odaklı tasarımlar yaratma",
+      "link": "#"
+    }
+  ],
+  "school": [
+    {
+      "title": "Ecole 42",
+      "period": "2021 - devam ediyor",
+      "description": "Ecole 42, hem teknik becerilerimi hem de kişisel gelişimimi şekillendiren dönüştürücü bir yolculuktu. Bu akran öğrenmesi ortamı beni konfor alanımın dışına itti ve karmaşık problemlere yaratıcılık ve sebatla nasıl yaklaşacağımı öğretti.",
+      "highlights": [
+        "Yoğun projeler aracılığıyla C, C++ ve çeşitli programlama paradigmalarında ustalaştım",
+        "Takım projeleri ve akran değerlendirmeleri sayesinde güçlü işbirliği becerileri geliştirdim",
+        "Benzersiz 'yaparak öğrenme' yaklaşımıyla problem çözme yetenekleri kazandım",
+        "Farklı geçmişlerden akranlarımla kalıcı dostluklar kurdum",
+        "Sistem yönetimi, ağlar ve web geliştirme alanlarında deneyim kazandım",
+        "Baskı altında çalışmayı ve zorlu son teslim tarihlerini karşılamayı öğrendim"
+      ],
+      "reflection": "42'deki zamanım sadece kodlama hakkında değildi—potansiyelimi keşfetmek, yaşam boyu bağlantılar kurmak ve herhangi bir meydan okuma ile başa çıkabilecek dayanıklılığı geliştirmek hakkındaydı. Hata ayıklama ile geçirilen sayısız geceler, işbirlikçi problem çözme oturumları ve paylaşılan zaferler, sadece teknik becerilerimin değil, yaşamın zorluklarına yaklaşımımın da temelini oluşturdu. Şu an hâlâ bu yolculuktayım çünkü RNCP6 elde etme hayallerim var ve kendimi yeni zirvelere taşımaya devam etmek istiyorum.",
+      "link": "https://www.42.fr/en/",
+      "image": "/others/42.png"
+    }
+  ]
+}

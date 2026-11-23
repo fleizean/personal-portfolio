@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Core/">
+    <Project Path="src/Core/Portfolio.Domain/Portfolio.Domain.csproj" />
+    <Project Path="src/Core/Portfolio.Application/Portfolio.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/Infrastructure/">
+    <Project Path="src/Infrastructure/Portfolio.Infrastructure/Portfolio.Infrastructure.csproj" />
+    <Project Path="src/Infrastructure/Portfolio.Persistence/Portfolio.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/src/Presentation/">
+    <Project Path="src/Presentation/Portfolio.WebAPI/Portfolio.WebAPI.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Portfolio.UnitTests/Portfolio.UnitTests.csproj" />
+    <Project Path="tests/Portfolio.IntegrationTests/Portfolio.IntegrationTests.csproj" />
+  </Folder>
+</Solution>
