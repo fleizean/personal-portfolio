@@ -6,6 +6,16 @@
       [strokeWidth]="1.6"
     ></svg>
   }
+  @case ('app') {
+    <span
+      class="absolute inset-[8%] flex items-center justify-center rounded-[22%] shadow-md ring-1 ring-white/15"
+      [style.background]="appBackground()"
+    >
+      @if (inner(); as icon) {
+        <svg [lucideIcon]="icon" class="h-[55%] w-[55%] text-white" [strokeWidth]="2"></svg>
+      }
+    </span>
+  }
   @case ('dir') {
     <svg viewBox="0 0 48 48" class="h-full w-full">
       <defs>

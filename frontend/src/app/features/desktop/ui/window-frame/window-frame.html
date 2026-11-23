@@ -7,7 +7,7 @@
   (pointerdown)="startDrag($event)"
   (dblclick)="toggleMaximize()"
 >
-  <app-node-icon [kind]="isFolder() ? 'dir' : 'file'" [glyph]="win().glyph" [size]="18" />
+  <app-node-icon [kind]="iconKind()" [glyph]="win().glyph" [size]="18" />
   <span
     class="pointer-events-none absolute inset-x-28 truncate text-center text-xs font-bold"
     [class]="

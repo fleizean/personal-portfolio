@@ -7,7 +7,7 @@
     [attr.aria-label]="i18n.t('os.menu.applications')"
     [attr.aria-expanded]="menuOpen()"
     [title]="i18n.t('os.menu.applications')"
-    (click)="menuOpen.set(!menuOpen())"
+    (click)="menuOpen.set(!menuOpen()); clockOpen.set(false)"
   >
     <span
       aria-hidden="true"
@@ -98,7 +98,7 @@
       [title]="win.title"
       (click)="store.toggleFromTaskbar(win.id)"
     >
-      <app-node-icon [kind]="win.content.app === 'files' ? 'dir' : 'file'" [glyph]="win.glyph" [size]="16" />
+      <app-node-icon [kind]="iconKind(win)" [glyph]="win.glyph" [size]="16" />
       <span class="hidden truncate md:inline">{{ win.title }}</span>
     </button>
   }
@@ -125,6 +125,57 @@
   <svg lucideSun class="hidden h-4 w-4 dark:block"></svg>
 </button>
 <span class="panel-separator" aria-hidden="true"></span>
-<time class="os-mono min-w-[44px] px-2 text-center text-xs tabular-nums" [title]="date()">
-  {{ time() }}
-</time>
+<!-- Saat ve takvim paneli -->
+<div class="relative" data-clock>
+  <button
+    type="button"
+    class="panel-button os-mono min-w-[52px] text-xs tabular-nums"
+    [class.panel-button--active]="clockOpen()"
+    [attr.aria-expanded]="clockOpen()"
+    [title]="date()"
+    (click)="toggleClock()"
+  >
+    {{ time() }}
+  </button>
+
+  @if (clockOpen()) {
+    <div
+      class="absolute right-0 top-full mt-1 w-72 rounded-md border border-slate-300 bg-[#f6f7f9] p-3 shadow-xl dark:border-[#3a3f4b] dark:bg-[#22252c]"
+      role="dialog"
+      [attr.aria-label]="date()"
+    >
+      <p class="os-mono text-2xl font-bold tabular-nums">{{ longTime() }}</p>
+      <p class="mb-3 text-xs capitalize text-slate-500 dark:text-slate-400">{{ date() }}</p>
+
+      <div class="mb-2 flex items-center justify-between">
+        <button type="button" class="tool-button h-7 w-7" [attr.aria-label]="'‹'" (click)="shiftMonth(-1)">
+          <svg lucideChevronLeft class="h-4 w-4"></svg>
+        </button>
+        <span class="font-bold capitalize">{{ monthTitle() }}</span>
+        <button type="button" class="tool-button h-7 w-7" [attr.aria-label]="'›'" (click)="shiftMonth(1)">
+          <svg lucideChevronRight class="h-4 w-4"></svg>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-7 gap-y-1 text-center text-xs">
+        @for (name of weekdays(); track $index) {
+          <span class="pb-1 font-bold capitalize text-slate-500 dark:text-slate-400">{{ name }}</span>
+        }
+        @for (d of calendarDays(); track d.key) {
+          <span
+            class="os-mono mx-auto flex h-7 w-7 items-center justify-center rounded-full tabular-nums"
+            [class]="
+              d.today
+                ? 'bg-[#367bf0] font-bold text-white'
+                : d.inMonth
+                  ? ''
+                  : 'text-slate-400 dark:text-slate-600'
+            "
+          >
+            {{ d.day }}
+          </span>
+        }
+      </div>
+    </div>
+  }
+</div>

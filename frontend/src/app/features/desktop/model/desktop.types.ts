@@ -10,7 +10,10 @@ export type Glyph =
   | 'text'
   | 'pdf'
   | 'script'
-  | 'link';
+  | 'link'
+  | 'settings'
+  | 'terminal'
+  | 'music';
 
 /** Metin görüntüleyicide açılan bir dosyanın içeriği */
 export interface Doc {
@@ -59,7 +62,21 @@ export type WindowContent =
   | { app: 'files'; location: FsLocation }
   | { app: 'about' }
   | { app: 'doc'; doc: Doc }
-  | { app: 'pdf' };
+  | { app: 'pdf' }
+  | { app: 'admin' }
+  | { app: 'terminal' }
+  | { app: 'music' };
+
+/** İkon türü: klasör, dosya ya da uygulama */
+export type IconKind = 'dir' | 'file' | 'app';
+
+/** Pencere içeriğine göre görev çubuğu / başlık ikonunun türü */
+export const iconKindOf = (content: WindowContent): IconKind =>
+  content.app === 'files'
+    ? 'dir'
+    : content.app === 'terminal' || content.app === 'music' || content.app === 'admin'
+      ? 'app'
+      : 'file';
 
 export interface WindowState {
   id: string;

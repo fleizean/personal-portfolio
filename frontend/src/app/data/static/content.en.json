@@ -400,5 +400,17 @@
       "link": "https://www.42.fr/en/",
       "image": "/others/42.png"
     }
+  ],
+  "tracks": [
+    {
+      "title": "en baba rüzgarda yanar ateş (GODBLESS)",
+      "artist": "YUNG OUZO",
+      "videoId": "NQCUZTCRgsM"
+    },
+    {
+      "title": "nejat_isler.mp3",
+      "artist": "Lil Zey",
+      "videoId": "XPhgA7JNZb8"
+    }
   ]
 }

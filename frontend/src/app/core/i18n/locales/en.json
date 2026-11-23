@@ -5,7 +5,8 @@
       "files": "File Manager",
       "cv": "Resume",
       "contact": "Contact",
-      "blog": "Blog"
+      "blog": "Blog",
+      "music": "Music"
     },
     "panel": {
       "workspace": "Workspace",
@@ -83,6 +84,10 @@
     "tech_stack": {
       "title": "tech stack",
       "description": "Discover the technologies, programming languages, frameworks, and tools I use to build modern applications. From frontend to backend, explore my technical expertise."
+    },
+    "admin": {
+      "title": "admin",
+      "description": "Site admin panel."
     }
   },
   "actions": {
@@ -125,5 +130,123 @@
     "title": "NOT FOUND",
     "description_main": "Oops! This page seems to have vanished like my motivation on Monday mornings.",
     "description_secondary": "Maybe it's taking a coffee break or got lost in the digital void."
+  },
+  "admin": {
+    "title": "Admin",
+    "checking": "Checking session…",
+    "locked": "Sign in to continue",
+    "login_github": "Sign in with GitHub",
+    "login_denied": "This GitHub account is not allowed to manage the site.",
+    "login_unavailable": "Sign-in is not configured on this server yet.",
+    "logout": "Sign out",
+    "sections": {
+      "profile": "Profile",
+      "projects": "Projects",
+      "journey": "Journey",
+      "technologies": "Technologies",
+      "school": "School",
+      "tracks": "Music"
+    },
+    "new": "New",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved. It is live on the site right away.",
+    "delete": "Delete",
+    "confirm_delete": "Sure? Click again",
+    "deleted": "Deleted.",
+    "loading": "Loading…",
+    "pick_item": "Pick an item on the left to edit, or add a new one.",
+    "move_up": "Move up",
+    "move_down": "Move down",
+    "upload": "Upload",
+    "uploading": "Uploading…",
+    "remove": "Remove",
+    "add_link": "Add link",
+    "translatable_hint": "Fill in TR and EN texts separately",
+    "tags_hint": "Comma separated: Angular, .NET",
+    "lines_hint": "One item per line",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "greeting": "Greeting",
+      "role": "Role",
+      "company": "Company",
+      "description": "Description",
+      "portraitAlt": "Portrait alt text",
+      "location": "Location",
+      "contactTitle": "Contact title",
+      "contactText": "Contact text",
+      "socials": "Social links",
+      "year": "Year",
+      "status": "Status",
+      "current": "Currently active",
+      "techStack": "Technologies",
+      "githubUrl": "GitHub URL",
+      "liveUrl": "Live URL",
+      "image": "Image",
+      "kind": "Kind",
+      "link": "Link",
+      "title": "Title",
+      "place": "Place",
+      "period": "Period",
+      "category": "Category",
+      "highlights": "Highlights",
+      "reflection": "Reflection",
+      "artist": "Artist",
+      "youtube": "YouTube link"
+    },
+    "errors": {
+      "REQUIRED": "This field is required.",
+      "TOO_LONG": "Too long.",
+      "INVALID_URL": "Must be a valid http/https address.",
+      "INVALID_PATH": "Must be a site path (e.g. /api/uploads/...).",
+      "INVALID_EMAIL": "Must be a valid email.",
+      "TOO_MANY": "Too many items.",
+      "INVALID_VALUE": "Invalid value.",
+      "SIZE_NOT_ALLOWED": "The file can be at most 2 MB.",
+      "TYPE_NOT_ALLOWED": "PNG, JPEG or WebP only.",
+      "INVALID_YOUTUBE": "Must be a valid YouTube link or video id."
+    }
+  },
+  "terminal": {
+    "welcome": "Type help to see the commands. Tab completes, ↑/↓ browse history.",
+    "input_label": "Terminal command",
+    "music": "Opening the music player…",
+    "help": {
+      "help": "shows this help",
+      "ls": "lists a folder",
+      "cd": "changes folder (cd projects, cd ..)",
+      "pwd": "prints the current path",
+      "cat": "prints a file in the terminal",
+      "open": "opens a file or folder in a window",
+      "tree": "shows the folder tree",
+      "clear": "clears the screen (Ctrl+L)",
+      "whoami": "tells who you are",
+      "hostname": "prints the machine name",
+      "date": "prints date and time",
+      "echo": "repeats text",
+      "neofetch": "system info",
+      "music": "opens the music player",
+      "lang": "changes language (lang tr)",
+      "theme": "toggles the theme",
+      "history": "command history",
+      "exit": "closes the terminal"
+    },
+    "errors": {
+      "unknown": "{{cmd}}: command not found",
+      "not_found": "{{cmd}}: {{path}}: no such file or directory",
+      "not_dir": "cd: {{path}}: not a directory",
+      "is_dir": "{{cmd}}: {{path}}: is a directory",
+      "missing_operand": "{{cmd}}: missing operand",
+      "binary": "cat: {{path}}: binary file — try open {{path}}",
+      "lang_usage": "usage: lang tr | lang en",
+      "sudo": "guest is not in the sudoers file. This incident will be reported."
+    }
+  },
+  "music": {
+    "playlist": "Playlist",
+    "play": "Play",
+    "youtube_notice": "This track plays in the YouTube player. Pressing play loads it from youtube-nocookie.com.",
+    "empty": "The playlist is empty."
   }
 }

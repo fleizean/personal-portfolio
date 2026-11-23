@@ -13,7 +13,8 @@ export type PageKey =
   | 'contact'
   | 'cv'
   | 'projects'
-  | 'tech_stack';
+  | 'tech_stack'
+  | 'admin';
 
 /** Sayfa başlığı, açıklama, canonical ve sosyal önizleme etiketleri; sunucuda da render edilir */
 @Injectable({ providedIn: 'root' })
@@ -50,6 +51,10 @@ export class SeoService {
       const attr = key.startsWith('og:') ? 'property' : 'name';
       this.meta.updateTag({ [attr]: key, content }, `${attr}="${key}"`);
     }
+    this.meta.updateTag(
+      { name: 'robots', content: page === 'admin' ? 'noindex, nofollow' : 'index, follow, max-image-preview:large' },
+      'name="robots"',
+    );
     this.setCanonical(url);
   }
 

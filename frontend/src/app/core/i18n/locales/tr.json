@@ -5,7 +5,8 @@
       "files": "Dosya Yöneticisi",
       "cv": "Özgeçmiş",
       "contact": "İletişim",
-      "blog": "Blog"
+      "blog": "Blog",
+      "music": "Müzik"
     },
     "panel": {
       "workspace": "Çalışma alanı",
@@ -83,6 +84,10 @@
     "tech_stack": {
       "title": "teknoloji yığını",
       "description": "Modern uygulamalar geliştirmek için kullandığım teknolojileri, programlama dillerini, framework'leri ve araçları keşfet."
+    },
+    "admin": {
+      "title": "yönetim",
+      "description": "Site yönetim paneli."
     }
   },
   "actions": {
@@ -125,5 +130,123 @@
     "title": "SAYFA BULUNAMADI",
     "description_main": "Eyvah! Bu sayfa, pazartesi sabahı motivasyonum gibi yok olmuş olabilir.",
     "description_secondary": "Belki kahve molasına çıktı ya da dijital boşlukta kayboldu."
+  },
+  "admin": {
+    "title": "Yönetim",
+    "checking": "Oturum kontrol ediliyor…",
+    "locked": "Devam etmek için giriş yap",
+    "login_github": "GitHub ile giriş yap",
+    "login_denied": "Bu GitHub hesabının yönetim izni yok.",
+    "login_unavailable": "Giriş bu sunucuda henüz yapılandırılmadı.",
+    "logout": "Çıkış yap",
+    "sections": {
+      "profile": "Profil",
+      "projects": "Projeler",
+      "journey": "Yolculuk",
+      "technologies": "Teknolojiler",
+      "school": "Okul",
+      "tracks": "Müzik"
+    },
+    "new": "Yeni",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor…",
+    "saved": "Kaydedildi. Sitede hemen görünür.",
+    "delete": "Sil",
+    "confirm_delete": "Emin misin? Tekrar tıkla",
+    "deleted": "Silindi.",
+    "loading": "Yükleniyor…",
+    "pick_item": "Düzenlemek için soldan bir kayıt seç ya da yeni ekle.",
+    "move_up": "Yukarı taşı",
+    "move_down": "Aşağı taşı",
+    "upload": "Yükle",
+    "uploading": "Yükleniyor…",
+    "remove": "Kaldır",
+    "add_link": "Bağlantı ekle",
+    "translatable_hint": "TR ve EN metinleri ayrı ayrı doldur",
+    "tags_hint": "Virgülle ayır: Angular, .NET",
+    "lines_hint": "Her satır bir madde",
+    "fields": {
+      "name": "Ad",
+      "email": "E-posta",
+      "greeting": "Selamlama",
+      "role": "Rol",
+      "company": "Şirket",
+      "description": "Açıklama",
+      "portraitAlt": "Portre alt metni",
+      "location": "Konum",
+      "contactTitle": "İletişim başlığı",
+      "contactText": "İletişim metni",
+      "socials": "Sosyal bağlantılar",
+      "year": "Yıl",
+      "status": "Durum",
+      "current": "Şu an devam ediyor",
+      "techStack": "Teknolojiler",
+      "githubUrl": "GitHub adresi",
+      "liveUrl": "Canlı adres",
+      "image": "Görsel",
+      "kind": "Tür",
+      "link": "Bağlantı",
+      "title": "Başlık",
+      "place": "Yer",
+      "period": "Dönem",
+      "category": "Kategori",
+      "highlights": "Öne çıkanlar",
+      "reflection": "Kişisel düşünce",
+      "artist": "Sanatçı",
+      "youtube": "YouTube bağlantısı"
+    },
+    "errors": {
+      "REQUIRED": "Bu alan zorunlu.",
+      "TOO_LONG": "Çok uzun.",
+      "INVALID_URL": "Geçerli bir http/https adresi olmalı.",
+      "INVALID_PATH": "Site içi bir yol olmalı (ör. /api/uploads/...).",
+      "INVALID_EMAIL": "Geçerli bir e-posta olmalı.",
+      "TOO_MANY": "Çok fazla öğe.",
+      "INVALID_VALUE": "Geçersiz değer.",
+      "SIZE_NOT_ALLOWED": "Dosya en fazla 2 MB olabilir.",
+      "TYPE_NOT_ALLOWED": "Yalnızca PNG, JPEG ya da WebP.",
+      "INVALID_YOUTUBE": "Geçerli bir YouTube bağlantısı ya da video kimliği olmalı."
+    }
+  },
+  "terminal": {
+    "welcome": "Komutları görmek için help yaz. Tab tamamlar, ↑/↓ geçmişte gezer.",
+    "input_label": "Terminal komutu",
+    "music": "Müzik çalar açılıyor…",
+    "help": {
+      "help": "bu yardımı gösterir",
+      "ls": "klasör içeriğini listeler",
+      "cd": "klasör değiştirir (cd projects, cd ..)",
+      "pwd": "bulunduğun yolu yazar",
+      "cat": "dosyayı terminalde gösterir",
+      "open": "dosya ya da klasörü pencerede açar",
+      "tree": "klasör ağacını gösterir",
+      "clear": "ekranı temizler (Ctrl+L)",
+      "whoami": "kim olduğunu söyler",
+      "hostname": "makine adını yazar",
+      "date": "tarih ve saati yazar",
+      "echo": "metni tekrarlar",
+      "neofetch": "sistem bilgisi",
+      "music": "müzik çaları açar",
+      "lang": "dili değiştirir (lang en)",
+      "theme": "temayı değiştirir",
+      "history": "komut geçmişi",
+      "exit": "terminali kapatır"
+    },
+    "errors": {
+      "unknown": "{{cmd}}: komut bulunamadı",
+      "not_found": "{{cmd}}: {{path}}: böyle bir dosya ya da klasör yok",
+      "not_dir": "cd: {{path}}: klasör değil",
+      "is_dir": "{{cmd}}: {{path}}: bir klasör",
+      "missing_operand": "{{cmd}}: eksik argüman",
+      "binary": "cat: {{path}}: ikili dosya — open {{path}} dene",
+      "lang_usage": "kullanım: lang tr | lang en",
+      "sudo": "guest sudoers dosyasında değil. Bu olay rapor edilecek."
+    }
+  },
+  "music": {
+    "playlist": "Çalma listesi",
+    "play": "Oynat",
+    "youtube_notice": "Bu parça YouTube oynatıcısıyla çalar. Oynat'a basınca oynatıcı youtube-nocookie.com üzerinden yüklenir.",
+    "empty": "Çalma listesi boş."
   }
 }

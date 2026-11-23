@@ -14,10 +14,10 @@
           type="button"
           class="group flex w-[88px] flex-col items-center gap-1 rounded p-1 outline-none focus-visible:ring-2 focus-visible:ring-white/70"
           (click)="clickIcon(icon)"
-          (dblclick)="openIcon(icon)"
-          (keydown.enter)="openIcon(icon)"
+          (dblclick)="icon.open()"
+          (keydown.enter)="icon.open()"
         >
-          <app-node-icon [kind]="icon.node.kind" [glyph]="icon.node.glyph" [size]="52" />
+          <app-node-icon [kind]="icon.kind" [glyph]="icon.glyph" [size]="52" />
           <span
             class="rounded px-1 text-center leading-tight text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]"
             [class]="selectedIcon() === icon.key ? 'bg-[#367bf0]' : 'group-hover:bg-white/15'"
@@ -60,6 +60,29 @@
         }
         @case ('pdf') {
           <app-pdf-viewer [src]="cvSrc()" />
+        }
+        @case ('terminal') {
+          @if (home(); as home) {
+            <app-terminal
+              [home]="home"
+              [profile]="profile()"
+              (fileOpened)="openFile($event)"
+              (folderOpened)="openFolderAt($event)"
+              (musicOpened)="openMusic()"
+              (closed)="store.close(win.id)"
+            />
+          }
+        }
+        @case ('music') {
+          <app-music-player [tracks]="tracks()" />
+        }
+        @case ('admin') {
+          <!-- Yönetim uygulaması ayrı pakette: yalnızca bu pencere açılınca indirilir -->
+          @defer {
+            <app-admin-app class="h-full" />
+          } @placeholder {
+            <p class="p-4 text-slate-500 dark:text-slate-400">{{ i18n.t('admin.checking') }}</p>
+          }
         }
       }
     </app-window-frame>

@@ -69,6 +69,14 @@ export interface SchoolExperience {
   image?: string;
 }
 
+/** Müzik çalardaki parça (YouTube gömülü oynatıcısıyla çalar) */
+export interface MusicTrack {
+  title: string;
+  artist: string;
+  /** 11 karakterlik YouTube video kimliği */
+  videoId: string;
+}
+
 /** Sitenin bir dildeki tüm içeriği */
 export interface PortfolioContent {
   profile: Profile;
@@ -76,4 +84,5 @@ export interface PortfolioContent {
   journey: JourneyEntry[];
   technologies: Technology[];
   school: SchoolExperience[];
+  tracks: MusicTrack[];
 }

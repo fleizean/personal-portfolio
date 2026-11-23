@@ -8,12 +8,14 @@ import {
   LucideHouse,
   LucideLayers,
   LucideLink2,
+  LucideMusic,
   LucidePenLine,
   LucideRoute,
+  LucideSettings,
   LucideSquareTerminal,
   LucideTrash2,
 } from '@lucide/angular';
-import type { Glyph } from '../../model/desktop.types';
+import type { Glyph, IconKind } from '../../model/desktop.types';
 
 const GLYPHS: Partial<Record<Glyph, LucideIcon>> = {
   home: LucideHouse,
@@ -25,6 +27,16 @@ const GLYPHS: Partial<Record<Glyph, LucideIcon>> = {
   text: LucideFileText,
   script: LucideSquareTerminal,
   link: LucideLink2,
+  settings: LucideSettings,
+  terminal: LucideSquareTerminal,
+  music: LucideMusic,
+};
+
+/** Uygulama ikonlarının arka planı */
+const APP_BACKGROUND: Partial<Record<Glyph, string>> = {
+  terminal: 'linear-gradient(135deg, #2b2f38, #11131a)',
+  music: 'linear-gradient(135deg, #b46ef0, #6b4dff)',
+  settings: 'linear-gradient(135deg, #5a6478, #2f3542)',
 };
 
 const FILE_ACCENT: Partial<Record<Glyph, string>> = {
@@ -48,7 +60,7 @@ const FILE_ACCENT: Partial<Record<Glyph, string>> = {
   templateUrl: './node-icon.html',
 })
 export class NodeIcon {
-  readonly kind = input<'dir' | 'file'>('file');
+  readonly kind = input<IconKind>('file');
   readonly glyph = input<Glyph | undefined>(undefined);
   readonly size = input(48);
 
@@ -62,4 +74,7 @@ export class NodeIcon {
     return glyph ? (GLYPHS[glyph] ?? null) : null;
   });
   protected readonly accent = computed(() => FILE_ACCENT[this.glyph() ?? 'text'] ?? '#8b93a7');
+  protected readonly appBackground = computed(
+    () => APP_BACKGROUND[this.glyph() ?? 'settings'] ?? APP_BACKGROUND['settings'],
+  );
 }

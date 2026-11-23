@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { LucideMaximize2, LucideMinimize2, LucideMinus, LucideX } from '@lucide/angular';
 import { I18n } from '@core/i18n/i18n.service';
-import type { WindowState } from '../../model/desktop.types';
+import { iconKindOf, type WindowState } from '../../model/desktop.types';
 import { WindowManagerStore } from '../../state/window-manager.store';
 import { NodeIcon } from '../node-icon/node-icon';
 
@@ -47,7 +47,7 @@ export class WindowFrame {
   }
 
   protected readonly maximized = computed(() => this.win().maximized || this.compact());
-  protected readonly isFolder = computed(() => this.win().content.app === 'files');
+  protected readonly iconKind = computed(() => iconKindOf(this.win().content));
 
   protected readonly hostClass = computed(() =>
     [

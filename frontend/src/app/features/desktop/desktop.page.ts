@@ -7,13 +7,14 @@ import {
   computed,
   effect,
   inject,
+  linkedSignal,
   signal,
   untracked,
 } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
-import { ContentRepository } from '@domain';
+import { ContentRepository, type PortfolioContent } from '@domain';
 import { I18n } from '@core/i18n/i18n.service';
 import { SeoService } from '@core/seo/seo.service';
 import type { DesktopRouteData } from './desktop.routes';
@@ -24,6 +25,8 @@ import type {
   FsNode,
   OpenRequest,
   WindowState,
+  Glyph,
+  IconKind,
 } from './model/desktop.types';
 import { buildHome, buildTrash, cvSrc } from './model/filesystem';
 import { WindowManagerStore } from './state/window-manager.store';
@@ -35,6 +38,36 @@ import { FileManager } from './apps/file-manager/file-manager';
 import { DocViewer } from './apps/doc-viewer/doc-viewer';
 import { About } from './apps/about/about';
 import { PdfViewer } from './apps/pdf-viewer/pdf-viewer';
+import { AdminApp } from '@features/admin/admin-app';
+import { Terminal } from './apps/terminal/terminal';
+import { MusicPlayer } from './apps/music-player/music-player';
+
+const ADMIN_WINDOW: OpenRequest = {
+  id: 'admin',
+  title: 'Yönetim',
+  glyph: 'settings',
+  content: { app: 'admin' },
+  w: 1080,
+  h: 640,
+};
+
+const TERMINAL_WINDOW: OpenRequest = {
+  id: 'terminal',
+  title: 'Terminal',
+  glyph: 'terminal',
+  content: { app: 'terminal' },
+  w: 720,
+  h: 440,
+};
+
+const MUSIC_WINDOW: OpenRequest = {
+  id: 'music',
+  title: 'Music',
+  glyph: 'music',
+  content: { app: 'music' },
+  w: 760,
+  h: 460,
+};
 
 const ABOUT_WINDOW: OpenRequest = {
   id: 'about',
@@ -45,17 +78,31 @@ const ABOUT_WINDOW: OpenRequest = {
   h: 400,
 };
 
+/** Masaüstündeki ikon: klasör, dosya ya da uygulama; çift tıklanınca open() çalışır */
 interface DesktopIcon {
   key: string;
   label: string;
-  node: FsNode;
-  location: FsLocation;
+  kind: IconKind;
+  glyph?: Glyph;
+  open: () => void;
 }
 
 /** Ana sayfa: masaüstü, panel ve pencereler */
 @Component({
   selector: 'app-desktop-page',
-  imports: [Panel, Wallpaper, WindowFrame, NodeIcon, FileManager, DocViewer, About, PdfViewer],
+  imports: [
+    Panel,
+    Wallpaper,
+    WindowFrame,
+    NodeIcon,
+    FileManager,
+    DocViewer,
+    About,
+    PdfViewer,
+    Terminal,
+    MusicPlayer,
+    AdminApp,
+  ],
   providers: [WindowManagerStore],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './desktop.page.html',
@@ -77,10 +124,17 @@ export class DesktopPage {
     stream: ({ params }) => this.repository.getContent(params),
   });
 
-  protected readonly profile = computed(() => this.content.value()?.profile ?? null);
+  /** Dil değişip yeni içerik yüklenirken bir önceki içerik gösterilmeye devam eder (pencereler boşalmaz) */
+  private readonly loadedContent = linkedSignal<PortfolioContent | undefined, PortfolioContent | undefined>({
+    source: () => this.content.value(),
+    computation: (next, previous) => next ?? previous?.value,
+  });
+
+  protected readonly profile = computed(() => this.loadedContent()?.profile ?? null);
+  protected readonly tracks = computed(() => this.loadedContent()?.tracks ?? []);
 
   protected readonly home = computed<FsDir | null>(() => {
-    const content = this.content.value();
+    const content = this.loadedContent();
     return content ? buildHome(content, this.i18n.language(), (key) => this.i18n.t(key)) : null;
   });
 
@@ -89,19 +143,23 @@ export class DesktopPage {
   protected readonly desktopIcons = computed<DesktopIcon[]>(() => {
     const home = this.home();
     if (!home) return [];
-    const pick = ['projects', 'README.md', 'cv.pdf', 'contact.sh'].flatMap((name) => {
+    const nodeIcon = (key: string, label: string, node: FsNode, location: FsLocation): DesktopIcon => ({
+      key,
+      label,
+      kind: node.kind,
+      glyph: node.glyph,
+      open: () => (node.kind === 'dir' ? this.openFolder(location, node) : this.openFile(node)),
+    });
+    const files = ['projects', 'README.md', 'cv.pdf', 'contact.sh'].flatMap((name) => {
       const node = home.children.find((c) => c.name === name);
-      return node ? [{ key: name, label: name, node, location: { root: 'home' as const, path: [name] } }] : [];
+      return node ? [nodeIcon(name, name, node, { root: 'home', path: [name] })] : [];
     });
     return [
-      {
-        key: 'trash',
-        label: this.i18n.t('os.places.trash'),
-        node: this.trash(),
-        location: { root: 'trash', path: [] },
-      },
-      { key: 'home', label: this.i18n.t('os.desktop.home'), node: home, location: { root: 'home', path: [] } },
-      ...pick,
+      nodeIcon('trash', this.i18n.t('os.places.trash'), this.trash(), { root: 'trash', path: [] }),
+      nodeIcon('home', this.i18n.t('os.desktop.home'), home, { root: 'home', path: [] }),
+      { key: 'terminal', label: 'Terminal', kind: 'app', glyph: 'terminal', open: () => this.openTerminal() },
+      { key: 'music', label: this.i18n.t('os.menu.music'), kind: 'app', glyph: 'music', open: () => this.openMusic() },
+      ...files,
     ];
   });
 
@@ -112,6 +170,8 @@ export class DesktopPage {
       glyph: 'home',
       select: () => this.openHome(),
     },
+    { label: 'Terminal', kind: 'app', glyph: 'terminal', select: () => this.openTerminal() },
+    { label: this.i18n.t('os.menu.music'), kind: 'app', glyph: 'music', select: () => this.openMusic() },
     { label: 'README.md', kind: 'file', glyph: 'text', select: () => this.store.open(ABOUT_WINDOW) },
     { label: this.i18n.t('os.menu.cv'), kind: 'file', glyph: 'pdf', select: () => this.openNamedFile('cv.pdf') },
     {
@@ -122,7 +182,8 @@ export class DesktopPage {
     },
   ]);
 
-  protected readonly launchers = computed(() => this.menu().slice(0, 3));
+  /** Panel başlatıcıları: dosyalar, terminal, müzik, README */
+  protected readonly launchers = computed(() => this.menu().slice(0, 4));
 
   protected readonly cvSrc = computed(() => cvSrc(this.i18n.language()));
 
@@ -145,6 +206,10 @@ export class DesktopPage {
       initialOpened = true;
       const open = data.open;
       untracked(() => {
+        if ('app' in open) {
+          this.store.open({ ...ADMIN_WINDOW, title: this.i18n.t('admin.title') });
+          return;
+        }
         if ('file' in open) {
           this.openNamedFile(open.file);
           return;
@@ -169,14 +234,22 @@ export class DesktopPage {
     }
   }
 
-  protected openIcon(icon: DesktopIcon): void {
-    if (icon.node.kind === 'dir') this.openFolder(icon.location, icon.node);
-    else this.openFile(icon.node);
+  protected clickIcon(icon: DesktopIcon): void {
+    if (this.compact()) icon.open();
+    else this.selectedIcon.set(icon.key);
   }
 
-  protected clickIcon(icon: DesktopIcon): void {
-    if (this.compact()) this.openIcon(icon);
-    else this.selectedIcon.set(icon.key);
+  protected openTerminal(): void {
+    this.store.open(TERMINAL_WINDOW);
+  }
+
+  protected openMusic(): void {
+    this.store.open({ ...MUSIC_WINDOW, title: this.i18n.t('os.menu.music') });
+  }
+
+  /** Terminalde "open <klasör>" ile dosya yöneticisi açılır */
+  protected openFolderAt(event: { location: FsLocation; dir: FsDir }): void {
+    this.openFolder(event.location, event.dir);
   }
 
   protected clearIconSelection(event: Event): void {
@@ -222,7 +295,7 @@ export class DesktopPage {
     if (home) this.openFolder({ root: 'home', path: [] }, home);
   }
 
-  private openFolder(location: FsLocation, dir: FsDir): void {
+  protected openFolder(location: FsLocation, dir: FsDir): void {
     this.windowCounter += 1;
     this.store.open({
       id: `files-${this.windowCounter}`,

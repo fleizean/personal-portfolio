@@ -1,0 +1,146 @@
+@switch (phase()) {
+  @case ('checking') {
+    <div class="flex flex-1 items-center justify-center text-slate-500 dark:text-slate-400">
+      {{ i18n.t('admin.checking') }}
+    </div>
+  }
+
+  @case ('locked') {
+    <!-- Kilit ekranı -->
+    <div class="flex flex-1 flex-col items-center justify-center gap-5 bg-gradient-to-b from-[#1c3f9a] to-[#2c1552] px-6 text-center text-white">
+      <span class="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20">
+        <svg lucideLock class="h-7 w-7"></svg>
+      </span>
+      <div>
+        <p class="os-mono text-lg font-bold">fleizeanOS</p>
+        <p class="mt-1 text-sm text-white/70">{{ i18n.t('admin.locked') }}</p>
+      </div>
+
+      @if (loginDenied()) {
+        <p class="rounded bg-[#e5484d]/20 px-3 py-2 text-sm text-red-100">{{ i18n.t('admin.login_denied') }}</p>
+      }
+
+      @if (loginAvailable()) {
+        <button
+          type="button"
+          class="flex items-center gap-2 rounded-md bg-white px-4 py-2 font-bold text-slate-900 shadow hover:bg-slate-100"
+          (click)="login()"
+        >
+          <app-brand-icon class="h-5 w-5" kind="github" />
+          {{ i18n.t('admin.login_github') }}
+        </button>
+      } @else {
+        <p class="max-w-sm text-sm text-white/70">{{ i18n.t('admin.login_unavailable') }}</p>
+      }
+    </div>
+  }
+
+  @case ('ready') {
+    <div class="flex min-h-0 flex-1">
+      <!-- Bölümler -->
+      <nav class="flex w-44 shrink-0 flex-col border-r border-slate-300 py-2 dark:border-[#2e323a]">
+        @for (s of sections; track s.key) {
+          <button
+            type="button"
+            class="px-3 py-1.5 text-left"
+            [class]="
+              sectionKey() === s.key ? 'bg-[#367bf0] text-white' : 'hover:bg-slate-200 dark:hover:bg-[#2c3038]'
+            "
+            (click)="open(s)"
+          >
+            {{ i18n.t('admin.sections.' + s.key) }}
+          </button>
+        }
+
+        <div class="mt-auto border-t border-slate-300 px-3 pt-2 dark:border-[#2e323a]">
+          @if (user(); as u) {
+            <div class="flex items-center gap-2">
+              @if (u.avatarUrl) {
+                <img [src]="u.avatarUrl" alt="" class="h-6 w-6 rounded-full" referrerpolicy="no-referrer" />
+              }
+              <span class="truncate text-xs">{{ u.name ?? u.login }}</span>
+            </div>
+          }
+          <button type="button" class="mt-2 flex items-center gap-1.5 text-xs hover:text-[#367bf0]" (click)="logout()">
+            <svg lucideLogOut class="h-3.5 w-3.5"></svg>
+            {{ i18n.t('admin.logout') }}
+          </button>
+        </div>
+      </nav>
+
+      <!-- Kayıt listesi -->
+      @if (!section().single) {
+        <div class="flex w-60 shrink-0 flex-col border-r border-slate-300 dark:border-[#2e323a]">
+          <div class="flex shrink-0 items-center justify-between px-3 py-2">
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-400">
+              {{ i18n.t('os.files.items', { n: items().length }) }}
+            </span>
+            <button type="button" class="admin-button" (click)="select('new')">
+              <svg lucidePlus class="h-4 w-4"></svg>
+              {{ i18n.t('admin.new') }}
+            </button>
+          </div>
+          <ul class="min-h-0 flex-1 overflow-y-auto">
+            @for (item of items(); track item.id; let i = $index, first = $first, last = $last) {
+              <li
+                class="group flex items-center gap-1 px-2"
+                [class]="selection() === item.id ? 'bg-[#367bf0] text-white' : 'hover:bg-slate-200 dark:hover:bg-[#2c3038]'"
+              >
+                <button type="button" class="min-w-0 flex-1 truncate py-1.5 text-left" (click)="select(item.id ?? null)">
+                  {{ section().titleOf(item) }}
+                </button>
+                <button
+                  type="button"
+                  class="rounded p-0.5 opacity-0 group-hover:opacity-100 disabled:invisible"
+                  [attr.aria-label]="i18n.t('admin.move_up')"
+                  [disabled]="first"
+                  (click)="move(i, -1)"
+                >
+                  <svg lucideArrowUp class="h-3.5 w-3.5"></svg>
+                </button>
+                <button
+                  type="button"
+                  class="rounded p-0.5 opacity-0 group-hover:opacity-100 disabled:invisible"
+                  [attr.aria-label]="i18n.t('admin.move_down')"
+                  [disabled]="last"
+                  (click)="move(i, 1)"
+                >
+                  <svg lucideArrowDown class="h-3.5 w-3.5"></svg>
+                </button>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+
+      <!-- Düzenleyici -->
+      <section class="flex min-w-0 flex-1 flex-col">
+        @if (notice(); as n) {
+          <p
+            class="shrink-0 px-4 py-2 text-sm"
+            [class]="n.kind === 'ok' ? 'bg-[#30a46c]/15 text-[#30a46c]' : 'bg-[#e5484d]/15 text-[#e5484d]'"
+            role="status"
+          >
+            {{ n.text }}
+          </p>
+        }
+        @if (loading()) {
+          <p class="p-4 text-slate-500 dark:text-slate-400">{{ i18n.t('admin.loading') }}</p>
+        } @else if (current(); as record) {
+          <app-record-editor
+            class="min-h-0 flex-1"
+            [section]="section()"
+            [record]="record"
+            [errors]="errors()"
+            [busy]="busy()"
+            [deletable]="!section().single && selection() !== 'new'"
+            (saved)="save($event)"
+            (deleted)="remove()"
+          />
+        } @else {
+          <p class="p-4 text-slate-500 dark:text-slate-400">{{ i18n.t('admin.pick_item') }}</p>
+        }
+      </section>
+    </div>
+  }
+}

@@ -1,0 +1,41 @@
+<div #screen class="min-h-0 flex-1 overflow-y-auto px-3 py-2">
+  @for (entry of entries(); track $index) {
+    @if (entry.command; as command) {
+      <div class="mt-1">
+        <div>
+          <span class="text-[#3e8bff]">┌──(</span><span class="font-bold text-[#3e8bff]">guest㉿fleizeanOS</span
+          ><span class="text-[#3e8bff]">)-[</span><span class="font-bold text-white">{{ command.cwd }}</span
+          ><span class="text-[#3e8bff]">]</span>
+        </div>
+        <div class="whitespace-pre-wrap break-all">
+          <span class="text-[#3e8bff]">└─</span><span class="font-bold text-[#3e8bff]">$ </span>{{ command.text }}
+        </div>
+      </div>
+    } @else if (entry.line; as line) {
+      <div class="whitespace-pre-wrap break-words" [class]="lineClass[line.kind]">{{ line.text || ' ' }}</div>
+    }
+  }
+
+  <!-- İstem -->
+  <div class="mt-1">
+    <div>
+      <span class="text-[#3e8bff]">┌──(</span><span class="font-bold text-[#3e8bff]">guest㉿fleizeanOS</span
+      ><span class="text-[#3e8bff]">)-[</span><span class="font-bold text-white">{{ prompt() }}</span
+      ><span class="text-[#3e8bff]">]</span>
+    </div>
+    <div class="flex">
+      <span class="text-[#3e8bff]">└─</span><span class="font-bold text-[#3e8bff]">$&nbsp;</span>
+      <input
+        #field
+        class="min-w-0 flex-1 bg-transparent text-slate-100 caret-[#3e8bff] outline-none"
+        spellcheck="false"
+        autocomplete="off"
+        autocapitalize="off"
+        [attr.aria-label]="i18n.t('terminal.input_label')"
+        [value]="draft()"
+        (input)="draft.set($any($event.target).value)"
+        (keydown)="onKeydown($event)"
+      />
+    </div>
+  </div>
+</div>

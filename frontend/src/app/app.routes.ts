@@ -18,5 +18,7 @@ export const routes: Routes = [
   page('blog', { page: 'blog', open: { folder: 'blog' } }),
   page('cv', { page: 'cv', open: { file: 'cv.pdf' } }),
   page('contact', { page: 'contact', open: { file: 'contact.sh' } }),
+  // Yönetim paneli: arama motorlarına kapalı (noindex), kodu yalnızca pencere açılınca yüklenir
+  page('admin', { page: 'admin', open: { app: 'admin' } }),
   { path: '**', redirectTo: '' },
 ];

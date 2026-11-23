@@ -1,0 +1,163 @@
+<form class="flex min-h-0 flex-1 flex-col" (submit)="save($event)">
+  @if (hasTranslatable()) {
+    <div class="flex shrink-0 gap-1 border-b border-slate-300 px-4 pt-3 dark:border-[#2e323a]" role="tablist">
+      @for (lang of languages; track lang) {
+        <button
+          type="button"
+          role="tab"
+          class="os-mono relative rounded-t px-3 py-1.5 text-xs font-bold uppercase"
+          [class]="
+            language() === lang
+              ? 'bg-white text-slate-900 dark:bg-[#1a1c21] dark:text-white'
+              : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white'
+          "
+          [attr.aria-selected]="language() === lang"
+          (click)="language.set(lang)"
+        >
+          {{ lang }}
+          @if (languageHasError(lang)) {
+            <span class="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-[#e5484d]"></span>
+          }
+        </button>
+      }
+      <span class="ml-auto self-center text-xs text-slate-500 dark:text-slate-400">
+        {{ i18n.t('admin.translatable_hint') }}
+      </span>
+    </div>
+  }
+
+  <div class="min-h-0 flex-1 space-y-4 overflow-y-auto bg-white px-4 py-4 dark:bg-[#1a1c21]">
+    @for (field of section().fields; track field.key) {
+      @let fieldError = error(field);
+      <div class="grid gap-1">
+        <label class="flex items-center gap-2 text-xs font-bold text-slate-600 dark:text-slate-300" [for]="'f-' + field.key">
+          {{ i18n.t('admin.fields.' + field.key) }}
+          @if (field.translatable) {
+            <span class="os-mono rounded bg-[#367bf0]/15 px-1 text-[10px] uppercase text-[#367bf0]">{{ language() }}</span>
+          }
+        </label>
+
+        @switch (field.type) {
+          @case ('textarea') {
+            <textarea
+              class="admin-input min-h-24"
+              [id]="'f-' + field.key"
+              [value]="text(field)"
+              (input)="setFromInput(field, $event)"
+            ></textarea>
+          }
+          @case ('lines') {
+            <textarea
+              class="admin-input min-h-24"
+              [id]="'f-' + field.key"
+              [placeholder]="i18n.t('admin.lines_hint')"
+              [value]="text(field)"
+              (change)="setFromInput(field, $event)"
+            ></textarea>
+          }
+          @case ('select') {
+            <select class="admin-input" [id]="'f-' + field.key" (change)="setFromInput(field, $event)">
+              @for (option of field.options; track option) {
+                <option [value]="option" [selected]="value(field) === option">{{ option }}</option>
+              }
+            </select>
+          }
+          @case ('checkbox') {
+            <input
+              type="checkbox"
+              class="h-4 w-4 accent-[#367bf0]"
+              [id]="'f-' + field.key"
+              [checked]="value(field) === true"
+              (change)="setFromInput(field, $event)"
+            />
+          }
+          @case ('tags') {
+            <input
+              class="admin-input"
+              [id]="'f-' + field.key"
+              [placeholder]="i18n.t('admin.tags_hint')"
+              [value]="text(field)"
+              (change)="setFromInput(field, $event)"
+            />
+          }
+          @case ('image') {
+            <div class="flex items-center gap-2">
+              @if (text(field)) {
+                <img [src]="text(field)" alt="" class="h-10 w-10 rounded border border-slate-300 object-contain dark:border-[#33373f]" />
+              }
+              <input
+                class="admin-input flex-1"
+                placeholder="/api/uploads/..."
+                [id]="'f-' + field.key"
+                [value]="text(field)"
+                (input)="setFromInput(field, $event)"
+              />
+              <label class="admin-button cursor-pointer" [class.opacity-50]="uploading() === field.key">
+                <svg lucideUpload class="h-4 w-4"></svg>
+                {{ uploading() === field.key ? i18n.t('admin.uploading') : i18n.t('admin.upload') }}
+                <input type="file" accept="image/png,image/jpeg,image/webp" class="sr-only" (change)="upload(field, $event)" />
+              </label>
+            </div>
+            @if (uploadError(); as message) {
+              <p class="text-xs text-[#e5484d]">{{ message }}</p>
+            }
+          }
+          @case ('socials') {
+            <div class="space-y-2">
+              @for (row of socials(field); track $index; let i = $index) {
+                <div class="flex gap-2">
+                  <select class="admin-input w-28" (change)="updateSocial(field, i, 'kind', $event)">
+                    @for (kind of socialKinds; track kind) {
+                      <option [value]="kind" [selected]="row.kind === kind">{{ kind }}</option>
+                    }
+                  </select>
+                  <input class="admin-input w-28" [value]="row.label" (input)="updateSocial(field, i, 'label', $event)" />
+                  <input class="admin-input flex-1" [value]="row.url" (input)="updateSocial(field, i, 'url', $event)" />
+                  <button type="button" class="tool-button" [attr.aria-label]="i18n.t('admin.remove')" (click)="removeSocial(field, i)">
+                    <svg lucideX class="h-4 w-4"></svg>
+                  </button>
+                </div>
+              }
+              <button type="button" class="admin-button" (click)="addSocial(field)">
+                <svg lucidePlus class="h-4 w-4"></svg>
+                {{ i18n.t('admin.add_link') }}
+              </button>
+            </div>
+          }
+          @default {
+            <input
+              class="admin-input"
+              [id]="'f-' + field.key"
+              [type]="field.type === 'url' ? 'url' : field.type === 'email' ? 'email' : 'text'"
+              [value]="text(field)"
+              (input)="setFromInput(field, $event)"
+            />
+          }
+        }
+
+        @if (fieldError) {
+          <p class="os-mono text-xs text-[#e5484d]">{{ errorText(fieldError) }}</p>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="flex shrink-0 items-center gap-2 border-t border-slate-300 px-4 py-2 dark:border-[#2e323a]">
+    @if (deletable()) {
+      <button
+        type="button"
+        class="admin-button"
+        [class]="confirmingDelete() ? 'bg-[#e5484d] text-white hover:bg-[#d13d42]' : ''"
+        [disabled]="busy()"
+        (click)="requestDelete()"
+        (blur)="confirmingDelete.set(false)"
+      >
+        <svg lucideTrash2 class="h-4 w-4"></svg>
+        {{ confirmingDelete() ? i18n.t('admin.confirm_delete') : i18n.t('admin.delete') }}
+      </button>
+    }
+    <button type="submit" class="admin-button admin-button--primary ml-auto" [disabled]="busy()">
+      {{ busy() ? i18n.t('admin.saving') : i18n.t('admin.save') }}
+    </button>
+  </div>
+</form>
