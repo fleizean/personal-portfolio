@@ -9,6 +9,9 @@ services:
     image: ghcr.io/fleizean/personal-portfolio:${IMAGE_TAG:-latest}
     build: ./frontend
     restart: unless-stopped
+    environment:
+      # SSR icerigi docker agi icinden API'den ceker
+      API_INTERNAL_URL: http://api:8080
     ports:
       # Sadece localhost'a ac: TLS'i sunucudaki nginx yapiyor.
       - '127.0.0.1:${WEB_PORT:-8083}:3000'
@@ -25,7 +28,8 @@ services:
         max-size: '10m'
         max-file: '3'
 
-  # .NET API. Disariya port acmaz; web servisi ileride docker agi icinden http://api:8080 ile erisir.
+  # .NET API. Yalnizca localhost'a acilir; nginx /api isteklerini buraya yonlendirir.
+  # web servisi SSR icin docker agi icinden http://api:8080 ile erisir.
   api:
     image: ghcr.io/fleizean/personal-portfolio-api:${IMAGE_TAG:-latest}
     build: ./backend
@@ -33,6 +37,15 @@ services:
     environment:
       # Sifre yalnizca sunucudaki .env dosyasinda durur; yoksa compose bilerek hata verir.
       ConnectionStrings__Default: Host=db;Port=5432;Database=${POSTGRES_DB:-portfolio};Username=${POSTGRES_USER:-portfolio};Password=${POSTGRES_PASSWORD:?POSTGRES_PASSWORD .env dosyasinda tanimli olmali}
+      # Yonetim girisi: GitHub OAuth App bilgileri ve izinli hesabin sayisal kimligi (.env)
+      ADMIN_GITHUB_ID: ${ADMIN_GITHUB_ID:-}
+      GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID:-}
+      GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET:-}
+    ports:
+      - '127.0.0.1:${API_PORT:-8086}:8080'
+    volumes:
+      - api_uploads:/data/uploads
+      - api_keys:/data/keys
     depends_on:
       db:
         condition: service_healthy
@@ -74,3 +87,5 @@ networks:
 
 volumes:
   db_data:
+  api_uploads:
+  api_keys:

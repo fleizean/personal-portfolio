@@ -14,6 +14,18 @@ This is my personal portfolio website, continuously evolving with new sections a
 
 ## 📋 All Updates
 
+### November 24, 2026
+
+#### 🛠️ feat: admin panel, terminal and music player
+
+- Content now comes from the .NET API; the bundled JSON stays as a fallback if the API is down
+- Admin app at `/admin`: GitHub sign-in for a single account, editing in Turkish and English, reordering, image uploads, playlist management
+- Terminal app: browse the site as a file system (`ls`, `cd`, `cat`, `open`, `tree`, `neofetch`, tab completion, history)
+- Music player using YouTube's embedded player, loaded only after you press play
+- Clock menu with a month calendar in the top panel
+
+---
+
 ### November 23, 2026
 
 #### 🖥️ feat: desktop-style redesign, rebuilt with Angular
