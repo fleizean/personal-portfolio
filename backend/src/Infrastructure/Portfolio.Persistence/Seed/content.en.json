@@ -86,7 +86,7 @@
     {
       "name": "Gathly",
       "year": "2026",
-      "status": "in-progress",
+      "status": "ongoing",
       "description": "A SaaS platform that enables wedding and event guests to share photos and videos instantly by scanning a QR code—no app required. Organizers can collect, manage, and access all memories in a single secure gallery.",
       "techStack": [
         "Angular",

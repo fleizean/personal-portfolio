@@ -86,7 +86,7 @@
     {
       "name": "Gathly",
       "year": "2026",
-      "status": "in-progress",
+      "status": "ongoing",
       "description": "Düğün ve etkinliklerde misafirlerin QR kod aracılığıyla uygulama indirmeden fotoğraf ve videolarını paylaşabildiği, organizatörlerin ise tüm anıları tek bir güvenli galeride yönetebildiği SaaS platformu.",
       "techStack": [
         "Angular",
