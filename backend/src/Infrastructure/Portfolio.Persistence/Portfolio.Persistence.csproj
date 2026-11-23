@@ -12,7 +12,10 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
   </ItemGroup>
   <ItemGroup>
-    <!-- İlk kurulumda veritabanına yüklenen içerik -->
-    <EmbeddedResource Include="Seed\content.*.json" />
+    <!-- İlk kurulumda veritabanına yüklenen içerik. Dosya adındaki .tr/.en kültür eki sanılıp
+         ayrı uydu derlemeye konmasın diye kültür algılaması kapalı ve kaynak adı sabit. -->
+    <EmbeddedResource Include="Seed\content.*.json"
+                      WithCulture="false"
+                      LogicalName="Portfolio.Persistence.Seed.%(Filename)%(Extension)" />
   </ItemGroup>
 </Project>
