@@ -36,7 +36,7 @@ jobs:
       # (runner'da Docker hazir). Testler kirilirsa imaj gonderilmez, deploy baslamaz.
       - name: Test
         working-directory: backend
-        run: dotnet test Portfolio.slnx -c Release
+        run: dotnet test --solution Portfolio.slnx -c Release
 
   build:
     name: İmajları derle ve gönder

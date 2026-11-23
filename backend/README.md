@@ -39,7 +39,7 @@ No secret lives in the repository. The API reads its connection string from the
 
 ```bash
 dotnet build Portfolio.slnx
-dotnet test Portfolio.slnx          # integration tests need Docker
+dotnet test --solution Portfolio.slnx   # integration tests need Docker
 dotnet tool restore
 dotnet tool run dotnet-ef migrations add <Name> \
   --project src/Infrastructure/Portfolio.Persistence \
