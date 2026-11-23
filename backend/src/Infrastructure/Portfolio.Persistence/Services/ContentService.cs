@@ -14,7 +14,8 @@ public class ContentService(
     IReadRepository<Project> projects,
     IReadRepository<JourneyEntry> journey,
     IReadRepository<Technology> technologies,
-    IReadRepository<SchoolExperience> school) : IContentService
+    IReadRepository<SchoolExperience> school,
+    IReadRepository<MusicTrack> tracks) : IContentService
 {
     public async Task<PortfolioContentResponse> GetAsync(Language language, CancellationToken cancellationToken = default)
     {
@@ -25,12 +26,14 @@ public class ContentService(
         var journeyList = await journey.GetAll().OrderBy(j => j.SortOrder).ToListAsync(cancellationToken);
         var techList = await technologies.GetAll().OrderBy(t => t.SortOrder).ToListAsync(cancellationToken);
         var schoolList = await school.GetAll().OrderBy(s => s.SortOrder).ToListAsync(cancellationToken);
+        var trackList = await tracks.GetAll().OrderBy(t => t.SortOrder).ToListAsync(cancellationToken);
 
         return new PortfolioContentResponse(
             profile.ToResponse(language),
             [.. projectList.Select(p => p.ToResponse(language))],
             [.. journeyList.Select(j => j.ToResponse(language))],
             [.. techList.Select(t => t.ToResponse(language))],
-            [.. schoolList.Select(s => s.ToResponse(language))]);
+            [.. schoolList.Select(s => s.ToResponse(language))],
+            [.. trackList.Select(t => t.ToResponse())]);
     }
 }

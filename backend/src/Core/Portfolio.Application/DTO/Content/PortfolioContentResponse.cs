@@ -9,7 +9,10 @@ public sealed record PortfolioContentResponse(
     IReadOnlyList<ProjectResponse> Projects,
     IReadOnlyList<JourneyEntryResponse> Journey,
     IReadOnlyList<TechnologyResponse> Technologies,
-    IReadOnlyList<SchoolExperienceResponse> School);
+    IReadOnlyList<SchoolExperienceResponse> School,
+    IReadOnlyList<MusicTrackResponse> Tracks);
+
+public sealed record MusicTrackResponse(string Title, string Artist, string VideoId);
 
 public sealed record SocialLinkResponse(SocialKind Kind, string Label, string Url);
 

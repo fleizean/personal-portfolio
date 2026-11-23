@@ -52,6 +52,8 @@ public static class ContentMappings
         return new SchoolExperienceResponse(t.Title, t.Period, t.Description, t.Highlights, t.Reflection, school.Link, school.ImagePath);
     }
 
+    public static MusicTrackResponse ToResponse(this MusicTrack track) => new(track.Title, track.Artist, track.VideoId);
+
     private static AppException MissingTranslation(string entity, long id) =>
         new(ErrorCodes.InternalError, $"{entity} {id} has no translation.");
 }

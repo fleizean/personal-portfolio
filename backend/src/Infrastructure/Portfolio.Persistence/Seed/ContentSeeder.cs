@@ -22,6 +22,15 @@ public sealed partial class ContentSeeder(PortfolioDbContext context, ILogger<Co
 
     public async Task SeedAsync(CancellationToken cancellationToken = default)
     {
+        // Parçalar sonradan eklendi: içerik zaten yüklü olsa bile parça tablosu boşsa doldurulur
+        if (!await context.MusicTracks.AnyAsync(cancellationToken))
+        {
+            var tracks = Load(Language.Tr).Tracks ?? [];
+            context.MusicTracks.AddRange(tracks.Select((t, i) =>
+                new MusicTrack { Title = t.Title, Artist = t.Artist, VideoId = t.VideoId, SortOrder = i }));
+            await context.SaveChangesAsync(cancellationToken);
+        }
+
         if (await context.Profiles.AnyAsync(cancellationToken))
         {
             LogSkipped(logger);
@@ -154,7 +163,10 @@ public sealed partial class ContentSeeder(PortfolioDbContext context, ILogger<Co
         List<SeedProject> Projects,
         List<SeedJourney> Journey,
         List<SeedTechnology> Technologies,
-        List<SeedSchool> School);
+        List<SeedSchool> School,
+        List<SeedTrack>? Tracks);
+
+    private sealed record SeedTrack(string Title, string Artist, string VideoId);
 
     private sealed record SeedSocial(SocialKind Kind, string Label, string Url);
 

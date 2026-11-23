@@ -25,6 +25,7 @@ public static class ServiceRegistration
         services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
 
         services.AddScoped<IContentService, ContentService>();
+        services.AddScoped<IAdminContentService, AdminContentService>();
         services.AddScoped<ContentSeeder>();
         return services;
     }

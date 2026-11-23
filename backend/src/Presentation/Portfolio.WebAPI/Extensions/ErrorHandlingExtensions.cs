@@ -18,7 +18,10 @@ public static partial class ErrorHandlingExtensions
     {
         [ErrorCodes.ValidationError] = StatusCodes.Status400BadRequest,
         [ErrorCodes.BadRequest] = StatusCodes.Status400BadRequest,
+        [ErrorCodes.Unauthorized] = StatusCodes.Status401Unauthorized,
+        [ErrorCodes.Forbidden] = StatusCodes.Status403Forbidden,
         [ErrorCodes.NotFound] = StatusCodes.Status404NotFound,
+        [ErrorCodes.NotConfigured] = StatusCodes.Status503ServiceUnavailable,
         [ErrorCodes.RateLimited] = StatusCodes.Status429TooManyRequests,
         [ErrorCodes.InternalError] = StatusCodes.Status500InternalServerError,
     };
@@ -26,6 +29,8 @@ public static partial class ErrorHandlingExtensions
     private static readonly Dictionary<int, ErrorBody> DefaultByStatus = new()
     {
         [StatusCodes.Status400BadRequest] = new(ErrorCodes.BadRequest, "The request is malformed."),
+        [StatusCodes.Status401Unauthorized] = new(ErrorCodes.Unauthorized, "Authentication is required."),
+        [StatusCodes.Status403Forbidden] = new(ErrorCodes.Forbidden, "You are not allowed to do this."),
         [StatusCodes.Status404NotFound] = new(ErrorCodes.NotFound, "Not found."),
         [StatusCodes.Status405MethodNotAllowed] = new(ErrorCodes.BadRequest, "This method is not allowed on this resource."),
         [StatusCodes.Status429TooManyRequests] = new(ErrorCodes.RateLimited, "Too many requests. Try again later."),
@@ -58,7 +63,7 @@ public static partial class ErrorHandlingExtensions
             if (exception is AppException appException)
             {
                 status = StatusByCode.GetValueOrDefault(appException.Code, StatusCodes.Status400BadRequest);
-                body = status == StatusCodes.Status500InternalServerError
+                body = status == StatusCodes.Status500InternalServerError && appException.Code == ErrorCodes.InternalError
                     ? DefaultByStatus[status]
                     : new ErrorBody(appException.Code, appException.Message, appException.Fields);
             }
@@ -67,7 +72,7 @@ public static partial class ErrorHandlingExtensions
                 status = StatusCodes.Status500InternalServerError;
                 body = DefaultByStatus[status];
             }
-            if (status >= 500)
+            if (status == StatusCodes.Status500InternalServerError)
             {
                 var logger = context.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger("Portfolio.Errors");
                 LogUnhandled(logger, exception, context.Request.Method, context.Request.Path);

@@ -12,6 +12,7 @@ public class PortfolioDbContext(DbContextOptions<PortfolioDbContext> options) : 
     public DbSet<JourneyEntry> JourneyEntries => Set<JourneyEntry>();
     public DbSet<Technology> Technologies => Set<Technology>();
     public DbSet<SchoolExperience> SchoolExperiences => Set<SchoolExperience>();
+    public DbSet<MusicTrack> MusicTracks => Set<MusicTrack>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) =>
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(PortfolioDbContext).Assembly);

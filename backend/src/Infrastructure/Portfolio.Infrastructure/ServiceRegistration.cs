@@ -1,17 +1,16 @@
 using Microsoft.Extensions.DependencyInjection;
+using Portfolio.Application.Abstractions;
+using Portfolio.Infrastructure.Storage;
 
 namespace Portfolio.Infrastructure;
 
-/// <summary>
-/// Dış sistemlerle konuşan servisler buraya kaydedilir. Sıradaki adımlar:
-/// GitHub ile admin girişi, görsel yükleme ve içerik değişince frontend önbelleğini yenileme.
-/// </summary>
+/// <summary>Dış sistemlerle (dosya sistemi vb.) konuşan servisler</summary>
 public static class ServiceRegistration
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services, string uploadsDirectory)
     {
-        // Saat soyutlaması: test edilebilir zaman (ör. oturum süreleri) için tek kaynak
         services.AddSingleton(TimeProvider.System);
+        services.AddSingleton<IImageStorage>(new LocalImageStorage(uploadsDirectory));
         return services;
     }
 }

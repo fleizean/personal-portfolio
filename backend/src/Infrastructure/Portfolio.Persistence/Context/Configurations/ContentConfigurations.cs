@@ -114,3 +114,14 @@ internal sealed class SchoolExperienceConfiguration : IEntityTypeConfiguration<S
         });
     }
 }
+
+internal sealed class MusicTrackConfiguration : IEntityTypeConfiguration<MusicTrack>
+{
+    public void Configure(EntityTypeBuilder<MusicTrack> builder)
+    {
+        builder.Property(t => t.Title).HasMaxLength(200);
+        builder.Property(t => t.Artist).HasMaxLength(120);
+        builder.Property(t => t.VideoId).HasMaxLength(11).IsFixedLength();
+        builder.HasIndex(t => t.SortOrder);
+    }
+}

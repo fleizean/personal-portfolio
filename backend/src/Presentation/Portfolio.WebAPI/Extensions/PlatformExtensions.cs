@@ -16,6 +16,18 @@ public static class PlatformExtensions
     private static readonly string[] TrustedProxyNetworks =
         ["127.0.0.0/8", "10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16", "::1/128"];
 
+    private static readonly System.Net.IPNetwork[] InternalNetworks =
+        [.. TrustedProxyNetworks.Select(System.Net.IPNetwork.Parse)];
+
+    /// <summary>
+    /// İstek docker ağı içinden mi geliyor (ör. SSR yapan web container'ı). nginx üzerinden gelen
+    /// isteklerde UseForwardedHeaders sonrası RemoteIpAddress gerçek istemci IP'sidir; nginx bu IP'yi
+    /// zincirin sonuna eklediği ve yalnızca son değer okunduğu için sahte başlıkla iç IP taklit edilemez.
+    /// </summary>
+    public static bool IsInternal(IPAddress? address) =>
+        address is not null
+        && InternalNetworks.Any(network => network.Contains(address.IsIPv4MappedToIPv6 ? address.MapToIPv4() : address));
+
     /// <summary>Enum'lar "production", "intra42" gibi küçük harfli metin olarak; boş alanlar hiç yazılmaz</summary>
     public static void ConfigureJson(JsonSerializerOptions options)
     {
@@ -42,12 +54,15 @@ public static class PlatformExtensions
             }
         });
 
-        // İstemci IP'si başına dakikada 120 istek
+        // İstemci IP'si başına dakikada 120 istek. SSR'ın iç istekleri tüm ziyaretçiler adına
+        // geldiği için sınırlanmaz; yoksa yoğun bir dakikada site statik içeriğe düşerdi.
         services.AddRateLimiter(options =>
         {
             options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
             options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(context =>
-                RateLimitPartition.GetFixedWindowLimiter(
+                IsInternal(context.Connection.RemoteIpAddress)
+                ? RateLimitPartition.GetNoLimiter("internal")
+                : RateLimitPartition.GetFixedWindowLimiter(
                     context.Connection.RemoteIpAddress?.ToString() ?? IPAddress.None.ToString(),
                     _ => new FixedWindowRateLimiterOptions { PermitLimit = 120, Window = TimeSpan.FromMinutes(1), QueueLimit = 0 }));
             options.OnRejected = async (context, cancellationToken) =>

@@ -17,7 +17,7 @@ partial class PortfolioDbContextModelSnapshot : ModelSnapshot
     // If you encounter a merge conflict in the line below, it means you need to
     // discard one of the migration branches and recreate its migrations on top of
     // the other branch. See https://aka.ms/efcore-docs-migrations-conflicts for more info.
-    public override string LastMigrationId => "20261123181538_InitialCreate";
+    public override string LastMigrationId => "20261123203624_AddMusicTracks";
 
     protected override void BuildModel(ModelBuilder modelBuilder)
     {
@@ -76,6 +76,55 @@ partial class PortfolioDbContextModelSnapshot : ModelSnapshot
                     .HasDatabaseName("ix_journey_entries_sort_order");
 
                 b.ToTable("journey_entries");
+            });
+
+        modelBuilder.Entity("Portfolio.Domain.Entities.MusicTrack", b =>
+            {
+                var id = b.Property<long>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("bigint")
+                    .HasColumnName("id");
+
+                NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(id);
+
+                b.Property<string>("Artist")
+                    .IsRequired()
+                    .HasMaxLength(120)
+                    .HasColumnType("character varying(120)")
+                    .HasColumnName("artist");
+
+                b.Property<DateTime>("CreatedAt")
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("created_at");
+
+                b.Property<int>("SortOrder")
+                    .HasColumnType("integer")
+                    .HasColumnName("sort_order");
+
+                b.Property<string>("Title")
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .HasColumnType("character varying(200)")
+                    .HasColumnName("title");
+
+                b.Property<DateTime>("UpdatedAt")
+                    .HasColumnType("timestamp with time zone")
+                    .HasColumnName("updated_at");
+
+                b.Property<string>("VideoId")
+                    .IsRequired()
+                    .HasMaxLength(11)
+                    .HasColumnType("character(11)")
+                    .HasColumnName("video_id")
+                    .IsFixedLength();
+
+                b.HasKey("Id")
+                    .HasName("pk_music_tracks");
+
+                b.HasIndex("SortOrder")
+                    .HasDatabaseName("ix_music_tracks_sort_order");
+
+                b.ToTable("music_tracks");
             });
 
         modelBuilder.Entity("Portfolio.Domain.Entities.Profile", b =>

@@ -17,8 +17,12 @@ RUN dotnet publish src/Presentation/Portfolio.WebAPI -c Release -o /app --no-res
 FROM mcr.microsoft.com/dotnet/aspnet:11.0-alpine
 WORKDIR /app
 ENV ASPNETCORE_ENVIRONMENT=Production \
-    ASPNETCORE_HTTP_PORTS=8080
+    ASPNETCORE_HTTP_PORTS=8080 \
+    UPLOADS_DIR=/data/uploads \
+    DATA_PROTECTION_DIR=/data/keys
 COPY --from=build /app .
+# Yüklenen görseller ve oturum anahtarları volume'da; klasörler uygulama kullanıcısına ait
+RUN mkdir -p /data/uploads /data/keys && chown -R $APP_UID /data
 USER $APP_UID
 EXPOSE 8080
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
