@@ -240,7 +240,8 @@
       "missing_operand": "{{cmd}}: missing operand",
       "binary": "cat: {{path}}: binary file — try open {{path}}",
       "lang_usage": "usage: lang tr | lang en",
-      "sudo": "guest is not in the sudoers file. This incident will be reported."
+      "sudo": "guest is not in the sudoers file. This incident will be reported.",
+      "shutdown_usage": "usage: shutdown -r"
     }
   },
   "music": {

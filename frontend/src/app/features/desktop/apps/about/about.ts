@@ -1,16 +1,9 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  afterNextRender,
-  inject,
-  input,
-  output,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input, output } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import type { Profile } from '@domain';
 import { I18n } from '@core/i18n/i18n.service';
 import { BrandIcon } from '@shared/ui/brand-icon/brand-icon';
+import { EasterEggStore } from '../../state/easter-egg.store';
 
 /** README.md: tanıtım içeriği, editör görünümünde */
 @Component({
@@ -30,20 +23,12 @@ export class About {
   readonly openContact = output();
 
   protected readonly i18n = inject(I18n);
-  protected readonly portrait = signal('/hero/hero.png');
+  /** Mr. Robot sürprizi açıldıysa (terminalde shutdown -r) portre değişir */
+  protected readonly easterEgg = inject(EasterEggStore);
+  protected readonly portrait = computed(() =>
+    this.easterEgg.unlocked() ? '/hero/hero-2.png' : '/hero/hero.png',
+  );
 
   protected readonly linkedinUrl = () =>
     this.profile().socials.find((s) => s.kind === 'linkedin')?.url ?? '#';
-
-  constructor() {
-    // Müzik sonuna kadar dinlendiyse Mr. Robot portresi gösterilir. localStorage yalnızca
-    // tarayıcıda var; hidrasyon bozulmasın diye ilk çizimden sonra okunur.
-    afterNextRender(() => {
-      try {
-        if (localStorage.getItem('musicCompleted') === 'true') this.portrait.set('/hero/hero-2.png');
-      } catch {
-        // depolama kapalıysa varsayılan portre kalır
-      }
-    });
-  }
 }

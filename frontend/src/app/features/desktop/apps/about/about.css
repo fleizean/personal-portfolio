@@ -1,3 +1,66 @@
 .bracket {
   color: var(--color-slate-400);
 }
+
+/* Mr. Robot sürprizi: portre değişirken kısa bir glitch */
+.glitch-container::before,
+.glitch-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.glitch-active {
+  animation: glitch-shift 0.3s infinite linear alternate-reverse;
+}
+
+.glitch-active::before {
+  opacity: 0.8;
+  left: 2px;
+  background: rgb(255 0 0 / 0.25);
+  mix-blend-mode: multiply;
+  animation: glitch-clip-b 0.4s infinite linear alternate-reverse;
+}
+
+.glitch-active::after {
+  opacity: 0.8;
+  left: -2px;
+  background: rgb(0 0 255 / 0.25);
+  mix-blend-mode: multiply;
+  animation: glitch-clip-a 0.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-shift {
+  0% { transform: translate(-2px, 1px); }
+  25% { transform: translate(2px, -1px); }
+  50% { transform: translate(-2px, 2px); }
+  75% { transform: translate(2px, -2px); }
+  100% { transform: translate(1px, -1px); }
+}
+
+@keyframes glitch-clip-a {
+  0% { clip-path: inset(20% 0 80% 0); }
+  25% { clip-path: inset(60% 0 10% 0); }
+  50% { clip-path: inset(40% 0 50% 0); }
+  75% { clip-path: inset(80% 0 5% 0); }
+  100% { clip-path: inset(30% 0 50% 0); }
+}
+
+@keyframes glitch-clip-b {
+  0% { clip-path: inset(10% 0 60% 0); }
+  25% { clip-path: inset(80% 0 5% 0); }
+  50% { clip-path: inset(30% 0 20% 0); }
+  75% { clip-path: inset(15% 0 80% 0); }
+  100% { clip-path: inset(40% 0 30% 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch-active,
+  .glitch-active::before,
+  .glitch-active::after {
+    animation: none;
+  }
+}

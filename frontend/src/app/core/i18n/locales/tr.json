@@ -240,7 +240,8 @@
       "missing_operand": "{{cmd}}: eksik argüman",
       "binary": "cat: {{path}}: ikili dosya — open {{path}} dene",
       "lang_usage": "kullanım: lang tr | lang en",
-      "sudo": "guest sudoers dosyasında değil. Bu olay rapor edilecek."
+      "sudo": "guest sudoers dosyasında değil. Bu olay rapor edilecek.",
+      "shutdown_usage": "kullanım: shutdown -r"
     }
   },
   "music": {

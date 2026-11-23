@@ -46,6 +46,7 @@ export class Terminal {
   readonly fileOpened = output<FsFile>();
   readonly folderOpened = output<{ location: FsLocation; dir: FsDir }>();
   readonly musicOpened = output<void>();
+  readonly easterEgg = output<void>();
   readonly closed = output<void>();
 
   protected readonly i18n = inject(I18n);
@@ -173,6 +174,9 @@ export class Terminal {
           break;
         case 'theme':
           this.theme.toggle();
+          break;
+        case 'easter-egg':
+          this.easterEgg.emit();
           break;
       }
     }

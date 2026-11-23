@@ -30,6 +30,7 @@ import type {
 } from './model/desktop.types';
 import { buildHome, buildTrash, cvSrc } from './model/filesystem';
 import { WindowManagerStore } from './state/window-manager.store';
+import { EasterEggStore } from './state/easter-egg.store';
 import { Panel, type MenuEntry } from './ui/panel/panel';
 import { Wallpaper } from './ui/wallpaper/wallpaper';
 import { WindowFrame } from './ui/window-frame/window-frame';
@@ -103,7 +104,7 @@ interface DesktopIcon {
     MusicPlayer,
     AdminApp,
   ],
-  providers: [WindowManagerStore],
+  providers: [WindowManagerStore, EasterEggStore],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './desktop.page.html',
   host: { class: 'os-root fixed inset-0 flex flex-col overflow-hidden text-[13px] font-os' },
@@ -111,6 +112,7 @@ interface DesktopIcon {
 export class DesktopPage {
   protected readonly i18n = inject(I18n);
   protected readonly store = inject(WindowManagerStore);
+  private readonly easterEgg = inject(EasterEggStore);
   private readonly repository = inject(ContentRepository);
   private readonly document = inject(DOCUMENT);
 
@@ -237,6 +239,12 @@ export class DesktopPage {
   protected clickIcon(icon: DesktopIcon): void {
     if (this.compact()) icon.open();
     else this.selectedIcon.set(icon.key);
+  }
+
+  /** Terminaldeki shutdown -r: README öne gelir ve portre glitch ile değişir */
+  protected revealEasterEgg(): void {
+    this.store.open(ABOUT_WINDOW);
+    this.easterEgg.unlock();
   }
 
   protected openTerminal(): void {

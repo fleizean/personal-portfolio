@@ -14,6 +14,7 @@ export type ShellEffect =
   | { type: 'open-app'; app: 'music' }
   | { type: 'language'; language: 'tr' | 'en' }
   | { type: 'theme' }
+  | { type: 'easter-egg' }
   | { type: 'clear' }
   | { type: 'exit' };
 
@@ -286,6 +287,19 @@ export function execute(
 
     case 'sudo':
       return err(t('terminal.errors.sudo'));
+
+    // Gizli komut: Mr. Robot sürprizi (help listesinde yok)
+    case 'shutdown':
+      if (!args.includes('-r')) return err(t('terminal.errors.shutdown_usage'));
+      return out(
+        [
+          { kind: 'muted', text: 'Broadcast message from guest@fleizeanOS (pts/0):' },
+          { kind: 'out', text: 'The system is going down for reboot NOW!' },
+          { kind: 'exec', text: '[  OK  ] Stopped target Graphical Interface.' },
+          { kind: 'exec', text: '[  OK  ] Reached target fsociety.' },
+        ],
+        [{ type: 'easter-egg' }],
+      );
 
     default:
       return err(t('terminal.errors.unknown', { cmd: command }));
